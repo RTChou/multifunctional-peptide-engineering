@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 6 Small data set demo | Multifunctional peptide engineering</title>
+  <meta name="description" content="Section 6 Small data set demo | Multifunctional peptide engineering" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 6 Small data set demo | Multifunctional peptide engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 6 Small data set demo | Multifunctional peptide engineering" />
+  
+  
+  
+
+<meta name="author" content="Renee Ti Chou and Henry T. Hsueh" />
+
+
+<meta name="date" content="2023-02-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="id_05_adversarial_computational_control.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.24/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<!-- https://stackoverflow.com/questions/45360998/code-folding-in-bookdown -->
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script>
+var str = '<div class="btn-group pull-right" style="position: fixed; right: 50px; top: 10px; z-index: 200"><button type="button" class="btn btn-default btn-xs dropdown-toggle" id="allCodeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast=""><span>Code</span> <span class="caret"></span></button><ul class="dropdown-menu" style="min-width: 50px;"><li><a id="rmd-show-all-code" href="#">Show All Code</a></li><li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li></ul></div>';
+document.write(str);
+</script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "hide");
+});
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><i>Multifunctional peptide engineering</i></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html"><i class="fa fa-check"></i><b>1</b> Melanin binding pilot peptide array</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#generating-ml-input"><i class="fa fa-check"></i><b>1.2</b> Generating ML input</a></li>
+<li class="chapter" data-level="1.3" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#training-initial-rf-model"><i class="fa fa-check"></i><b>1.3</b> Training initial RF model</a></li>
+<li class="chapter" data-level="1.4" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#melanin-binding-variable-importance"><i class="fa fa-check"></i><b>1.4</b> Melanin binding variable importance</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html"><i class="fa fa-check"></i><b>2</b> Variable reduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#regression"><i class="fa fa-check"></i><b>2.1.1</b> Regression</a></li>
+<li class="chapter" data-level="2.1.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#classification"><i class="fa fa-check"></i><b>2.1.2</b> Classification</a>
+<ul>
+<li class="chapter" data-level="2.1.2.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#extension-to-multi-class-classification"><i class="fa fa-check"></i><b>2.1.2.1</b> Extension to multi-class classification</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#ml-input-generating-function"><i class="fa fa-check"></i><b>2.2</b> ML input generating function</a></li>
+<li class="chapter" data-level="2.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#aic-functions"><i class="fa fa-check"></i><b>2.3</b> AIC functions</a></li>
+<li class="chapter" data-level="2.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#melanin-binding-regression"><i class="fa fa-check"></i><b>2.4</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-1"><i class="fa fa-check"></i><b>2.4.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="2.4.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance"><i class="fa fa-check"></i><b>2.4.2</b> Variable importance</a></li>
+<li class="chapter" data-level="2.4.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction"><i class="fa fa-check"></i><b>2.4.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="2.4.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits"><i class="fa fa-check"></i><b>2.4.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#cell-penetration-classification"><i class="fa fa-check"></i><b>2.5</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-2"><i class="fa fa-check"></i><b>2.5.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="2.5.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance-1"><i class="fa fa-check"></i><b>2.5.2</b> Variable importance</a></li>
+<li class="chapter" data-level="2.5.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction-1"><i class="fa fa-check"></i><b>2.5.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits-1"><i class="fa fa-check"></i><b>2.5.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#toxicity-classification"><i class="fa fa-check"></i><b>2.6</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-3"><i class="fa fa-check"></i><b>2.6.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="2.6.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance-2"><i class="fa fa-check"></i><b>2.6.2</b> Variable importance</a></li>
+<li class="chapter" data-level="2.6.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction-2"><i class="fa fa-check"></i><b>2.6.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="2.6.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits-2"><i class="fa fa-check"></i><b>2.6.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#plotting"><i class="fa fa-check"></i><b>2.7</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="id_03_model_training.html"><a href="id_03_model_training.html"><i class="fa fa-check"></i><b>3</b> Model training</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#overview-1"><i class="fa fa-check"></i><b>3.1</b> Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#general-codefunctions"><i class="fa fa-check"></i><b>3.2</b> General code/functions</a></li>
+<li class="chapter" data-level="3.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#melanin-binding-regression-1"><i class="fa fa-check"></i><b>3.3</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training"><i class="fa fa-check"></i><b>3.3.1</b> Model training</a></li>
+<li class="chapter" data-level="3.3.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation"><i class="fa fa-check"></i><b>3.3.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="3.3.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set"><i class="fa fa-check"></i><b>3.3.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="3.3.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation"><i class="fa fa-check"></i><b>3.3.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="3.3.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection"><i class="fa fa-check"></i><b>3.3.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="3.3.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1"><i class="fa fa-check"></i><b>3.3.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="3.3.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2"><i class="fa fa-check"></i><b>3.3.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="3.3.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3"><i class="fa fa-check"></i><b>3.3.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="3.3.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4"><i class="fa fa-check"></i><b>3.3.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="3.3.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5"><i class="fa fa-check"></i><b>3.3.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="3.3.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6"><i class="fa fa-check"></i><b>3.3.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="3.3.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7"><i class="fa fa-check"></i><b>3.3.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="3.3.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8"><i class="fa fa-check"></i><b>3.3.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="3.3.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9"><i class="fa fa-check"></i><b>3.3.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="3.3.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10"><i class="fa fa-check"></i><b>3.3.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation"><i class="fa fa-check"></i><b>3.3.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="3.3.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection"><i class="fa fa-check"></i><b>3.3.7</b> Final model selection</a></li>
+<li class="chapter" data-level="3.3.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl"><i class="fa fa-check"></i><b>3.3.8</b> Final reduced SL</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cell-penetration-classification-1"><i class="fa fa-check"></i><b>3.4</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training-1"><i class="fa fa-check"></i><b>3.4.1</b> Model training</a></li>
+<li class="chapter" data-level="3.4.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation-1"><i class="fa fa-check"></i><b>3.4.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="3.4.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set-1"><i class="fa fa-check"></i><b>3.4.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="3.4.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation-1"><i class="fa fa-check"></i><b>3.4.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="3.4.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection-1"><i class="fa fa-check"></i><b>3.4.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="3.4.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1-1"><i class="fa fa-check"></i><b>3.4.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="3.4.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2-1"><i class="fa fa-check"></i><b>3.4.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="3.4.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3-1"><i class="fa fa-check"></i><b>3.4.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="3.4.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4-1"><i class="fa fa-check"></i><b>3.4.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="3.4.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5-1"><i class="fa fa-check"></i><b>3.4.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="3.4.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6-1"><i class="fa fa-check"></i><b>3.4.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="3.4.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7-1"><i class="fa fa-check"></i><b>3.4.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="3.4.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8-1"><i class="fa fa-check"></i><b>3.4.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="3.4.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9-1"><i class="fa fa-check"></i><b>3.4.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="3.4.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10-1"><i class="fa fa-check"></i><b>3.4.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation-1"><i class="fa fa-check"></i><b>3.4.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="3.4.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection-1"><i class="fa fa-check"></i><b>3.4.7</b> Final model selection</a></li>
+<li class="chapter" data-level="3.4.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl-1"><i class="fa fa-check"></i><b>3.4.8</b> Final reduced SL</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#toxicity-classification-1"><i class="fa fa-check"></i><b>3.5</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training-2"><i class="fa fa-check"></i><b>3.5.1</b> Model training</a></li>
+<li class="chapter" data-level="3.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation-2"><i class="fa fa-check"></i><b>3.5.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set-2"><i class="fa fa-check"></i><b>3.5.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="3.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation-2"><i class="fa fa-check"></i><b>3.5.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="3.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection-2"><i class="fa fa-check"></i><b>3.5.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="3.5.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1-2"><i class="fa fa-check"></i><b>3.5.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="3.5.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2-2"><i class="fa fa-check"></i><b>3.5.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="3.5.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3-2"><i class="fa fa-check"></i><b>3.5.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="3.5.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4-2"><i class="fa fa-check"></i><b>3.5.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="3.5.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5-2"><i class="fa fa-check"></i><b>3.5.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="3.5.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6-2"><i class="fa fa-check"></i><b>3.5.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="3.5.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7-2"><i class="fa fa-check"></i><b>3.5.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="3.5.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8-2"><i class="fa fa-check"></i><b>3.5.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="3.5.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9-2"><i class="fa fa-check"></i><b>3.5.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="3.5.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10-2"><i class="fa fa-check"></i><b>3.5.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation-2"><i class="fa fa-check"></i><b>3.5.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="3.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection-2"><i class="fa fa-check"></i><b>3.5.7</b> Final model selection</a></li>
+<li class="chapter" data-level="3.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl-2"><i class="fa fa-check"></i><b>3.5.8</b> Final reduced SL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html"><i class="fa fa-check"></i><b>4</b> Model validation and interpretation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#model-validation"><i class="fa fa-check"></i><b>4.1</b> Model validation</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melaning-binding"><i class="fa fa-check"></i><b>4.1.1</b> Melaning binding</a></li>
+<li class="chapter" data-level="4.1.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding-and-cell-penetration"><i class="fa fa-check"></i><b>4.1.2</b> Melanin binding and cell-penetration</a></li>
+<li class="chapter" data-level="4.1.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-induced-cells"><i class="fa fa-check"></i><b>4.1.3</b> Melanin-induced cells</a></li>
+<li class="chapter" data-level="4.1.4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#non-melanin-induced-cells"><i class="fa fa-check"></i><b>4.1.4</b> Non-melanin induced cells</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#overall-model-interpretation"><i class="fa fa-check"></i><b>4.2</b> Overall model interpretation</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding-regression-2"><i class="fa fa-check"></i><b>4.2.1</b> Melanin binding (regression)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#cell-penetration-classification-2"><i class="fa fa-check"></i><b>4.2.2</b> Cell-penetration (classification)</a></li>
+<li class="chapter" data-level="4.2.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#toxicity-classification-2"><i class="fa fa-check"></i><b>4.2.3</b> Toxicity (classification)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#multifunctional-peptide-selection"><i class="fa fa-check"></i><b>4.3</b> Multifunctional peptide selection</a></li>
+<li class="chapter" data-level="4.4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#explanation-of-hr97-predictions"><i class="fa fa-check"></i><b>4.4</b> Explanation of HR97 predictions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding"><i class="fa fa-check"></i><b>4.4.1</b> Melanin binding</a></li>
+<li class="chapter" data-level="4.4.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#cell-penetration"><i class="fa fa-check"></i><b>4.4.2</b> Cell-penetration</a></li>
+<li class="chapter" data-level="4.4.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#toxicity"><i class="fa fa-check"></i><b>4.4.3</b> Toxicity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#peptide-design-space-visualization"><i class="fa fa-check"></i><b>4.5</b> Peptide design space visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html"><i class="fa fa-check"></i><b>5</b> Adversarial computational control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#general-codefunctions-1"><i class="fa fa-check"></i><b>5.1</b> General code/functions</a></li>
+<li class="chapter" data-level="5.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#melanin-binding-regression-3"><i class="fa fa-check"></i><b>5.2</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-3"><i class="fa fa-check"></i><b>5.2.1</b> Model training</a></li>
+<li class="chapter" data-level="5.2.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-3"><i class="fa fa-check"></i><b>5.2.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="5.2.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-3"><i class="fa fa-check"></i><b>5.2.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="5.2.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-3"><i class="fa fa-check"></i><b>5.2.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="5.2.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-3"><i class="fa fa-check"></i><b>5.2.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="5.2.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-3"><i class="fa fa-check"></i><b>5.2.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="5.2.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-3"><i class="fa fa-check"></i><b>5.2.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="5.2.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-3"><i class="fa fa-check"></i><b>5.2.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="5.2.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-3"><i class="fa fa-check"></i><b>5.2.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="5.2.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-3"><i class="fa fa-check"></i><b>5.2.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="5.2.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-3"><i class="fa fa-check"></i><b>5.2.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="5.2.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-3"><i class="fa fa-check"></i><b>5.2.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="5.2.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-3"><i class="fa fa-check"></i><b>5.2.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="5.2.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-3"><i class="fa fa-check"></i><b>5.2.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-3"><i class="fa fa-check"></i><b>5.2.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cell-penetration-classification-3"><i class="fa fa-check"></i><b>5.3</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-4"><i class="fa fa-check"></i><b>5.3.1</b> Model training</a></li>
+<li class="chapter" data-level="5.3.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-4"><i class="fa fa-check"></i><b>5.3.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-4"><i class="fa fa-check"></i><b>5.3.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="5.3.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-4"><i class="fa fa-check"></i><b>5.3.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="5.3.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-4"><i class="fa fa-check"></i><b>5.3.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="5.3.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-4"><i class="fa fa-check"></i><b>5.3.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="5.3.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-4"><i class="fa fa-check"></i><b>5.3.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="5.3.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-4"><i class="fa fa-check"></i><b>5.3.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="5.3.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-4"><i class="fa fa-check"></i><b>5.3.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="5.3.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-4"><i class="fa fa-check"></i><b>5.3.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="5.3.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-4"><i class="fa fa-check"></i><b>5.3.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="5.3.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-4"><i class="fa fa-check"></i><b>5.3.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="5.3.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-4"><i class="fa fa-check"></i><b>5.3.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="5.3.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-4"><i class="fa fa-check"></i><b>5.3.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-4"><i class="fa fa-check"></i><b>5.3.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#toxicity-classification-3"><i class="fa fa-check"></i><b>5.4</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-5"><i class="fa fa-check"></i><b>5.4.1</b> Model training</a></li>
+<li class="chapter" data-level="5.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-5"><i class="fa fa-check"></i><b>5.4.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="5.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-5"><i class="fa fa-check"></i><b>5.4.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="5.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-5"><i class="fa fa-check"></i><b>5.4.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="5.4.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-5"><i class="fa fa-check"></i><b>5.4.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="5.4.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-5"><i class="fa fa-check"></i><b>5.4.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="5.4.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-5"><i class="fa fa-check"></i><b>5.4.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="5.4.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-5"><i class="fa fa-check"></i><b>5.4.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="5.4.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-5"><i class="fa fa-check"></i><b>5.4.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="5.4.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-5"><i class="fa fa-check"></i><b>5.4.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="5.4.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-5"><i class="fa fa-check"></i><b>5.4.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="5.4.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-5"><i class="fa fa-check"></i><b>5.4.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="5.4.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-5"><i class="fa fa-check"></i><b>5.4.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="5.4.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-5"><i class="fa fa-check"></i><b>5.4.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-5"><i class="fa fa-check"></i><b>5.4.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#overall-model-interpretation-1"><i class="fa fa-check"></i><b>5.5</b> Overall model interpretation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#melanin-binding-regression-4"><i class="fa fa-check"></i><b>5.5.1</b> Melanin binding (regression)</a></li>
+<li class="chapter" data-level="5.5.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cell-penetration-classification-4"><i class="fa fa-check"></i><b>5.5.2</b> Cell-penetration (classification)</a></li>
+<li class="chapter" data-level="5.5.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#toxicity-classification-4"><i class="fa fa-check"></i><b>5.5.3</b> Toxicity (classification)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html"><i class="fa fa-check"></i><b>6</b> Small data set demo</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#setup"><i class="fa fa-check"></i><b>6.1</b> Setup</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#load-libraries"><i class="fa fa-check"></i><b>6.1.1</b> Load libraries</a></li>
+<li class="chapter" data-level="6.1.2" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#aic-functions-1"><i class="fa fa-check"></i><b>6.1.2</b> AIC functions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#model-parameters"><i class="fa fa-check"></i><b>6.1.3</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#variable-reduction-3"><i class="fa fa-check"></i><b>6.2</b> Variable reduction</a></li>
+<li class="chapter" data-level="6.3" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#model-training-6"><i class="fa fa-check"></i><b>6.3</b> Model training</a></li>
+<li class="chapter" data-level="6.4" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#run-pipeline"><i class="fa fa-check"></i><b>6.4</b> Run pipeline</a></li>
+<li class="chapter" data-level="6.5" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#session-info"><i class="fa fa-check"></i><b>6.5</b> Session info</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multifunctional peptide engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="id_06_small_data_set_demo" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">Section 6</span> Small data set demo<a href="id_06_small_data_set_demo.html#id_06_small_data_set_demo" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="setup" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Setup<a href="id_06_small_data_set_demo.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="load-libraries" class="section level3 hasAnchor" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Load libraries<a href="id_06_small_data_set_demo.html#load-libraries" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb152-1"><a href="id_06_small_data_set_demo.html#cb152-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ranger)</span>
+<span id="cb152-2"><a href="id_06_small_data_set_demo.html#cb152-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlist)</span>
+<span id="cb152-3"><a href="id_06_small_data_set_demo.html#cb152-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(h2o)</span>
+<span id="cb152-4"><a href="id_06_small_data_set_demo.html#cb152-4" aria-hidden="true" tabindex="-1"></a><span class="fu">h2o.init</span>(<span class="at">nthreads =</span> <span class="sc">-</span><span class="dv">1</span>)</span></code></pre></div>
+</div>
+<div id="aic-functions-1" class="section level3 hasAnchor" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> AIC functions<a href="id_06_small_data_set_demo.html#aic-functions-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb153-1"><a href="id_06_small_data_set_demo.html#cb153-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Mean squared error function</span></span>
+<span id="cb153-2"><a href="id_06_small_data_set_demo.html#cb153-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-3"><a href="id_06_small_data_set_demo.html#cb153-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true values.</span></span>
+<span id="cb153-4"><a href="id_06_small_data_set_demo.html#cb153-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector or a matrix of predicted values.</span></span>
+<span id="cb153-5"><a href="id_06_small_data_set_demo.html#cb153-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-6"><a href="id_06_small_data_set_demo.html#cb153-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return MSE</span></span>
+<span id="cb153-7"><a href="id_06_small_data_set_demo.html#cb153-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-8"><a href="id_06_small_data_set_demo.html#cb153-8" aria-hidden="true" tabindex="-1"></a>mse <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred) {</span>
+<span id="cb153-9"><a href="id_06_small_data_set_demo.html#cb153-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">mean</span>((y_true <span class="sc">-</span> y_pred)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb153-10"><a href="id_06_small_data_set_demo.html#cb153-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb153-11"><a href="id_06_small_data_set_demo.html#cb153-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-12"><a href="id_06_small_data_set_demo.html#cb153-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Regression AIC</span></span>
+<span id="cb153-13"><a href="id_06_small_data_set_demo.html#cb153-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-14"><a href="id_06_small_data_set_demo.html#cb153-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true values.</span></span>
+<span id="cb153-15"><a href="id_06_small_data_set_demo.html#cb153-15" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector or a matrix of predicted values.</span></span>
+<span id="cb153-16"><a href="id_06_small_data_set_demo.html#cb153-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param k number of parameters/variables.</span></span>
+<span id="cb153-17"><a href="id_06_small_data_set_demo.html#cb153-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param eps a very small value to avoid negative infinitives generated by log(p=0).</span></span>
+<span id="cb153-18"><a href="id_06_small_data_set_demo.html#cb153-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-19"><a href="id_06_small_data_set_demo.html#cb153-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return AIC</span></span>
+<span id="cb153-20"><a href="id_06_small_data_set_demo.html#cb153-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-21"><a href="id_06_small_data_set_demo.html#cb153-21" aria-hidden="true" tabindex="-1"></a>aic_reg <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred, k, <span class="at">eps =</span> <span class="fl">1e-15</span>) {</span>
+<span id="cb153-22"><a href="id_06_small_data_set_demo.html#cb153-22" aria-hidden="true" tabindex="-1"></a>  mserr <span class="ot">&lt;-</span> <span class="fu">mse</span>(y_true, y_pred)</span>
+<span id="cb153-23"><a href="id_06_small_data_set_demo.html#cb153-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mserr <span class="sc">==</span> <span class="dv">0</span>) mserr <span class="ot">&lt;-</span> eps</span>
+<span id="cb153-24"><a href="id_06_small_data_set_demo.html#cb153-24" aria-hidden="true" tabindex="-1"></a>  AIC <span class="ot">&lt;-</span> <span class="fu">length</span>(y_true) <span class="sc">*</span> <span class="fu">log</span>(mserr) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> k</span>
+<span id="cb153-25"><a href="id_06_small_data_set_demo.html#cb153-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(AIC)</span>
+<span id="cb153-26"><a href="id_06_small_data_set_demo.html#cb153-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb153-27"><a href="id_06_small_data_set_demo.html#cb153-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-28"><a href="id_06_small_data_set_demo.html#cb153-28" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Cross-entropy function</span></span>
+<span id="cb153-29"><a href="id_06_small_data_set_demo.html#cb153-29" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-30"><a href="id_06_small_data_set_demo.html#cb153-30" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true labels.</span></span>
+<span id="cb153-31"><a href="id_06_small_data_set_demo.html#cb153-31" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector (probabilities of the second class/factor level)</span></span>
+<span id="cb153-32"><a href="id_06_small_data_set_demo.html#cb153-32" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; or a matrix of predicted probabilities.</span></span>
+<span id="cb153-33"><a href="id_06_small_data_set_demo.html#cb153-33" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param eps a very small value to avoid negative infinitives generated by log(p=0).</span></span>
+<span id="cb153-34"><a href="id_06_small_data_set_demo.html#cb153-34" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; If the function returns NaN, then increasing eps may solve the issue. Alternatively,</span></span>
+<span id="cb153-35"><a href="id_06_small_data_set_demo.html#cb153-35" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; As NaN is usually generated in the case of p = 1 - eps = 1, resulting in log(1 - p)</span></span>
+<span id="cb153-36"><a href="id_06_small_data_set_demo.html#cb153-36" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; = log(0) from binary cross-entropy, the user can pass prediction values as a matrix</span></span>
+<span id="cb153-37"><a href="id_06_small_data_set_demo.html#cb153-37" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; to calculate categorical cross-entropy instead.</span></span>
+<span id="cb153-38"><a href="id_06_small_data_set_demo.html#cb153-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-39"><a href="id_06_small_data_set_demo.html#cb153-39" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return H, cross-entropy (mean loss per sample)</span></span>
+<span id="cb153-40"><a href="id_06_small_data_set_demo.html#cb153-40" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-41"><a href="id_06_small_data_set_demo.html#cb153-41" aria-hidden="true" tabindex="-1"></a>crossEntropy <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred, <span class="at">eps =</span> <span class="fl">1e-15</span>) {</span>
+<span id="cb153-42"><a href="id_06_small_data_set_demo.html#cb153-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">is.factor</span>(y_true))</span>
+<span id="cb153-43"><a href="id_06_small_data_set_demo.html#cb153-43" aria-hidden="true" tabindex="-1"></a>  y_pred <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="fu">pmin</span>(y_pred, <span class="dv">1</span> <span class="sc">-</span> eps), eps)</span>
+<span id="cb153-44"><a href="id_06_small_data_set_demo.html#cb153-44" aria-hidden="true" tabindex="-1"></a>  n_levels <span class="ot">&lt;-</span> <span class="fu">nlevels</span>(y_true)</span>
+<span id="cb153-45"><a href="id_06_small_data_set_demo.html#cb153-45" aria-hidden="true" tabindex="-1"></a>  H <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb153-46"><a href="id_06_small_data_set_demo.html#cb153-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Binary classification</span></span>
+<span id="cb153-47"><a href="id_06_small_data_set_demo.html#cb153-47" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n_levels <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;&amp;</span> <span class="fu">is.vector</span>(y_pred)) {</span>
+<span id="cb153-48"><a href="id_06_small_data_set_demo.html#cb153-48" aria-hidden="true" tabindex="-1"></a>    y_true <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(y_true <span class="sc">==</span> <span class="fu">levels</span>(y_true)[<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb153-49"><a href="id_06_small_data_set_demo.html#cb153-49" aria-hidden="true" tabindex="-1"></a>    H <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">mean</span>(y_true <span class="sc">*</span> <span class="fu">log2</span>(y_pred) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> y_true) <span class="sc">*</span> <span class="fu">log2</span>(<span class="dv">1</span> <span class="sc">-</span> y_pred))</span>
+<span id="cb153-50"><a href="id_06_small_data_set_demo.html#cb153-50" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb153-51"><a href="id_06_small_data_set_demo.html#cb153-51" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Multi-class classification</span></span>
+<span id="cb153-52"><a href="id_06_small_data_set_demo.html#cb153-52" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (n_levels <span class="sc">==</span> <span class="fu">ncol</span>(y_pred)) {</span>
+<span id="cb153-53"><a href="id_06_small_data_set_demo.html#cb153-53" aria-hidden="true" tabindex="-1"></a>    y_true <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(y_true)</span>
+<span id="cb153-54"><a href="id_06_small_data_set_demo.html#cb153-54" aria-hidden="true" tabindex="-1"></a>    y_true_encoded <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(y_true, <span class="cf">function</span>(x) {</span>
+<span id="cb153-55"><a href="id_06_small_data_set_demo.html#cb153-55" aria-hidden="true" tabindex="-1"></a>      tmp <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, n_levels)</span>
+<span id="cb153-56"><a href="id_06_small_data_set_demo.html#cb153-56" aria-hidden="true" tabindex="-1"></a>      tmp[x] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb153-57"><a href="id_06_small_data_set_demo.html#cb153-57" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(tmp)</span>
+<span id="cb153-58"><a href="id_06_small_data_set_demo.html#cb153-58" aria-hidden="true" tabindex="-1"></a>    }))</span>
+<span id="cb153-59"><a href="id_06_small_data_set_demo.html#cb153-59" aria-hidden="true" tabindex="-1"></a>    H <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(y_true_encoded), <span class="cf">function</span>(x) <span class="fu">sum</span>(y_true_encoded[x, ] <span class="sc">*</span> <span class="fu">log2</span>(y_pred[x, ]))))</span>
+<span id="cb153-60"><a href="id_06_small_data_set_demo.html#cb153-60" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb153-61"><a href="id_06_small_data_set_demo.html#cb153-61" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(H)</span>
+<span id="cb153-62"><a href="id_06_small_data_set_demo.html#cb153-62" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb153-63"><a href="id_06_small_data_set_demo.html#cb153-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb153-64"><a href="id_06_small_data_set_demo.html#cb153-64" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Classification AIC</span></span>
+<span id="cb153-65"><a href="id_06_small_data_set_demo.html#cb153-65" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-66"><a href="id_06_small_data_set_demo.html#cb153-66" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true labels.</span></span>
+<span id="cb153-67"><a href="id_06_small_data_set_demo.html#cb153-67" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector or a matrix of predicted probabilities.</span></span>
+<span id="cb153-68"><a href="id_06_small_data_set_demo.html#cb153-68" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param k number of parameters/variables.</span></span>
+<span id="cb153-69"><a href="id_06_small_data_set_demo.html#cb153-69" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param ... other parameters to be passed to `crossEntropy()`</span></span>
+<span id="cb153-70"><a href="id_06_small_data_set_demo.html#cb153-70" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-71"><a href="id_06_small_data_set_demo.html#cb153-71" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return AIC</span></span>
+<span id="cb153-72"><a href="id_06_small_data_set_demo.html#cb153-72" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb153-73"><a href="id_06_small_data_set_demo.html#cb153-73" aria-hidden="true" tabindex="-1"></a>aic_clf <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred, k, ...) {</span>
+<span id="cb153-74"><a href="id_06_small_data_set_demo.html#cb153-74" aria-hidden="true" tabindex="-1"></a>  H <span class="ot">&lt;-</span> <span class="fu">crossEntropy</span>(y_true, y_pred, ...)</span>
+<span id="cb153-75"><a href="id_06_small_data_set_demo.html#cb153-75" aria-hidden="true" tabindex="-1"></a>  AIC <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">length</span>(y_true) <span class="sc">*</span> H <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> k</span>
+<span id="cb153-76"><a href="id_06_small_data_set_demo.html#cb153-76" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(AIC)</span>
+<span id="cb153-77"><a href="id_06_small_data_set_demo.html#cb153-77" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="model-parameters" class="section level3 hasAnchor" number="6.1.3">
+<h3><span class="header-section-number">6.1.3</span> Model parameters<a href="id_06_small_data_set_demo.html#model-parameters" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb154"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb154-1"><a href="id_06_small_data_set_demo.html#cb154-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DeepLearning Grid 1</span></span>
+<span id="cb154-2"><a href="id_06_small_data_set_demo.html#cb154-2" aria-hidden="true" tabindex="-1"></a>deeplearning_params_1 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb154-3"><a href="id_06_small_data_set_demo.html#cb154-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">activation =</span> <span class="st">&quot;RectifierWithDropout&quot;</span>,</span>
+<span id="cb154-4"><a href="id_06_small_data_set_demo.html#cb154-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">10000</span>, <span class="co"># early stopping</span></span>
+<span id="cb154-5"><a href="id_06_small_data_set_demo.html#cb154-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">epsilon =</span> <span class="fu">c</span>(<span class="fl">1e-6</span>, <span class="fl">1e-7</span>, <span class="fl">1e-8</span>, <span class="fl">1e-9</span>),</span>
+<span id="cb154-6"><a href="id_06_small_data_set_demo.html#cb154-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">hidden =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">50</span>), <span class="fu">c</span>(<span class="dv">200</span>), <span class="fu">c</span>(<span class="dv">500</span>)),</span>
+<span id="cb154-7"><a href="id_06_small_data_set_demo.html#cb154-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">hidden_dropout_ratios =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="fl">0.1</span>), <span class="fu">c</span>(<span class="fl">0.2</span>), <span class="fu">c</span>(<span class="fl">0.3</span>), <span class="fu">c</span>(<span class="fl">0.4</span>), <span class="fu">c</span>(<span class="fl">0.5</span>)),</span>
+<span id="cb154-8"><a href="id_06_small_data_set_demo.html#cb154-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">input_dropout_ratio =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>),</span>
+<span id="cb154-9"><a href="id_06_small_data_set_demo.html#cb154-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">rho =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)</span>
+<span id="cb154-10"><a href="id_06_small_data_set_demo.html#cb154-10" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb154-11"><a href="id_06_small_data_set_demo.html#cb154-11" aria-hidden="true" tabindex="-1"></a><span class="co"># DeepLearning Grid 2</span></span>
+<span id="cb154-12"><a href="id_06_small_data_set_demo.html#cb154-12" aria-hidden="true" tabindex="-1"></a>deeplearning_params_2 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb154-13"><a href="id_06_small_data_set_demo.html#cb154-13" aria-hidden="true" tabindex="-1"></a>  <span class="at">activation =</span> <span class="st">&quot;RectifierWithDropout&quot;</span>,</span>
+<span id="cb154-14"><a href="id_06_small_data_set_demo.html#cb154-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">10000</span>, <span class="co"># early stopping</span></span>
+<span id="cb154-15"><a href="id_06_small_data_set_demo.html#cb154-15" aria-hidden="true" tabindex="-1"></a>  <span class="at">epsilon =</span> <span class="fu">c</span>(<span class="fl">1e-6</span>, <span class="fl">1e-7</span>, <span class="fl">1e-8</span>, <span class="fl">1e-9</span>),</span>
+<span id="cb154-16"><a href="id_06_small_data_set_demo.html#cb154-16" aria-hidden="true" tabindex="-1"></a>  <span class="at">hidden =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">50</span>), <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>), <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>)),</span>
+<span id="cb154-17"><a href="id_06_small_data_set_demo.html#cb154-17" aria-hidden="true" tabindex="-1"></a>  <span class="at">hidden_dropout_ratios =</span> <span class="fu">list</span>(</span>
+<span id="cb154-18"><a href="id_06_small_data_set_demo.html#cb154-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>), <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.2</span>), <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.3</span>),</span>
+<span id="cb154-19"><a href="id_06_small_data_set_demo.html#cb154-19" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.4</span>), <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb154-20"><a href="id_06_small_data_set_demo.html#cb154-20" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb154-21"><a href="id_06_small_data_set_demo.html#cb154-21" aria-hidden="true" tabindex="-1"></a>  <span class="at">input_dropout_ratio =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>),</span>
+<span id="cb154-22"><a href="id_06_small_data_set_demo.html#cb154-22" aria-hidden="true" tabindex="-1"></a>  <span class="at">rho =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)</span>
+<span id="cb154-23"><a href="id_06_small_data_set_demo.html#cb154-23" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb154-24"><a href="id_06_small_data_set_demo.html#cb154-24" aria-hidden="true" tabindex="-1"></a><span class="co"># DeepLearning Grid 3</span></span>
+<span id="cb154-25"><a href="id_06_small_data_set_demo.html#cb154-25" aria-hidden="true" tabindex="-1"></a>deeplearning_params_3 <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb154-26"><a href="id_06_small_data_set_demo.html#cb154-26" aria-hidden="true" tabindex="-1"></a>  <span class="at">activation =</span> <span class="st">&quot;RectifierWithDropout&quot;</span>,</span>
+<span id="cb154-27"><a href="id_06_small_data_set_demo.html#cb154-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">epochs =</span> <span class="dv">10000</span>, <span class="co"># early stopping</span></span>
+<span id="cb154-28"><a href="id_06_small_data_set_demo.html#cb154-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">epsilon =</span> <span class="fu">c</span>(<span class="fl">1e-6</span>, <span class="fl">1e-7</span>, <span class="fl">1e-8</span>, <span class="fl">1e-9</span>),</span>
+<span id="cb154-29"><a href="id_06_small_data_set_demo.html#cb154-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">hidden =</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">50</span>, <span class="dv">50</span>), <span class="fu">c</span>(<span class="dv">200</span>, <span class="dv">200</span>, <span class="dv">200</span>), <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">500</span>, <span class="dv">500</span>)),</span>
+<span id="cb154-30"><a href="id_06_small_data_set_demo.html#cb154-30" aria-hidden="true" tabindex="-1"></a>  <span class="at">hidden_dropout_ratios =</span> <span class="fu">list</span>(</span>
+<span id="cb154-31"><a href="id_06_small_data_set_demo.html#cb154-31" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>), <span class="fu">c</span>(<span class="fl">0.2</span>, <span class="fl">0.2</span>, <span class="fl">0.2</span>),</span>
+<span id="cb154-32"><a href="id_06_small_data_set_demo.html#cb154-32" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="fl">0.3</span>, <span class="fl">0.3</span>, <span class="fl">0.3</span>), <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.4</span>, <span class="fl">0.4</span>),</span>
+<span id="cb154-33"><a href="id_06_small_data_set_demo.html#cb154-33" aria-hidden="true" tabindex="-1"></a>    <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>)</span>
+<span id="cb154-34"><a href="id_06_small_data_set_demo.html#cb154-34" aria-hidden="true" tabindex="-1"></a>  ),</span>
+<span id="cb154-35"><a href="id_06_small_data_set_demo.html#cb154-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">input_dropout_ratio =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.15</span>, <span class="fl">0.2</span>),</span>
+<span id="cb154-36"><a href="id_06_small_data_set_demo.html#cb154-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">rho =</span> <span class="fu">c</span>(<span class="fl">0.9</span>, <span class="fl">0.95</span>, <span class="fl">0.99</span>)</span>
+<span id="cb154-37"><a href="id_06_small_data_set_demo.html#cb154-37" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb154-38"><a href="id_06_small_data_set_demo.html#cb154-38" aria-hidden="true" tabindex="-1"></a><span class="co"># GBM</span></span>
+<span id="cb154-39"><a href="id_06_small_data_set_demo.html#cb154-39" aria-hidden="true" tabindex="-1"></a>gbm_params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb154-40"><a href="id_06_small_data_set_demo.html#cb154-40" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_sample_rate =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.7</span>, <span class="fl">1.0</span>),</span>
+<span id="cb154-41"><a href="id_06_small_data_set_demo.html#cb154-41" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_sample_rate_per_tree =</span> <span class="fu">c</span>(<span class="fl">0.4</span>, <span class="fl">0.7</span>, <span class="fl">1.0</span>),</span>
+<span id="cb154-42"><a href="id_06_small_data_set_demo.html#cb154-42" aria-hidden="true" tabindex="-1"></a>  <span class="at">learn_rate =</span> <span class="fl">0.1</span>,</span>
+<span id="cb154-43"><a href="id_06_small_data_set_demo.html#cb154-43" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_depth =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>, <span class="dv">11</span>, <span class="dv">12</span>, <span class="dv">13</span>, <span class="dv">14</span>, <span class="dv">15</span>, <span class="dv">16</span>, <span class="dv">17</span>),</span>
+<span id="cb154-44"><a href="id_06_small_data_set_demo.html#cb154-44" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_rows =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">30</span>, <span class="dv">100</span>),</span>
+<span id="cb154-45"><a href="id_06_small_data_set_demo.html#cb154-45" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_split_improvement =</span> <span class="fu">c</span>(<span class="fl">1e-4</span>, <span class="fl">1e-5</span>),</span>
+<span id="cb154-46"><a href="id_06_small_data_set_demo.html#cb154-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="co"># early stopping</span></span>
+<span id="cb154-47"><a href="id_06_small_data_set_demo.html#cb154-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample_rate =</span> <span class="fu">c</span>(<span class="fl">0.5</span>, <span class="fl">0.6</span>, <span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>)</span>
+<span id="cb154-48"><a href="id_06_small_data_set_demo.html#cb154-48" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb154-49"><a href="id_06_small_data_set_demo.html#cb154-49" aria-hidden="true" tabindex="-1"></a><span class="co"># XGBoost</span></span>
+<span id="cb154-50"><a href="id_06_small_data_set_demo.html#cb154-50" aria-hidden="true" tabindex="-1"></a>xgboost_params <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb154-51"><a href="id_06_small_data_set_demo.html#cb154-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">booster =</span> <span class="fu">c</span>(<span class="st">&quot;gbtree&quot;</span>, <span class="st">&quot;dart&quot;</span>),</span>
+<span id="cb154-52"><a href="id_06_small_data_set_demo.html#cb154-52" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_sample_rate =</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>),</span>
+<span id="cb154-53"><a href="id_06_small_data_set_demo.html#cb154-53" aria-hidden="true" tabindex="-1"></a>  <span class="at">col_sample_rate_per_tree =</span> <span class="fu">c</span>(<span class="fl">0.7</span>, <span class="fl">0.8</span>, <span class="fl">0.9</span>, <span class="fl">1.0</span>),</span>
+<span id="cb154-54"><a href="id_06_small_data_set_demo.html#cb154-54" aria-hidden="true" tabindex="-1"></a>  <span class="at">max_depth =</span> <span class="fu">c</span>(<span class="dv">5</span>, <span class="dv">10</span>, <span class="dv">15</span>, <span class="dv">20</span>),</span>
+<span id="cb154-55"><a href="id_06_small_data_set_demo.html#cb154-55" aria-hidden="true" tabindex="-1"></a>  <span class="at">min_rows =</span> <span class="fu">c</span>(<span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">1.0</span>, <span class="fl">3.0</span>, <span class="fl">5.0</span>, <span class="fl">10.0</span>, <span class="fl">15.0</span>, <span class="fl">20.0</span>),</span>
+<span id="cb154-56"><a href="id_06_small_data_set_demo.html#cb154-56" aria-hidden="true" tabindex="-1"></a>  <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="co"># early stopping</span></span>
+<span id="cb154-57"><a href="id_06_small_data_set_demo.html#cb154-57" aria-hidden="true" tabindex="-1"></a>  <span class="at">reg_alpha =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>),</span>
+<span id="cb154-58"><a href="id_06_small_data_set_demo.html#cb154-58" aria-hidden="true" tabindex="-1"></a>  <span class="at">reg_lambda =</span> <span class="fu">c</span>(<span class="fl">0.001</span>, <span class="fl">0.01</span>, <span class="fl">0.1</span>, <span class="fl">0.5</span>, <span class="dv">1</span>),</span>
+<span id="cb154-59"><a href="id_06_small_data_set_demo.html#cb154-59" aria-hidden="true" tabindex="-1"></a>  <span class="at">sample_rate =</span> <span class="fu">c</span>(<span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>)</span>
+<span id="cb154-60"><a href="id_06_small_data_set_demo.html#cb154-60" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+</div>
+<div id="variable-reduction-3" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Variable reduction<a href="id_06_small_data_set_demo.html#variable-reduction-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb155-1"><a href="id_06_small_data_set_demo.html#cb155-1" aria-hidden="true" tabindex="-1"></a>variable_reduction <span class="ot">&lt;-</span> <span class="cf">function</span>(predictor_variables, response_variable, <span class="at">seed =</span> <span class="dv">12</span>) {</span>
+<span id="cb155-2"><a href="id_06_small_data_set_demo.html#cb155-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calculate initial variable importance</span></span>
+<span id="cb155-3"><a href="id_06_small_data_set_demo.html#cb155-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set.seed</span>(seed)</span>
+<span id="cb155-4"><a href="id_06_small_data_set_demo.html#cb155-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Train random forest using ranger</span></span>
+<span id="cb155-5"><a href="id_06_small_data_set_demo.html#cb155-5" aria-hidden="true" tabindex="-1"></a>  ntree <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb155-6"><a href="id_06_small_data_set_demo.html#cb155-6" aria-hidden="true" tabindex="-1"></a>  rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(<span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">importance =</span> <span class="st">&quot;permutation&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">scale.permutation.importance =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>, <span class="at">keep.inbag =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb155-7"><a href="id_06_small_data_set_demo.html#cb155-7" aria-hidden="true" tabindex="-1"></a>  var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb155-8"><a href="id_06_small_data_set_demo.html#cb155-8" aria-hidden="true" tabindex="-1"></a>  var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)]</span>
+<span id="cb155-9"><a href="id_06_small_data_set_demo.html#cb155-9" aria-hidden="true" tabindex="-1"></a>  var_imp <span class="ot">&lt;-</span> var_imp[var_imp <span class="sc">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb155-10"><a href="id_06_small_data_set_demo.html#cb155-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Variable reduction iterations</span></span>
+<span id="cb155-11"><a href="id_06_small_data_set_demo.html#cb155-11" aria-hidden="true" tabindex="-1"></a>  ntree <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb155-12"><a href="id_06_small_data_set_demo.html#cb155-12" aria-hidden="true" tabindex="-1"></a>  var_subset_res <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb155-13"><a href="id_06_small_data_set_demo.html#cb155-13" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(var_imp)) {</span>
+<span id="cb155-14"><a href="id_06_small_data_set_demo.html#cb155-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Evaluating &quot;</span>, i, <span class="st">&quot; variable(s) out of &quot;</span>, <span class="fu">length</span>(var_imp), <span class="st">&quot; variables</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb155-15"><a href="id_06_small_data_set_demo.html#cb155-15" aria-hidden="true" tabindex="-1"></a>    predictor_variables_ <span class="ot">&lt;-</span> predictor_variables[, <span class="fu">colnames</span>(predictor_variables) <span class="sc">%in%</span> <span class="fu">names</span>(var_imp)[<span class="dv">1</span><span class="sc">:</span>i], drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb155-16"><a href="id_06_small_data_set_demo.html#cb155-16" aria-hidden="true" tabindex="-1"></a>    rf_ <span class="ot">&lt;-</span> <span class="fu">ranger</span>(<span class="at">x =</span> predictor_variables_, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">importance =</span> <span class="st">&quot;none&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> seed, <span class="at">probability =</span> <span class="fu">is.factor</span>(response_variable))</span>
+<span id="cb155-17"><a href="id_06_small_data_set_demo.html#cb155-17" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span><span class="fu">is.factor</span>(response_variable)) { <span class="co"># Regression</span></span>
+<span id="cb155-18"><a href="id_06_small_data_set_demo.html#cb155-18" aria-hidden="true" tabindex="-1"></a>      var_subset_res <span class="ot">&lt;-</span> <span class="fu">list.append</span>(var_subset_res, <span class="fu">list</span>(</span>
+<span id="cb155-19"><a href="id_06_small_data_set_demo.html#cb155-19" aria-hidden="true" tabindex="-1"></a>        <span class="at">rsq =</span> rf<span class="sc">$</span>r.squared,</span>
+<span id="cb155-20"><a href="id_06_small_data_set_demo.html#cb155-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">aic =</span> <span class="fu">aic_reg</span>(</span>
+<span id="cb155-21"><a href="id_06_small_data_set_demo.html#cb155-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">y_true =</span> response_variable,</span>
+<span id="cb155-22"><a href="id_06_small_data_set_demo.html#cb155-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">y_pred =</span> rf_<span class="sc">$</span>predictions,</span>
+<span id="cb155-23"><a href="id_06_small_data_set_demo.html#cb155-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">k =</span> i</span>
+<span id="cb155-24"><a href="id_06_small_data_set_demo.html#cb155-24" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb155-25"><a href="id_06_small_data_set_demo.html#cb155-25" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb155-26"><a href="id_06_small_data_set_demo.html#cb155-26" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> { <span class="co"># Classification</span></span>
+<span id="cb155-27"><a href="id_06_small_data_set_demo.html#cb155-27" aria-hidden="true" tabindex="-1"></a>      var_subset_res <span class="ot">&lt;-</span> <span class="fu">list.append</span>(var_subset_res, <span class="fu">list</span>(</span>
+<span id="cb155-28"><a href="id_06_small_data_set_demo.html#cb155-28" aria-hidden="true" tabindex="-1"></a>        <span class="at">acc =</span> <span class="dv">1</span> <span class="sc">-</span> rf<span class="sc">$</span>prediction.error,</span>
+<span id="cb155-29"><a href="id_06_small_data_set_demo.html#cb155-29" aria-hidden="true" tabindex="-1"></a>        <span class="at">aic =</span> <span class="fu">aic_clf</span>(</span>
+<span id="cb155-30"><a href="id_06_small_data_set_demo.html#cb155-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">y_true =</span> response_variable,</span>
+<span id="cb155-31"><a href="id_06_small_data_set_demo.html#cb155-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">y_pred =</span> rf_<span class="sc">$</span>predictions,</span>
+<span id="cb155-32"><a href="id_06_small_data_set_demo.html#cb155-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">k =</span> i</span>
+<span id="cb155-33"><a href="id_06_small_data_set_demo.html#cb155-33" aria-hidden="true" tabindex="-1"></a>        )</span>
+<span id="cb155-34"><a href="id_06_small_data_set_demo.html#cb155-34" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb155-35"><a href="id_06_small_data_set_demo.html#cb155-35" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb155-36"><a href="id_06_small_data_set_demo.html#cb155-36" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb155-37"><a href="id_06_small_data_set_demo.html#cb155-37" aria-hidden="true" tabindex="-1"></a>  aic_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>aic))</span>
+<span id="cb155-38"><a href="id_06_small_data_set_demo.html#cb155-38" aria-hidden="true" tabindex="-1"></a>  aic_cutoff <span class="ot">&lt;-</span> <span class="fu">which.min</span>(aic_vec)</span>
+<span id="cb155-39"><a href="id_06_small_data_set_demo.html#cb155-39" aria-hidden="true" tabindex="-1"></a>  var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb155-40"><a href="id_06_small_data_set_demo.html#cb155-40" aria-hidden="true" tabindex="-1"></a>  var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)][<span class="dv">1</span><span class="sc">:</span>aic_cutoff]</span>
+<span id="cb155-41"><a href="id_06_small_data_set_demo.html#cb155-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste</span>(<span class="st">&quot;Number of variables after variable reduction: &quot;</span>, aic_cutoff, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb155-42"><a href="id_06_small_data_set_demo.html#cb155-42" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> predictor_variables[, <span class="fu">colnames</span>(predictor_variables) <span class="sc">%in%</span> <span class="fu">names</span>(var_imp), drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb155-43"><a href="id_06_small_data_set_demo.html#cb155-43" aria-hidden="true" tabindex="-1"></a>  data<span class="sc">$</span>response <span class="ot">&lt;-</span> response_variable</span>
+<span id="cb155-44"><a href="id_06_small_data_set_demo.html#cb155-44" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(data)</span>
+<span id="cb155-45"><a href="id_06_small_data_set_demo.html#cb155-45" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="model-training-6" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Model training<a href="id_06_small_data_set_demo.html#model-training-6" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb156"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb156-1"><a href="id_06_small_data_set_demo.html#cb156-1" aria-hidden="true" tabindex="-1"></a>model_training <span class="ot">&lt;-</span> <span class="cf">function</span>(train_set, <span class="at">prefix =</span> <span class="st">&quot;demo_models&quot;</span>, <span class="at">exp_dir =</span> <span class="st">&quot;./demo_models&quot;</span>, <span class="at">nfolds =</span> <span class="dv">10</span>, <span class="at">grid_seed =</span> <span class="dv">1</span>) {</span>
+<span id="cb156-2"><a href="id_06_small_data_set_demo.html#cb156-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2o.init</span>(<span class="at">nthreads =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb156-3"><a href="id_06_small_data_set_demo.html#cb156-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2o.removeAll</span>()</span>
+<span id="cb156-4"><a href="id_06_small_data_set_demo.html#cb156-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">dir.create</span>(exp_dir)</span>
+<span id="cb156-5"><a href="id_06_small_data_set_demo.html#cb156-5" aria-hidden="true" tabindex="-1"></a>  tmp <span class="ot">&lt;-</span> <span class="fu">as.h2o</span>(train_set, <span class="at">destination_frame =</span> prefix)</span>
+<span id="cb156-6"><a href="id_06_small_data_set_demo.html#cb156-6" aria-hidden="true" tabindex="-1"></a>  classification <span class="ot">&lt;-</span> <span class="cn">FALSE</span></span>
+<span id="cb156-7"><a href="id_06_small_data_set_demo.html#cb156-7" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="fu">is.factor</span>(train_set<span class="sc">$</span>response)) classification <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb156-8"><a href="id_06_small_data_set_demo.html#cb156-8" aria-hidden="true" tabindex="-1"></a>  samp_factors <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb156-9"><a href="id_06_small_data_set_demo.html#cb156-9" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (classification) {</span>
+<span id="cb156-10"><a href="id_06_small_data_set_demo.html#cb156-10" aria-hidden="true" tabindex="-1"></a>    tmp[<span class="st">&quot;response&quot;</span>] <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(tmp[<span class="st">&quot;response&quot;</span>])</span>
+<span id="cb156-11"><a href="id_06_small_data_set_demo.html#cb156-11" aria-hidden="true" tabindex="-1"></a>    samp_factors <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(<span class="fu">mean</span>(<span class="fu">table</span>(train_set<span class="sc">$</span>response)) <span class="sc">/</span> <span class="fu">table</span>(train_set<span class="sc">$</span>response))</span>
+<span id="cb156-12"><a href="id_06_small_data_set_demo.html#cb156-12" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-13"><a href="id_06_small_data_set_demo.html#cb156-13" aria-hidden="true" tabindex="-1"></a>  y <span class="ot">&lt;-</span> <span class="st">&quot;response&quot;</span></span>
+<span id="cb156-14"><a href="id_06_small_data_set_demo.html#cb156-14" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">setdiff</span>(<span class="fu">names</span>(tmp), y)</span>
+<span id="cb156-15"><a href="id_06_small_data_set_demo.html#cb156-15" aria-hidden="true" tabindex="-1"></a>  res <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(tmp<span class="sc">$</span>response)</span>
+<span id="cb156-16"><a href="id_06_small_data_set_demo.html#cb156-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -------------------</span></span>
+<span id="cb156-17"><a href="id_06_small_data_set_demo.html#cb156-17" aria-hidden="true" tabindex="-1"></a>  <span class="co"># base model training</span></span>
+<span id="cb156-18"><a href="id_06_small_data_set_demo.html#cb156-18" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -------------------</span></span>
+<span id="cb156-19"><a href="id_06_small_data_set_demo.html#cb156-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Deep learning grid 1</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-20"><a href="id_06_small_data_set_demo.html#cb156-20" aria-hidden="true" tabindex="-1"></a>  deeplearning_1 <span class="ot">&lt;-</span> <span class="fu">h2o.grid</span>(</span>
+<span id="cb156-21"><a href="id_06_small_data_set_demo.html#cb156-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">algorithm =</span> <span class="st">&quot;deeplearning&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-22"><a href="id_06_small_data_set_demo.html#cb156-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">hyper_params =</span> deeplearning_params_1,</span>
+<span id="cb156-23"><a href="id_06_small_data_set_demo.html#cb156-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-24"><a href="id_06_small_data_set_demo.html#cb156-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-25"><a href="id_06_small_data_set_demo.html#cb156-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">search_criteria =</span> <span class="fu">list</span>(</span>
+<span id="cb156-26"><a href="id_06_small_data_set_demo.html#cb156-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">strategy =</span> <span class="st">&quot;RandomDiscrete&quot;</span>,</span>
+<span id="cb156-27"><a href="id_06_small_data_set_demo.html#cb156-27" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_models =</span> <span class="dv">5</span>, <span class="at">seed =</span> grid_seed</span>
+<span id="cb156-28"><a href="id_06_small_data_set_demo.html#cb156-28" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb156-29"><a href="id_06_small_data_set_demo.html#cb156-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>, <span class="at">parallelism =</span> <span class="dv">0</span></span>
+<span id="cb156-30"><a href="id_06_small_data_set_demo.html#cb156-30" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-31"><a href="id_06_small_data_set_demo.html#cb156-31" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> deeplearning_1<span class="sc">@</span>model_ids) {</span>
+<span id="cb156-32"><a href="id_06_small_data_set_demo.html#cb156-32" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-33"><a href="id_06_small_data_set_demo.html#cb156-33" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-34"><a href="id_06_small_data_set_demo.html#cb156-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Deep learning grid 2</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-35"><a href="id_06_small_data_set_demo.html#cb156-35" aria-hidden="true" tabindex="-1"></a>  deeplearning_2 <span class="ot">&lt;-</span> <span class="fu">h2o.grid</span>(</span>
+<span id="cb156-36"><a href="id_06_small_data_set_demo.html#cb156-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">algorithm =</span> <span class="st">&quot;deeplearning&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-37"><a href="id_06_small_data_set_demo.html#cb156-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">hyper_params =</span> deeplearning_params_2,</span>
+<span id="cb156-38"><a href="id_06_small_data_set_demo.html#cb156-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-39"><a href="id_06_small_data_set_demo.html#cb156-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-40"><a href="id_06_small_data_set_demo.html#cb156-40" aria-hidden="true" tabindex="-1"></a>    <span class="at">search_criteria =</span> <span class="fu">list</span>(</span>
+<span id="cb156-41"><a href="id_06_small_data_set_demo.html#cb156-41" aria-hidden="true" tabindex="-1"></a>      <span class="at">strategy =</span> <span class="st">&quot;RandomDiscrete&quot;</span>,</span>
+<span id="cb156-42"><a href="id_06_small_data_set_demo.html#cb156-42" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_models =</span> <span class="dv">5</span>, <span class="at">seed =</span> grid_seed</span>
+<span id="cb156-43"><a href="id_06_small_data_set_demo.html#cb156-43" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb156-44"><a href="id_06_small_data_set_demo.html#cb156-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>, <span class="at">parallelism =</span> <span class="dv">0</span></span>
+<span id="cb156-45"><a href="id_06_small_data_set_demo.html#cb156-45" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-46"><a href="id_06_small_data_set_demo.html#cb156-46" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> deeplearning_2<span class="sc">@</span>model_ids) {</span>
+<span id="cb156-47"><a href="id_06_small_data_set_demo.html#cb156-47" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-48"><a href="id_06_small_data_set_demo.html#cb156-48" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-49"><a href="id_06_small_data_set_demo.html#cb156-49" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;Deep learning grid 3</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-50"><a href="id_06_small_data_set_demo.html#cb156-50" aria-hidden="true" tabindex="-1"></a>  deeplearning_3 <span class="ot">&lt;-</span> <span class="fu">h2o.grid</span>(</span>
+<span id="cb156-51"><a href="id_06_small_data_set_demo.html#cb156-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">algorithm =</span> <span class="st">&quot;deeplearning&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-52"><a href="id_06_small_data_set_demo.html#cb156-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">hyper_params =</span> deeplearning_params_3,</span>
+<span id="cb156-53"><a href="id_06_small_data_set_demo.html#cb156-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-54"><a href="id_06_small_data_set_demo.html#cb156-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-55"><a href="id_06_small_data_set_demo.html#cb156-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">search_criteria =</span> <span class="fu">list</span>(</span>
+<span id="cb156-56"><a href="id_06_small_data_set_demo.html#cb156-56" aria-hidden="true" tabindex="-1"></a>      <span class="at">strategy =</span> <span class="st">&quot;RandomDiscrete&quot;</span>,</span>
+<span id="cb156-57"><a href="id_06_small_data_set_demo.html#cb156-57" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_models =</span> <span class="dv">5</span>, <span class="at">seed =</span> grid_seed</span>
+<span id="cb156-58"><a href="id_06_small_data_set_demo.html#cb156-58" aria-hidden="true" tabindex="-1"></a>    ),</span>
+<span id="cb156-59"><a href="id_06_small_data_set_demo.html#cb156-59" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>, <span class="at">parallelism =</span> <span class="dv">0</span></span>
+<span id="cb156-60"><a href="id_06_small_data_set_demo.html#cb156-60" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-61"><a href="id_06_small_data_set_demo.html#cb156-61" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> deeplearning_3<span class="sc">@</span>model_ids) {</span>
+<span id="cb156-62"><a href="id_06_small_data_set_demo.html#cb156-62" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-63"><a href="id_06_small_data_set_demo.html#cb156-63" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-64"><a href="id_06_small_data_set_demo.html#cb156-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;GBM grid</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-65"><a href="id_06_small_data_set_demo.html#cb156-65" aria-hidden="true" tabindex="-1"></a>  gbm <span class="ot">&lt;-</span> <span class="fu">h2o.grid</span>(</span>
+<span id="cb156-66"><a href="id_06_small_data_set_demo.html#cb156-66" aria-hidden="true" tabindex="-1"></a>    <span class="at">algorithm =</span> <span class="st">&quot;gbm&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-67"><a href="id_06_small_data_set_demo.html#cb156-67" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">hyper_params =</span> gbm_params, <span class="at">stopping_rounds =</span> <span class="dv">3</span>,</span>
+<span id="cb156-68"><a href="id_06_small_data_set_demo.html#cb156-68" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification, <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-69"><a href="id_06_small_data_set_demo.html#cb156-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">search_criteria =</span> <span class="fu">list</span>(<span class="at">strategy =</span> <span class="st">&quot;RandomDiscrete&quot;</span>, <span class="at">max_models =</span> <span class="dv">15</span>, <span class="at">seed =</span> grid_seed),</span>
+<span id="cb156-70"><a href="id_06_small_data_set_demo.html#cb156-70" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>, <span class="at">parallelism =</span> <span class="dv">0</span></span>
+<span id="cb156-71"><a href="id_06_small_data_set_demo.html#cb156-71" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-72"><a href="id_06_small_data_set_demo.html#cb156-72" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> gbm<span class="sc">@</span>model_ids) {</span>
+<span id="cb156-73"><a href="id_06_small_data_set_demo.html#cb156-73" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-74"><a href="id_06_small_data_set_demo.html#cb156-74" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-75"><a href="id_06_small_data_set_demo.html#cb156-75" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;GBM 5 default models</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-76"><a href="id_06_small_data_set_demo.html#cb156-76" aria-hidden="true" tabindex="-1"></a>  gbm_1 <span class="ot">&lt;-</span> <span class="fu">h2o.gbm</span>(</span>
+<span id="cb156-77"><a href="id_06_small_data_set_demo.html#cb156-77" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;GBM_1&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-78"><a href="id_06_small_data_set_demo.html#cb156-78" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-79"><a href="id_06_small_data_set_demo.html#cb156-79" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification, <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-80"><a href="id_06_small_data_set_demo.html#cb156-80" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>, <span class="at">learn_rate =</span> <span class="fl">0.1</span>,</span>
+<span id="cb156-81"><a href="id_06_small_data_set_demo.html#cb156-81" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">6</span>, <span class="at">min_rows =</span> <span class="dv">1</span>, <span class="at">min_split_improvement =</span> <span class="fl">1e-5</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">sample_rate =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-82"><a href="id_06_small_data_set_demo.html#cb156-82" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-83"><a href="id_06_small_data_set_demo.html#cb156-83" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-84"><a href="id_06_small_data_set_demo.html#cb156-84" aria-hidden="true" tabindex="-1"></a>  gbm_2 <span class="ot">&lt;-</span> <span class="fu">h2o.gbm</span>(</span>
+<span id="cb156-85"><a href="id_06_small_data_set_demo.html#cb156-85" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;GBM_2&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-86"><a href="id_06_small_data_set_demo.html#cb156-86" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-87"><a href="id_06_small_data_set_demo.html#cb156-87" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification, <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-88"><a href="id_06_small_data_set_demo.html#cb156-88" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>, <span class="at">learn_rate =</span> <span class="fl">0.1</span>,</span>
+<span id="cb156-89"><a href="id_06_small_data_set_demo.html#cb156-89" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">7</span>, <span class="at">min_rows =</span> <span class="dv">10</span>, <span class="at">min_split_improvement =</span> <span class="fl">1e-5</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">sample_rate =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-90"><a href="id_06_small_data_set_demo.html#cb156-90" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-91"><a href="id_06_small_data_set_demo.html#cb156-91" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-92"><a href="id_06_small_data_set_demo.html#cb156-92" aria-hidden="true" tabindex="-1"></a>  gbm_3 <span class="ot">&lt;-</span> <span class="fu">h2o.gbm</span>(</span>
+<span id="cb156-93"><a href="id_06_small_data_set_demo.html#cb156-93" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;GBM_3&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-94"><a href="id_06_small_data_set_demo.html#cb156-94" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-95"><a href="id_06_small_data_set_demo.html#cb156-95" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification, <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-96"><a href="id_06_small_data_set_demo.html#cb156-96" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>, <span class="at">learn_rate =</span> <span class="fl">0.1</span>,</span>
+<span id="cb156-97"><a href="id_06_small_data_set_demo.html#cb156-97" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">8</span>, <span class="at">min_rows =</span> <span class="dv">10</span>, <span class="at">min_split_improvement =</span> <span class="fl">1e-5</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">sample_rate =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-98"><a href="id_06_small_data_set_demo.html#cb156-98" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-99"><a href="id_06_small_data_set_demo.html#cb156-99" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-100"><a href="id_06_small_data_set_demo.html#cb156-100" aria-hidden="true" tabindex="-1"></a>  gbm_4 <span class="ot">&lt;-</span> <span class="fu">h2o.gbm</span>(</span>
+<span id="cb156-101"><a href="id_06_small_data_set_demo.html#cb156-101" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;GBM_4&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-102"><a href="id_06_small_data_set_demo.html#cb156-102" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-103"><a href="id_06_small_data_set_demo.html#cb156-103" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification, <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-104"><a href="id_06_small_data_set_demo.html#cb156-104" aria-hidden="true" tabindex="-1"></a>    <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>, <span class="at">learn_rate =</span> <span class="fl">0.1</span>,</span>
+<span id="cb156-105"><a href="id_06_small_data_set_demo.html#cb156-105" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">10</span>, <span class="at">min_rows =</span> <span class="dv">10</span>, <span class="at">min_split_improvement =</span> <span class="fl">1e-5</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">sample_rate =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-106"><a href="id_06_small_data_set_demo.html#cb156-106" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-107"><a href="id_06_small_data_set_demo.html#cb156-107" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-108"><a href="id_06_small_data_set_demo.html#cb156-108" aria-hidden="true" tabindex="-1"></a>  <span class="co"># gbm_5 = h2o.gbm(model_id=&#39;GBM_5&#39;, x=x, y=y, training_frame=tmp, seed=1, nfolds=nfolds,</span></span>
+<span id="cb156-109"><a href="id_06_small_data_set_demo.html#cb156-109" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                 keep_cross_validation_predictions=TRUE, stopping_rounds=3, score_tree_interval=5,</span></span>
+<span id="cb156-110"><a href="id_06_small_data_set_demo.html#cb156-110" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                 balance_classes=classification, class_sampling_factors=samp_factors,</span></span>
+<span id="cb156-111"><a href="id_06_small_data_set_demo.html#cb156-111" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                 col_sample_rate=0.8, col_sample_rate_per_tree=0.8, learn_rate=0.1,</span></span>
+<span id="cb156-112"><a href="id_06_small_data_set_demo.html#cb156-112" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                 max_depth=15, min_rows=100, min_split_improvement=1e-5, ntrees=10000, sample_rate=0.8,</span></span>
+<span id="cb156-113"><a href="id_06_small_data_set_demo.html#cb156-113" aria-hidden="true" tabindex="-1"></a>  <span class="co">#                 keep_cross_validation_models=FALSE, fold_assignment=&#39;Modulo&#39;)</span></span>
+<span id="cb156-114"><a href="id_06_small_data_set_demo.html#cb156-114" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> <span class="fu">paste0</span>(<span class="st">&quot;GBM_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)) {</span>
+<span id="cb156-115"><a href="id_06_small_data_set_demo.html#cb156-115" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-116"><a href="id_06_small_data_set_demo.html#cb156-116" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-117"><a href="id_06_small_data_set_demo.html#cb156-117" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;XGBoost grid</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-118"><a href="id_06_small_data_set_demo.html#cb156-118" aria-hidden="true" tabindex="-1"></a>  xgboost <span class="ot">&lt;-</span> <span class="fu">h2o.grid</span>(</span>
+<span id="cb156-119"><a href="id_06_small_data_set_demo.html#cb156-119" aria-hidden="true" tabindex="-1"></a>    <span class="at">algorithm =</span> <span class="st">&quot;xgboost&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-120"><a href="id_06_small_data_set_demo.html#cb156-120" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">hyper_params =</span> xgboost_params, <span class="at">stopping_rounds =</span> <span class="dv">3</span>,</span>
+<span id="cb156-121"><a href="id_06_small_data_set_demo.html#cb156-121" aria-hidden="true" tabindex="-1"></a>    <span class="at">search_criteria =</span> <span class="fu">list</span>(<span class="at">strategy =</span> <span class="st">&quot;RandomDiscrete&quot;</span>, <span class="at">max_models =</span> <span class="dv">15</span>, <span class="at">seed =</span> grid_seed),</span>
+<span id="cb156-122"><a href="id_06_small_data_set_demo.html#cb156-122" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span>, <span class="at">parallelism =</span> <span class="dv">0</span></span>
+<span id="cb156-123"><a href="id_06_small_data_set_demo.html#cb156-123" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-124"><a href="id_06_small_data_set_demo.html#cb156-124" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> xgboost<span class="sc">@</span>model_ids) {</span>
+<span id="cb156-125"><a href="id_06_small_data_set_demo.html#cb156-125" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-126"><a href="id_06_small_data_set_demo.html#cb156-126" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-127"><a href="id_06_small_data_set_demo.html#cb156-127" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;XGBoost 3 default models</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-128"><a href="id_06_small_data_set_demo.html#cb156-128" aria-hidden="true" tabindex="-1"></a>  xgboost_1 <span class="ot">&lt;-</span> <span class="fu">h2o.xgboost</span>(</span>
+<span id="cb156-129"><a href="id_06_small_data_set_demo.html#cb156-129" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;XGBoost_1&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-130"><a href="id_06_small_data_set_demo.html#cb156-130" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-131"><a href="id_06_small_data_set_demo.html#cb156-131" aria-hidden="true" tabindex="-1"></a>    <span class="at">booster =</span> <span class="st">&quot;gbtree&quot;</span>, <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-132"><a href="id_06_small_data_set_demo.html#cb156-132" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">10</span>, <span class="at">min_rows =</span> <span class="dv">5</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">reg_alpha =</span> <span class="dv">0</span>, <span class="at">reg_lambda =</span> <span class="dv">1</span>,</span>
+<span id="cb156-133"><a href="id_06_small_data_set_demo.html#cb156-133" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample_rate =</span> <span class="fl">0.6</span>, <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-134"><a href="id_06_small_data_set_demo.html#cb156-134" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-135"><a href="id_06_small_data_set_demo.html#cb156-135" aria-hidden="true" tabindex="-1"></a>  xgboost_2 <span class="ot">&lt;-</span> <span class="fu">h2o.xgboost</span>(</span>
+<span id="cb156-136"><a href="id_06_small_data_set_demo.html#cb156-136" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;XGBoost_2&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-137"><a href="id_06_small_data_set_demo.html#cb156-137" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-138"><a href="id_06_small_data_set_demo.html#cb156-138" aria-hidden="true" tabindex="-1"></a>    <span class="at">booster =</span> <span class="st">&quot;gbtree&quot;</span>, <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-139"><a href="id_06_small_data_set_demo.html#cb156-139" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">20</span>, <span class="at">min_rows =</span> <span class="dv">10</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">reg_alpha =</span> <span class="dv">0</span>, <span class="at">reg_lambda =</span> <span class="dv">1</span>,</span>
+<span id="cb156-140"><a href="id_06_small_data_set_demo.html#cb156-140" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample_rate =</span> <span class="fl">0.6</span>, <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-141"><a href="id_06_small_data_set_demo.html#cb156-141" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-142"><a href="id_06_small_data_set_demo.html#cb156-142" aria-hidden="true" tabindex="-1"></a>  xgboost_3 <span class="ot">&lt;-</span> <span class="fu">h2o.xgboost</span>(</span>
+<span id="cb156-143"><a href="id_06_small_data_set_demo.html#cb156-143" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;XGBoost_3&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-144"><a href="id_06_small_data_set_demo.html#cb156-144" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>, <span class="at">score_tree_interval =</span> <span class="dv">5</span>,</span>
+<span id="cb156-145"><a href="id_06_small_data_set_demo.html#cb156-145" aria-hidden="true" tabindex="-1"></a>    <span class="at">booster =</span> <span class="st">&quot;gbtree&quot;</span>, <span class="at">col_sample_rate =</span> <span class="fl">0.8</span>, <span class="at">col_sample_rate_per_tree =</span> <span class="fl">0.8</span>,</span>
+<span id="cb156-146"><a href="id_06_small_data_set_demo.html#cb156-146" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_depth =</span> <span class="dv">5</span>, <span class="at">min_rows =</span> <span class="dv">3</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">reg_alpha =</span> <span class="dv">0</span>, <span class="at">reg_lambda =</span> <span class="dv">1</span>,</span>
+<span id="cb156-147"><a href="id_06_small_data_set_demo.html#cb156-147" aria-hidden="true" tabindex="-1"></a>    <span class="at">sample_rate =</span> <span class="fl">0.8</span>, <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-148"><a href="id_06_small_data_set_demo.html#cb156-148" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-149"><a href="id_06_small_data_set_demo.html#cb156-149" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> <span class="fu">paste0</span>(<span class="st">&quot;XGBoost_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)) {</span>
+<span id="cb156-150"><a href="id_06_small_data_set_demo.html#cb156-150" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-151"><a href="id_06_small_data_set_demo.html#cb156-151" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-152"><a href="id_06_small_data_set_demo.html#cb156-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;GLM</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-153"><a href="id_06_small_data_set_demo.html#cb156-153" aria-hidden="true" tabindex="-1"></a>  glm <span class="ot">&lt;-</span> <span class="fu">h2o.glm</span>(</span>
+<span id="cb156-154"><a href="id_06_small_data_set_demo.html#cb156-154" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;GLM&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-155"><a href="id_06_small_data_set_demo.html#cb156-155" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">alpha =</span> <span class="fu">c</span>(<span class="fl">0.0</span>, <span class="fl">0.2</span>, <span class="fl">0.4</span>, <span class="fl">0.6</span>, <span class="fl">0.8</span>, <span class="fl">1.0</span>),</span>
+<span id="cb156-156"><a href="id_06_small_data_set_demo.html#cb156-156" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification, <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-157"><a href="id_06_small_data_set_demo.html#cb156-157" aria-hidden="true" tabindex="-1"></a>    <span class="at">max_after_balance_size =</span> <span class="fl">0.5</span>, <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-158"><a href="id_06_small_data_set_demo.html#cb156-158" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-159"><a href="id_06_small_data_set_demo.html#cb156-159" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="st">&quot;GLM&quot;</span>), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-160"><a href="id_06_small_data_set_demo.html#cb156-160" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;DRF</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-161"><a href="id_06_small_data_set_demo.html#cb156-161" aria-hidden="true" tabindex="-1"></a>  drf <span class="ot">&lt;-</span> <span class="fu">h2o.randomForest</span>(</span>
+<span id="cb156-162"><a href="id_06_small_data_set_demo.html#cb156-162" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;DRF&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-163"><a href="id_06_small_data_set_demo.html#cb156-163" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>,</span>
+<span id="cb156-164"><a href="id_06_small_data_set_demo.html#cb156-164" aria-hidden="true" tabindex="-1"></a>    <span class="at">score_tree_interval =</span> <span class="dv">5</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>,</span>
+<span id="cb156-165"><a href="id_06_small_data_set_demo.html#cb156-165" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-166"><a href="id_06_small_data_set_demo.html#cb156-166" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-167"><a href="id_06_small_data_set_demo.html#cb156-167" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-168"><a href="id_06_small_data_set_demo.html#cb156-168" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-169"><a href="id_06_small_data_set_demo.html#cb156-169" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="st">&quot;DRF&quot;</span>), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-170"><a href="id_06_small_data_set_demo.html#cb156-170" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;XRT</span><span class="sc">\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-171"><a href="id_06_small_data_set_demo.html#cb156-171" aria-hidden="true" tabindex="-1"></a>  xrt <span class="ot">&lt;-</span> <span class="fu">h2o.randomForest</span>(</span>
+<span id="cb156-172"><a href="id_06_small_data_set_demo.html#cb156-172" aria-hidden="true" tabindex="-1"></a>    <span class="at">model_id =</span> <span class="st">&quot;XRT&quot;</span>, <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>, <span class="at">nfolds =</span> nfolds,</span>
+<span id="cb156-173"><a href="id_06_small_data_set_demo.html#cb156-173" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>, <span class="at">ntrees =</span> <span class="dv">10000</span>, <span class="at">histogram_type =</span> <span class="st">&quot;Random&quot;</span>,</span>
+<span id="cb156-174"><a href="id_06_small_data_set_demo.html#cb156-174" aria-hidden="true" tabindex="-1"></a>    <span class="at">score_tree_interval =</span> <span class="dv">5</span>, <span class="at">stopping_rounds =</span> <span class="dv">3</span>,</span>
+<span id="cb156-175"><a href="id_06_small_data_set_demo.html#cb156-175" aria-hidden="true" tabindex="-1"></a>    <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-176"><a href="id_06_small_data_set_demo.html#cb156-176" aria-hidden="true" tabindex="-1"></a>    <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-177"><a href="id_06_small_data_set_demo.html#cb156-177" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_cross_validation_models =</span> <span class="cn">FALSE</span>, <span class="at">fold_assignment =</span> <span class="st">&quot;Modulo&quot;</span></span>
+<span id="cb156-178"><a href="id_06_small_data_set_demo.html#cb156-178" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-179"><a href="id_06_small_data_set_demo.html#cb156-179" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="st">&quot;XRT&quot;</span>), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-180"><a href="id_06_small_data_set_demo.html#cb156-180" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -----------------------</span></span>
+<span id="cb156-181"><a href="id_06_small_data_set_demo.html#cb156-181" aria-hidden="true" tabindex="-1"></a>  <span class="co"># get holdout predictions</span></span>
+<span id="cb156-182"><a href="id_06_small_data_set_demo.html#cb156-182" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -----------------------</span></span>
+<span id="cb156-183"><a href="id_06_small_data_set_demo.html#cb156-183" aria-hidden="true" tabindex="-1"></a>  base_models <span class="ot">&lt;-</span> <span class="fu">as.list</span>(<span class="fu">c</span>(</span>
+<span id="cb156-184"><a href="id_06_small_data_set_demo.html#cb156-184" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(deeplearning_1<span class="sc">@</span>model_ids),</span>
+<span id="cb156-185"><a href="id_06_small_data_set_demo.html#cb156-185" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(deeplearning_2<span class="sc">@</span>model_ids),</span>
+<span id="cb156-186"><a href="id_06_small_data_set_demo.html#cb156-186" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(deeplearning_3<span class="sc">@</span>model_ids),</span>
+<span id="cb156-187"><a href="id_06_small_data_set_demo.html#cb156-187" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(gbm<span class="sc">@</span>model_ids), <span class="fu">paste0</span>(<span class="st">&quot;GBM_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>),</span>
+<span id="cb156-188"><a href="id_06_small_data_set_demo.html#cb156-188" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(xgboost<span class="sc">@</span>model_ids), <span class="fu">paste0</span>(<span class="st">&quot;XGBoost_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>),</span>
+<span id="cb156-189"><a href="id_06_small_data_set_demo.html#cb156-189" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;GLM&quot;</span>,</span>
+<span id="cb156-190"><a href="id_06_small_data_set_demo.html#cb156-190" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;DRF&quot;</span>,</span>
+<span id="cb156-191"><a href="id_06_small_data_set_demo.html#cb156-191" aria-hidden="true" tabindex="-1"></a>    <span class="st">&quot;XRT&quot;</span></span>
+<span id="cb156-192"><a href="id_06_small_data_set_demo.html#cb156-192" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb156-193"><a href="id_06_small_data_set_demo.html#cb156-193" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (model_id <span class="cf">in</span> base_models) {</span>
+<span id="cb156-194"><a href="id_06_small_data_set_demo.html#cb156-194" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span>classification) {</span>
+<span id="cb156-195"><a href="id_06_small_data_set_demo.html#cb156-195" aria-hidden="true" tabindex="-1"></a>      res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id)),</span>
+<span id="cb156-196"><a href="id_06_small_data_set_demo.html#cb156-196" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.names =</span> model_id</span>
+<span id="cb156-197"><a href="id_06_small_data_set_demo.html#cb156-197" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb156-198"><a href="id_06_small_data_set_demo.html#cb156-198" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb156-199"><a href="id_06_small_data_set_demo.html#cb156-199" aria-hidden="true" tabindex="-1"></a>      res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id))[<span class="dv">3</span>],</span>
+<span id="cb156-200"><a href="id_06_small_data_set_demo.html#cb156-200" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.names =</span> model_id</span>
+<span id="cb156-201"><a href="id_06_small_data_set_demo.html#cb156-201" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb156-202"><a href="id_06_small_data_set_demo.html#cb156-202" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb156-203"><a href="id_06_small_data_set_demo.html#cb156-203" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-204"><a href="id_06_small_data_set_demo.html#cb156-204" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----------------------</span></span>
+<span id="cb156-205"><a href="id_06_small_data_set_demo.html#cb156-205" aria-hidden="true" tabindex="-1"></a>  <span class="co"># super learner training</span></span>
+<span id="cb156-206"><a href="id_06_small_data_set_demo.html#cb156-206" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----------------------</span></span>
+<span id="cb156-207"><a href="id_06_small_data_set_demo.html#cb156-207" aria-hidden="true" tabindex="-1"></a>  sl_iter <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb156-208"><a href="id_06_small_data_set_demo.html#cb156-208" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Super learner iteration &quot;</span>, sl_iter, <span class="st">&quot; (&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot; models)</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb156-209"><a href="id_06_small_data_set_demo.html#cb156-209" aria-hidden="true" tabindex="-1"></a>  sl <span class="ot">&lt;-</span> <span class="fu">h2o.stackedEnsemble</span>(</span>
+<span id="cb156-210"><a href="id_06_small_data_set_demo.html#cb156-210" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">model_id =</span> <span class="fu">paste0</span>(<span class="st">&quot;superlearner_iter_&quot;</span>, sl_iter),</span>
+<span id="cb156-211"><a href="id_06_small_data_set_demo.html#cb156-211" aria-hidden="true" tabindex="-1"></a>    <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>,</span>
+<span id="cb156-212"><a href="id_06_small_data_set_demo.html#cb156-212" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_models =</span> base_models,</span>
+<span id="cb156-213"><a href="id_06_small_data_set_demo.html#cb156-213" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_algorithm =</span> <span class="st">&quot;glm&quot;</span>,</span>
+<span id="cb156-214"><a href="id_06_small_data_set_demo.html#cb156-214" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_nfolds =</span> nfolds,</span>
+<span id="cb156-215"><a href="id_06_small_data_set_demo.html#cb156-215" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_levelone_frame =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-216"><a href="id_06_small_data_set_demo.html#cb156-216" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_params =</span> <span class="fu">list</span>(</span>
+<span id="cb156-217"><a href="id_06_small_data_set_demo.html#cb156-217" aria-hidden="true" tabindex="-1"></a>      <span class="at">standardize =</span> <span class="cn">TRUE</span>, <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-218"><a href="id_06_small_data_set_demo.html#cb156-218" aria-hidden="true" tabindex="-1"></a>      <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-219"><a href="id_06_small_data_set_demo.html#cb156-219" aria-hidden="true" tabindex="-1"></a>      <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-220"><a href="id_06_small_data_set_demo.html#cb156-220" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_after_balance_size =</span> <span class="fl">0.5</span></span>
+<span id="cb156-221"><a href="id_06_small_data_set_demo.html#cb156-221" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb156-222"><a href="id_06_small_data_set_demo.html#cb156-222" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-223"><a href="id_06_small_data_set_demo.html#cb156-223" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="fu">paste0</span>(<span class="st">&quot;superlearner_iter_&quot;</span>, sl_iter)), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-224"><a href="id_06_small_data_set_demo.html#cb156-224" aria-hidden="true" tabindex="-1"></a>  model_id <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;metalearner_glm_superlearner_iter_&quot;</span>, sl_iter)</span>
+<span id="cb156-225"><a href="id_06_small_data_set_demo.html#cb156-225" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-226"><a href="id_06_small_data_set_demo.html#cb156-226" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>classification) {</span>
+<span id="cb156-227"><a href="id_06_small_data_set_demo.html#cb156-227" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id)),</span>
+<span id="cb156-228"><a href="id_06_small_data_set_demo.html#cb156-228" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-229"><a href="id_06_small_data_set_demo.html#cb156-229" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-230"><a href="id_06_small_data_set_demo.html#cb156-230" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb156-231"><a href="id_06_small_data_set_demo.html#cb156-231" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id))[<span class="dv">3</span>],</span>
+<span id="cb156-232"><a href="id_06_small_data_set_demo.html#cb156-232" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-233"><a href="id_06_small_data_set_demo.html#cb156-233" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-234"><a href="id_06_small_data_set_demo.html#cb156-234" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-235"><a href="id_06_small_data_set_demo.html#cb156-235" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----------------------------------</span></span>
+<span id="cb156-236"><a href="id_06_small_data_set_demo.html#cb156-236" aria-hidden="true" tabindex="-1"></a>  <span class="co"># super learner base model reduction</span></span>
+<span id="cb156-237"><a href="id_06_small_data_set_demo.html#cb156-237" aria-hidden="true" tabindex="-1"></a>  <span class="co"># ----------------------------------</span></span>
+<span id="cb156-238"><a href="id_06_small_data_set_demo.html#cb156-238" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> (<span class="cn">TRUE</span>) {</span>
+<span id="cb156-239"><a href="id_06_small_data_set_demo.html#cb156-239" aria-hidden="true" tabindex="-1"></a>    meta <span class="ot">&lt;-</span> <span class="fu">h2o.getModel</span>(<span class="fu">paste0</span>(<span class="st">&quot;metalearner_glm_superlearner_iter_&quot;</span>, sl_iter, <span class="st">&quot;_cv_1&quot;</span>))</span>
+<span id="cb156-240"><a href="id_06_small_data_set_demo.html#cb156-240" aria-hidden="true" tabindex="-1"></a>    names <span class="ot">&lt;-</span> meta<span class="sc">@</span>model<span class="sc">$</span>coefficients_table[, <span class="st">&quot;names&quot;</span>]</span>
+<span id="cb156-241"><a href="id_06_small_data_set_demo.html#cb156-241" aria-hidden="true" tabindex="-1"></a>    coeffs <span class="ot">&lt;-</span> (meta<span class="sc">@</span>model<span class="sc">$</span>coefficients_table[, <span class="st">&quot;standardized_coefficients&quot;</span>] <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb156-242"><a href="id_06_small_data_set_demo.html#cb156-242" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (j <span class="cf">in</span> <span class="dv">2</span><span class="sc">:</span>nfolds) {</span>
+<span id="cb156-243"><a href="id_06_small_data_set_demo.html#cb156-243" aria-hidden="true" tabindex="-1"></a>      meta <span class="ot">&lt;-</span> <span class="fu">h2o.getModel</span>(<span class="fu">paste0</span>(<span class="st">&quot;metalearner_glm_superlearner_iter_&quot;</span>, sl_iter, <span class="st">&quot;_cv_&quot;</span>, j))</span>
+<span id="cb156-244"><a href="id_06_small_data_set_demo.html#cb156-244" aria-hidden="true" tabindex="-1"></a>      names <span class="ot">&lt;-</span> meta<span class="sc">@</span>model<span class="sc">$</span>coefficients_table[, <span class="st">&quot;names&quot;</span>]</span>
+<span id="cb156-245"><a href="id_06_small_data_set_demo.html#cb156-245" aria-hidden="true" tabindex="-1"></a>      coeffs <span class="ot">&lt;-</span> coeffs <span class="sc">+</span> (meta<span class="sc">@</span>model<span class="sc">$</span>coefficients_table[, <span class="st">&quot;standardized_coefficients&quot;</span>] <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb156-246"><a href="id_06_small_data_set_demo.html#cb156-246" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb156-247"><a href="id_06_small_data_set_demo.html#cb156-247" aria-hidden="true" tabindex="-1"></a>    base_models_ <span class="ot">&lt;-</span> <span class="fu">as.list</span>(names[coeffs <span class="sc">&gt;=</span> <span class="fu">ceiling</span>(nfolds <span class="sc">/</span> <span class="dv">2</span>) <span class="sc">&amp;</span> names <span class="sc">!=</span> <span class="st">&quot;Intercept&quot;</span>])</span>
+<span id="cb156-248"><a href="id_06_small_data_set_demo.html#cb156-248" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">length</span>(base_models_) <span class="sc">==</span> <span class="dv">0</span>) {</span>
+<span id="cb156-249"><a href="id_06_small_data_set_demo.html#cb156-249" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">&quot;No base models passing the threshold</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-250"><a href="id_06_small_data_set_demo.html#cb156-250" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb156-251"><a href="id_06_small_data_set_demo.html#cb156-251" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb156-252"><a href="id_06_small_data_set_demo.html#cb156-252" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="fu">sum</span>(base_models <span class="sc">%in%</span> base_models_) <span class="sc">==</span> <span class="fu">length</span>(base_models)) {</span>
+<span id="cb156-253"><a href="id_06_small_data_set_demo.html#cb156-253" aria-hidden="true" tabindex="-1"></a>      <span class="fu">cat</span>(<span class="st">&quot;No further reduction of base models</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-254"><a href="id_06_small_data_set_demo.html#cb156-254" aria-hidden="true" tabindex="-1"></a>      <span class="cf">break</span></span>
+<span id="cb156-255"><a href="id_06_small_data_set_demo.html#cb156-255" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb156-256"><a href="id_06_small_data_set_demo.html#cb156-256" aria-hidden="true" tabindex="-1"></a>    sl_iter <span class="ot">&lt;-</span> sl_iter <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb156-257"><a href="id_06_small_data_set_demo.html#cb156-257" aria-hidden="true" tabindex="-1"></a>    base_models <span class="ot">&lt;-</span> base_models_</span>
+<span id="cb156-258"><a href="id_06_small_data_set_demo.html#cb156-258" aria-hidden="true" tabindex="-1"></a>    <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Super learner iteration &quot;</span>, sl_iter, <span class="st">&quot; (&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot; models)</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb156-259"><a href="id_06_small_data_set_demo.html#cb156-259" aria-hidden="true" tabindex="-1"></a>    sl <span class="ot">&lt;-</span> <span class="fu">h2o.stackedEnsemble</span>(</span>
+<span id="cb156-260"><a href="id_06_small_data_set_demo.html#cb156-260" aria-hidden="true" tabindex="-1"></a>      <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">model_id =</span> <span class="fu">paste0</span>(<span class="st">&quot;superlearner_iter_&quot;</span>, sl_iter),</span>
+<span id="cb156-261"><a href="id_06_small_data_set_demo.html#cb156-261" aria-hidden="true" tabindex="-1"></a>      <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>,</span>
+<span id="cb156-262"><a href="id_06_small_data_set_demo.html#cb156-262" aria-hidden="true" tabindex="-1"></a>      <span class="at">base_models =</span> base_models,</span>
+<span id="cb156-263"><a href="id_06_small_data_set_demo.html#cb156-263" aria-hidden="true" tabindex="-1"></a>      <span class="at">metalearner_algorithm =</span> <span class="st">&quot;glm&quot;</span>,</span>
+<span id="cb156-264"><a href="id_06_small_data_set_demo.html#cb156-264" aria-hidden="true" tabindex="-1"></a>      <span class="at">metalearner_nfolds =</span> nfolds,</span>
+<span id="cb156-265"><a href="id_06_small_data_set_demo.html#cb156-265" aria-hidden="true" tabindex="-1"></a>      <span class="at">keep_levelone_frame =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-266"><a href="id_06_small_data_set_demo.html#cb156-266" aria-hidden="true" tabindex="-1"></a>      <span class="at">metalearner_params =</span> <span class="fu">list</span>(</span>
+<span id="cb156-267"><a href="id_06_small_data_set_demo.html#cb156-267" aria-hidden="true" tabindex="-1"></a>        <span class="at">standardize =</span> <span class="cn">TRUE</span>, <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-268"><a href="id_06_small_data_set_demo.html#cb156-268" aria-hidden="true" tabindex="-1"></a>        <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-269"><a href="id_06_small_data_set_demo.html#cb156-269" aria-hidden="true" tabindex="-1"></a>        <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-270"><a href="id_06_small_data_set_demo.html#cb156-270" aria-hidden="true" tabindex="-1"></a>        <span class="at">max_after_balance_size =</span> <span class="fl">0.5</span></span>
+<span id="cb156-271"><a href="id_06_small_data_set_demo.html#cb156-271" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb156-272"><a href="id_06_small_data_set_demo.html#cb156-272" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb156-273"><a href="id_06_small_data_set_demo.html#cb156-273" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="fu">paste0</span>(<span class="st">&quot;superlearner_iter_&quot;</span>, sl_iter)), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-274"><a href="id_06_small_data_set_demo.html#cb156-274" aria-hidden="true" tabindex="-1"></a>    model_id <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">&quot;metalearner_glm_superlearner_iter_&quot;</span>, sl_iter)</span>
+<span id="cb156-275"><a href="id_06_small_data_set_demo.html#cb156-275" aria-hidden="true" tabindex="-1"></a>    tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-276"><a href="id_06_small_data_set_demo.html#cb156-276" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> (<span class="sc">!</span>classification) {</span>
+<span id="cb156-277"><a href="id_06_small_data_set_demo.html#cb156-277" aria-hidden="true" tabindex="-1"></a>      res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id)),</span>
+<span id="cb156-278"><a href="id_06_small_data_set_demo.html#cb156-278" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-279"><a href="id_06_small_data_set_demo.html#cb156-279" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb156-280"><a href="id_06_small_data_set_demo.html#cb156-280" aria-hidden="true" tabindex="-1"></a>    } <span class="cf">else</span> {</span>
+<span id="cb156-281"><a href="id_06_small_data_set_demo.html#cb156-281" aria-hidden="true" tabindex="-1"></a>      res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id))[<span class="dv">3</span>],</span>
+<span id="cb156-282"><a href="id_06_small_data_set_demo.html#cb156-282" aria-hidden="true" tabindex="-1"></a>        <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-283"><a href="id_06_small_data_set_demo.html#cb156-283" aria-hidden="true" tabindex="-1"></a>      ))</span>
+<span id="cb156-284"><a href="id_06_small_data_set_demo.html#cb156-284" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb156-285"><a href="id_06_small_data_set_demo.html#cb156-285" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-286"><a href="id_06_small_data_set_demo.html#cb156-286" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -----------------------------------------</span></span>
+<span id="cb156-287"><a href="id_06_small_data_set_demo.html#cb156-287" aria-hidden="true" tabindex="-1"></a>  <span class="co"># super learner for homogeneous base models</span></span>
+<span id="cb156-288"><a href="id_06_small_data_set_demo.html#cb156-288" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -----------------------------------------</span></span>
+<span id="cb156-289"><a href="id_06_small_data_set_demo.html#cb156-289" aria-hidden="true" tabindex="-1"></a>  <span class="co"># DeepLearning</span></span>
+<span id="cb156-290"><a href="id_06_small_data_set_demo.html#cb156-290" aria-hidden="true" tabindex="-1"></a>  base_models <span class="ot">&lt;-</span> <span class="fu">as.list</span>(<span class="fu">c</span>(</span>
+<span id="cb156-291"><a href="id_06_small_data_set_demo.html#cb156-291" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(deeplearning_1<span class="sc">@</span>model_ids),</span>
+<span id="cb156-292"><a href="id_06_small_data_set_demo.html#cb156-292" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(deeplearning_2<span class="sc">@</span>model_ids),</span>
+<span id="cb156-293"><a href="id_06_small_data_set_demo.html#cb156-293" aria-hidden="true" tabindex="-1"></a>    <span class="fu">unlist</span>(deeplearning_3<span class="sc">@</span>model_ids)</span>
+<span id="cb156-294"><a href="id_06_small_data_set_demo.html#cb156-294" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb156-295"><a href="id_06_small_data_set_demo.html#cb156-295" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Super learner deep learning (&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot; models)</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb156-296"><a href="id_06_small_data_set_demo.html#cb156-296" aria-hidden="true" tabindex="-1"></a>  sl <span class="ot">&lt;-</span> <span class="fu">h2o.stackedEnsemble</span>(</span>
+<span id="cb156-297"><a href="id_06_small_data_set_demo.html#cb156-297" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">model_id =</span> <span class="st">&quot;superlearner_deeplearning&quot;</span>,</span>
+<span id="cb156-298"><a href="id_06_small_data_set_demo.html#cb156-298" aria-hidden="true" tabindex="-1"></a>    <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>,</span>
+<span id="cb156-299"><a href="id_06_small_data_set_demo.html#cb156-299" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_models =</span> base_models,</span>
+<span id="cb156-300"><a href="id_06_small_data_set_demo.html#cb156-300" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_algorithm =</span> <span class="st">&quot;glm&quot;</span>,</span>
+<span id="cb156-301"><a href="id_06_small_data_set_demo.html#cb156-301" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_nfolds =</span> nfolds,</span>
+<span id="cb156-302"><a href="id_06_small_data_set_demo.html#cb156-302" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_levelone_frame =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-303"><a href="id_06_small_data_set_demo.html#cb156-303" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_params =</span> <span class="fu">list</span>(</span>
+<span id="cb156-304"><a href="id_06_small_data_set_demo.html#cb156-304" aria-hidden="true" tabindex="-1"></a>      <span class="at">standardize =</span> <span class="cn">TRUE</span>, <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-305"><a href="id_06_small_data_set_demo.html#cb156-305" aria-hidden="true" tabindex="-1"></a>      <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-306"><a href="id_06_small_data_set_demo.html#cb156-306" aria-hidden="true" tabindex="-1"></a>      <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-307"><a href="id_06_small_data_set_demo.html#cb156-307" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_after_balance_size =</span> <span class="fl">0.5</span></span>
+<span id="cb156-308"><a href="id_06_small_data_set_demo.html#cb156-308" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb156-309"><a href="id_06_small_data_set_demo.html#cb156-309" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-310"><a href="id_06_small_data_set_demo.html#cb156-310" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="st">&quot;superlearner_deeplearning&quot;</span>), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-311"><a href="id_06_small_data_set_demo.html#cb156-311" aria-hidden="true" tabindex="-1"></a>  model_id <span class="ot">&lt;-</span> <span class="st">&quot;metalearner_glm_superlearner_deeplearning&quot;</span></span>
+<span id="cb156-312"><a href="id_06_small_data_set_demo.html#cb156-312" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-313"><a href="id_06_small_data_set_demo.html#cb156-313" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>classification) {</span>
+<span id="cb156-314"><a href="id_06_small_data_set_demo.html#cb156-314" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id)),</span>
+<span id="cb156-315"><a href="id_06_small_data_set_demo.html#cb156-315" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-316"><a href="id_06_small_data_set_demo.html#cb156-316" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-317"><a href="id_06_small_data_set_demo.html#cb156-317" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb156-318"><a href="id_06_small_data_set_demo.html#cb156-318" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id))[<span class="dv">3</span>],</span>
+<span id="cb156-319"><a href="id_06_small_data_set_demo.html#cb156-319" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-320"><a href="id_06_small_data_set_demo.html#cb156-320" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-321"><a href="id_06_small_data_set_demo.html#cb156-321" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-322"><a href="id_06_small_data_set_demo.html#cb156-322" aria-hidden="true" tabindex="-1"></a>  <span class="co"># GBM</span></span>
+<span id="cb156-323"><a href="id_06_small_data_set_demo.html#cb156-323" aria-hidden="true" tabindex="-1"></a>  base_models <span class="ot">&lt;-</span> <span class="fu">as.list</span>(<span class="fu">c</span>(<span class="fu">unlist</span>(gbm<span class="sc">@</span>model_ids), <span class="fu">paste0</span>(<span class="st">&quot;GBM_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)))</span>
+<span id="cb156-324"><a href="id_06_small_data_set_demo.html#cb156-324" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Super learner GBM (&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot; models)</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb156-325"><a href="id_06_small_data_set_demo.html#cb156-325" aria-hidden="true" tabindex="-1"></a>  sl <span class="ot">&lt;-</span> <span class="fu">h2o.stackedEnsemble</span>(</span>
+<span id="cb156-326"><a href="id_06_small_data_set_demo.html#cb156-326" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">model_id =</span> <span class="st">&quot;superlearner_gbm&quot;</span>,</span>
+<span id="cb156-327"><a href="id_06_small_data_set_demo.html#cb156-327" aria-hidden="true" tabindex="-1"></a>    <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>,</span>
+<span id="cb156-328"><a href="id_06_small_data_set_demo.html#cb156-328" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_models =</span> base_models,</span>
+<span id="cb156-329"><a href="id_06_small_data_set_demo.html#cb156-329" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_algorithm =</span> <span class="st">&quot;glm&quot;</span>,</span>
+<span id="cb156-330"><a href="id_06_small_data_set_demo.html#cb156-330" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_nfolds =</span> nfolds,</span>
+<span id="cb156-331"><a href="id_06_small_data_set_demo.html#cb156-331" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_levelone_frame =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-332"><a href="id_06_small_data_set_demo.html#cb156-332" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_params =</span> <span class="fu">list</span>(</span>
+<span id="cb156-333"><a href="id_06_small_data_set_demo.html#cb156-333" aria-hidden="true" tabindex="-1"></a>      <span class="at">standardize =</span> <span class="cn">TRUE</span>, <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-334"><a href="id_06_small_data_set_demo.html#cb156-334" aria-hidden="true" tabindex="-1"></a>      <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-335"><a href="id_06_small_data_set_demo.html#cb156-335" aria-hidden="true" tabindex="-1"></a>      <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-336"><a href="id_06_small_data_set_demo.html#cb156-336" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_after_balance_size =</span> <span class="fl">0.5</span></span>
+<span id="cb156-337"><a href="id_06_small_data_set_demo.html#cb156-337" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb156-338"><a href="id_06_small_data_set_demo.html#cb156-338" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-339"><a href="id_06_small_data_set_demo.html#cb156-339" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="st">&quot;superlearner_gbm&quot;</span>), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-340"><a href="id_06_small_data_set_demo.html#cb156-340" aria-hidden="true" tabindex="-1"></a>  model_id <span class="ot">&lt;-</span> <span class="st">&quot;metalearner_glm_superlearner_gbm&quot;</span></span>
+<span id="cb156-341"><a href="id_06_small_data_set_demo.html#cb156-341" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-342"><a href="id_06_small_data_set_demo.html#cb156-342" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>classification) {</span>
+<span id="cb156-343"><a href="id_06_small_data_set_demo.html#cb156-343" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id)),</span>
+<span id="cb156-344"><a href="id_06_small_data_set_demo.html#cb156-344" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-345"><a href="id_06_small_data_set_demo.html#cb156-345" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-346"><a href="id_06_small_data_set_demo.html#cb156-346" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb156-347"><a href="id_06_small_data_set_demo.html#cb156-347" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id))[<span class="dv">3</span>],</span>
+<span id="cb156-348"><a href="id_06_small_data_set_demo.html#cb156-348" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-349"><a href="id_06_small_data_set_demo.html#cb156-349" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-350"><a href="id_06_small_data_set_demo.html#cb156-350" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-351"><a href="id_06_small_data_set_demo.html#cb156-351" aria-hidden="true" tabindex="-1"></a>  <span class="co"># XGBoost</span></span>
+<span id="cb156-352"><a href="id_06_small_data_set_demo.html#cb156-352" aria-hidden="true" tabindex="-1"></a>  base_models <span class="ot">&lt;-</span> <span class="fu">as.list</span>(<span class="fu">c</span>(<span class="fu">unlist</span>(xgboost<span class="sc">@</span>model_ids), <span class="fu">paste0</span>(<span class="st">&quot;XGBoost_&quot;</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)))</span>
+<span id="cb156-353"><a href="id_06_small_data_set_demo.html#cb156-353" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Super learner XGBoost (&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot; models)</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb156-354"><a href="id_06_small_data_set_demo.html#cb156-354" aria-hidden="true" tabindex="-1"></a>  sl <span class="ot">&lt;-</span> <span class="fu">h2o.stackedEnsemble</span>(</span>
+<span id="cb156-355"><a href="id_06_small_data_set_demo.html#cb156-355" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> x, <span class="at">y =</span> y, <span class="at">model_id =</span> <span class="st">&quot;superlearner_xgboost&quot;</span>,</span>
+<span id="cb156-356"><a href="id_06_small_data_set_demo.html#cb156-356" aria-hidden="true" tabindex="-1"></a>    <span class="at">training_frame =</span> tmp, <span class="at">seed =</span> <span class="dv">1</span>,</span>
+<span id="cb156-357"><a href="id_06_small_data_set_demo.html#cb156-357" aria-hidden="true" tabindex="-1"></a>    <span class="at">base_models =</span> base_models,</span>
+<span id="cb156-358"><a href="id_06_small_data_set_demo.html#cb156-358" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_algorithm =</span> <span class="st">&quot;glm&quot;</span>,</span>
+<span id="cb156-359"><a href="id_06_small_data_set_demo.html#cb156-359" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_nfolds =</span> nfolds,</span>
+<span id="cb156-360"><a href="id_06_small_data_set_demo.html#cb156-360" aria-hidden="true" tabindex="-1"></a>    <span class="at">keep_levelone_frame =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-361"><a href="id_06_small_data_set_demo.html#cb156-361" aria-hidden="true" tabindex="-1"></a>    <span class="at">metalearner_params =</span> <span class="fu">list</span>(</span>
+<span id="cb156-362"><a href="id_06_small_data_set_demo.html#cb156-362" aria-hidden="true" tabindex="-1"></a>      <span class="at">standardize =</span> <span class="cn">TRUE</span>, <span class="at">keep_cross_validation_predictions =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb156-363"><a href="id_06_small_data_set_demo.html#cb156-363" aria-hidden="true" tabindex="-1"></a>      <span class="at">balance_classes =</span> classification,</span>
+<span id="cb156-364"><a href="id_06_small_data_set_demo.html#cb156-364" aria-hidden="true" tabindex="-1"></a>      <span class="at">class_sampling_factors =</span> samp_factors,</span>
+<span id="cb156-365"><a href="id_06_small_data_set_demo.html#cb156-365" aria-hidden="true" tabindex="-1"></a>      <span class="at">max_after_balance_size =</span> <span class="fl">0.5</span></span>
+<span id="cb156-366"><a href="id_06_small_data_set_demo.html#cb156-366" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb156-367"><a href="id_06_small_data_set_demo.html#cb156-367" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb156-368"><a href="id_06_small_data_set_demo.html#cb156-368" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(<span class="st">&quot;superlearner_xgboost&quot;</span>), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-369"><a href="id_06_small_data_set_demo.html#cb156-369" aria-hidden="true" tabindex="-1"></a>  model_id <span class="ot">&lt;-</span> <span class="st">&quot;metalearner_glm_superlearner_xgboost&quot;</span></span>
+<span id="cb156-370"><a href="id_06_small_data_set_demo.html#cb156-370" aria-hidden="true" tabindex="-1"></a>  tmp_path <span class="ot">&lt;-</span> <span class="fu">h2o.saveModel</span>(<span class="fu">h2o.getModel</span>(model_id), <span class="at">path =</span> exp_dir, <span class="at">force =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb156-371"><a href="id_06_small_data_set_demo.html#cb156-371" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (<span class="sc">!</span>classification) {</span>
+<span id="cb156-372"><a href="id_06_small_data_set_demo.html#cb156-372" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id)),</span>
+<span id="cb156-373"><a href="id_06_small_data_set_demo.html#cb156-373" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-374"><a href="id_06_small_data_set_demo.html#cb156-374" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-375"><a href="id_06_small_data_set_demo.html#cb156-375" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">else</span> {</span>
+<span id="cb156-376"><a href="id_06_small_data_set_demo.html#cb156-376" aria-hidden="true" tabindex="-1"></a>    res <span class="ot">&lt;-</span> <span class="fu">cbind</span>(res, <span class="fu">as.data.frame</span>(<span class="fu">h2o.getFrame</span>(<span class="fu">paste0</span>(<span class="st">&quot;cv_holdout_prediction_&quot;</span>, model_id))[<span class="dv">3</span>],</span>
+<span id="cb156-377"><a href="id_06_small_data_set_demo.html#cb156-377" aria-hidden="true" tabindex="-1"></a>      <span class="at">col.names =</span> <span class="fu">paste0</span>(model_id, <span class="st">&quot;_&quot;</span>, <span class="fu">length</span>(base_models), <span class="st">&quot;_models&quot;</span>)</span>
+<span id="cb156-378"><a href="id_06_small_data_set_demo.html#cb156-378" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb156-379"><a href="id_06_small_data_set_demo.html#cb156-379" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb156-380"><a href="id_06_small_data_set_demo.html#cb156-380" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.csv</span>(res, <span class="at">file =</span> <span class="fu">paste0</span>(exp_dir, <span class="st">&quot;/cv_holdout_predictions.csv&quot;</span>), <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb156-381"><a href="id_06_small_data_set_demo.html#cb156-381" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">&quot;</span><span class="sc">\n\n</span><span class="st">&quot;</span>)</span>
+<span id="cb156-382"><a href="id_06_small_data_set_demo.html#cb156-382" aria-hidden="true" tabindex="-1"></a>  <span class="fu">h2o.removeAll</span>()</span>
+<span id="cb156-383"><a href="id_06_small_data_set_demo.html#cb156-383" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="run-pipeline" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Run pipeline<a href="id_06_small_data_set_demo.html#run-pipeline" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb157-1"><a href="id_06_small_data_set_demo.html#cb157-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://archive.ics.uci.edu/ml/machine-learning-databases/parkinsons/parkinsons.data&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb157-2"><a href="id_06_small_data_set_demo.html#cb157-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-3"><a href="id_06_small_data_set_demo.html#cb157-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Random subset</span></span>
+<span id="cb157-4"><a href="id_06_small_data_set_demo.html#cb157-4" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">10</span>)</span>
+<span id="cb157-5"><a href="id_06_small_data_set_demo.html#cb157-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(data), <span class="at">size =</span> <span class="dv">50</span>, <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb157-6"><a href="id_06_small_data_set_demo.html#cb157-6" aria-hidden="true" tabindex="-1"></a>predictor_variables <span class="ot">&lt;-</span> data[, <span class="fu">colnames</span>(data) <span class="sc">!=</span> <span class="st">&quot;status&quot;</span>]</span>
+<span id="cb157-7"><a href="id_06_small_data_set_demo.html#cb157-7" aria-hidden="true" tabindex="-1"></a>response_variable <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>status)</span>
+<span id="cb157-8"><a href="id_06_small_data_set_demo.html#cb157-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb157-9"><a href="id_06_small_data_set_demo.html#cb157-9" aria-hidden="true" tabindex="-1"></a><span class="fu">system.time</span>({</span>
+<span id="cb157-10"><a href="id_06_small_data_set_demo.html#cb157-10" aria-hidden="true" tabindex="-1"></a>  reduced_data <span class="ot">&lt;-</span> <span class="fu">variable_reduction</span>(<span class="at">predictor_variables =</span> predictor_variables, <span class="at">response_variable =</span> response_variable)</span>
+<span id="cb157-11"><a href="id_06_small_data_set_demo.html#cb157-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">model_training</span>(<span class="at">train_set =</span> reduced_data)</span>
+<span id="cb157-12"><a href="id_06_small_data_set_demo.html#cb157-12" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div>
+</div>
+<div id="session-info" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Session info<a href="id_06_small_data_set_demo.html#session-info" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb158"><pre class="sourceCode r fold-show"><code class="sourceCode r"><span id="cb158-1"><a href="id_06_small_data_set_demo.html#cb158-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.2.2 (2022-10-31)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Big Sur ... 10.16
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## loaded via a namespace (and not attached):
+##  [1] rstudioapi_0.14   knitr_1.40        magrittr_2.0.3    R.cache_0.16.0   
+##  [5] R6_2.5.1          rlang_1.0.4       fastmap_1.1.0     stringr_1.4.1    
+##  [9] styler_1.8.0      tools_4.2.2       xfun_0.32         R.oo_1.25.0      
+## [13] cli_3.3.0         jquerylib_0.1.4   htmltools_0.5.3   yaml_2.3.5       
+## [17] digest_0.6.29     bookdown_0.28     purrr_0.3.4       vctrs_0.4.1      
+## [21] sass_0.4.2        R.utils_2.12.0    cachem_1.0.6      evaluate_0.16    
+## [25] rmarkdown_2.16    stringi_1.7.8     compiler_4.2.2    bslib_0.4.0      
+## [29] R.methodsS3_1.8.2 jsonlite_1.8.0</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="id_05_adversarial_computational_control.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["main_notebook.pdf", "PDF"]],
+"search": false,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 2 Variable reduction | Multifunctional peptide engineering</title>
+  <meta name="description" content="Section 2 Variable reduction | Multifunctional peptide engineering" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 2 Variable reduction | Multifunctional peptide engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 2 Variable reduction | Multifunctional peptide engineering" />
+  
+  
+  
+
+<meta name="author" content="Renee Ti Chou and Henry T. Hsueh" />
+
+
+<meta name="date" content="2023-02-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="id_01_pilot_peptide_array.html"/>
+<link rel="next" href="id_03_model_training.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.24/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<!-- https://stackoverflow.com/questions/45360998/code-folding-in-bookdown -->
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script>
+var str = '<div class="btn-group pull-right" style="position: fixed; right: 50px; top: 10px; z-index: 200"><button type="button" class="btn btn-default btn-xs dropdown-toggle" id="allCodeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast=""><span>Code</span> <span class="caret"></span></button><ul class="dropdown-menu" style="min-width: 50px;"><li><a id="rmd-show-all-code" href="#">Show All Code</a></li><li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li></ul></div>';
+document.write(str);
+</script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "hide");
+});
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><i>Multifunctional peptide engineering</i></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html"><i class="fa fa-check"></i><b>1</b> Melanin binding pilot peptide array</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#overview"><i class="fa fa-check"></i><b>1.1</b> Overview</a></li>
+<li class="chapter" data-level="1.2" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#generating-ml-input"><i class="fa fa-check"></i><b>1.2</b> Generating ML input</a></li>
+<li class="chapter" data-level="1.3" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#training-initial-rf-model"><i class="fa fa-check"></i><b>1.3</b> Training initial RF model</a></li>
+<li class="chapter" data-level="1.4" data-path="id_01_pilot_peptide_array.html"><a href="id_01_pilot_peptide_array.html#melanin-binding-variable-importance"><i class="fa fa-check"></i><b>1.4</b> Melanin binding variable importance</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html"><i class="fa fa-check"></i><b>2</b> Variable reduction</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#methods"><i class="fa fa-check"></i><b>2.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#regression"><i class="fa fa-check"></i><b>2.1.1</b> Regression</a></li>
+<li class="chapter" data-level="2.1.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#classification"><i class="fa fa-check"></i><b>2.1.2</b> Classification</a>
+<ul>
+<li class="chapter" data-level="2.1.2.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#extension-to-multi-class-classification"><i class="fa fa-check"></i><b>2.1.2.1</b> Extension to multi-class classification</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#ml-input-generating-function"><i class="fa fa-check"></i><b>2.2</b> ML input generating function</a></li>
+<li class="chapter" data-level="2.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#aic-functions"><i class="fa fa-check"></i><b>2.3</b> AIC functions</a></li>
+<li class="chapter" data-level="2.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#melanin-binding-regression"><i class="fa fa-check"></i><b>2.4</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-1"><i class="fa fa-check"></i><b>2.4.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="2.4.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance"><i class="fa fa-check"></i><b>2.4.2</b> Variable importance</a></li>
+<li class="chapter" data-level="2.4.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction"><i class="fa fa-check"></i><b>2.4.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="2.4.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits"><i class="fa fa-check"></i><b>2.4.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#cell-penetration-classification"><i class="fa fa-check"></i><b>2.5</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-2"><i class="fa fa-check"></i><b>2.5.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="2.5.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance-1"><i class="fa fa-check"></i><b>2.5.2</b> Variable importance</a></li>
+<li class="chapter" data-level="2.5.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction-1"><i class="fa fa-check"></i><b>2.5.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="2.5.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits-1"><i class="fa fa-check"></i><b>2.5.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="2.6" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#toxicity-classification"><i class="fa fa-check"></i><b>2.6</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-3"><i class="fa fa-check"></i><b>2.6.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="2.6.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance-2"><i class="fa fa-check"></i><b>2.6.2</b> Variable importance</a></li>
+<li class="chapter" data-level="2.6.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction-2"><i class="fa fa-check"></i><b>2.6.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="2.6.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits-2"><i class="fa fa-check"></i><b>2.6.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#plotting"><i class="fa fa-check"></i><b>2.7</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="id_03_model_training.html"><a href="id_03_model_training.html"><i class="fa fa-check"></i><b>3</b> Model training</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#overview-1"><i class="fa fa-check"></i><b>3.1</b> Overview</a></li>
+<li class="chapter" data-level="3.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#general-codefunctions"><i class="fa fa-check"></i><b>3.2</b> General code/functions</a></li>
+<li class="chapter" data-level="3.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#melanin-binding-regression-1"><i class="fa fa-check"></i><b>3.3</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training"><i class="fa fa-check"></i><b>3.3.1</b> Model training</a></li>
+<li class="chapter" data-level="3.3.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation"><i class="fa fa-check"></i><b>3.3.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="3.3.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set"><i class="fa fa-check"></i><b>3.3.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="3.3.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation"><i class="fa fa-check"></i><b>3.3.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="3.3.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection"><i class="fa fa-check"></i><b>3.3.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="3.3.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1"><i class="fa fa-check"></i><b>3.3.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="3.3.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2"><i class="fa fa-check"></i><b>3.3.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="3.3.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3"><i class="fa fa-check"></i><b>3.3.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="3.3.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4"><i class="fa fa-check"></i><b>3.3.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="3.3.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5"><i class="fa fa-check"></i><b>3.3.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="3.3.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6"><i class="fa fa-check"></i><b>3.3.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="3.3.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7"><i class="fa fa-check"></i><b>3.3.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="3.3.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8"><i class="fa fa-check"></i><b>3.3.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="3.3.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9"><i class="fa fa-check"></i><b>3.3.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="3.3.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10"><i class="fa fa-check"></i><b>3.3.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation"><i class="fa fa-check"></i><b>3.3.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="3.3.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection"><i class="fa fa-check"></i><b>3.3.7</b> Final model selection</a></li>
+<li class="chapter" data-level="3.3.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl"><i class="fa fa-check"></i><b>3.3.8</b> Final reduced SL</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cell-penetration-classification-1"><i class="fa fa-check"></i><b>3.4</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training-1"><i class="fa fa-check"></i><b>3.4.1</b> Model training</a></li>
+<li class="chapter" data-level="3.4.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation-1"><i class="fa fa-check"></i><b>3.4.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="3.4.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set-1"><i class="fa fa-check"></i><b>3.4.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="3.4.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation-1"><i class="fa fa-check"></i><b>3.4.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="3.4.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection-1"><i class="fa fa-check"></i><b>3.4.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="3.4.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1-1"><i class="fa fa-check"></i><b>3.4.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="3.4.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2-1"><i class="fa fa-check"></i><b>3.4.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="3.4.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3-1"><i class="fa fa-check"></i><b>3.4.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="3.4.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4-1"><i class="fa fa-check"></i><b>3.4.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="3.4.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5-1"><i class="fa fa-check"></i><b>3.4.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="3.4.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6-1"><i class="fa fa-check"></i><b>3.4.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="3.4.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7-1"><i class="fa fa-check"></i><b>3.4.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="3.4.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8-1"><i class="fa fa-check"></i><b>3.4.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="3.4.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9-1"><i class="fa fa-check"></i><b>3.4.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="3.4.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10-1"><i class="fa fa-check"></i><b>3.4.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation-1"><i class="fa fa-check"></i><b>3.4.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="3.4.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection-1"><i class="fa fa-check"></i><b>3.4.7</b> Final model selection</a></li>
+<li class="chapter" data-level="3.4.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl-1"><i class="fa fa-check"></i><b>3.4.8</b> Final reduced SL</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#toxicity-classification-1"><i class="fa fa-check"></i><b>3.5</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training-2"><i class="fa fa-check"></i><b>3.5.1</b> Model training</a></li>
+<li class="chapter" data-level="3.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation-2"><i class="fa fa-check"></i><b>3.5.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="3.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set-2"><i class="fa fa-check"></i><b>3.5.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="3.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation-2"><i class="fa fa-check"></i><b>3.5.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="3.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection-2"><i class="fa fa-check"></i><b>3.5.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="3.5.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1-2"><i class="fa fa-check"></i><b>3.5.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="3.5.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2-2"><i class="fa fa-check"></i><b>3.5.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="3.5.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3-2"><i class="fa fa-check"></i><b>3.5.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="3.5.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4-2"><i class="fa fa-check"></i><b>3.5.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="3.5.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5-2"><i class="fa fa-check"></i><b>3.5.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="3.5.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6-2"><i class="fa fa-check"></i><b>3.5.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="3.5.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7-2"><i class="fa fa-check"></i><b>3.5.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="3.5.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8-2"><i class="fa fa-check"></i><b>3.5.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="3.5.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9-2"><i class="fa fa-check"></i><b>3.5.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="3.5.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10-2"><i class="fa fa-check"></i><b>3.5.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation-2"><i class="fa fa-check"></i><b>3.5.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="3.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection-2"><i class="fa fa-check"></i><b>3.5.7</b> Final model selection</a></li>
+<li class="chapter" data-level="3.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl-2"><i class="fa fa-check"></i><b>3.5.8</b> Final reduced SL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html"><i class="fa fa-check"></i><b>4</b> Model validation and interpretation</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#model-validation"><i class="fa fa-check"></i><b>4.1</b> Model validation</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melaning-binding"><i class="fa fa-check"></i><b>4.1.1</b> Melaning binding</a></li>
+<li class="chapter" data-level="4.1.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding-and-cell-penetration"><i class="fa fa-check"></i><b>4.1.2</b> Melanin binding and cell-penetration</a></li>
+<li class="chapter" data-level="4.1.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-induced-cells"><i class="fa fa-check"></i><b>4.1.3</b> Melanin-induced cells</a></li>
+<li class="chapter" data-level="4.1.4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#non-melanin-induced-cells"><i class="fa fa-check"></i><b>4.1.4</b> Non-melanin induced cells</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#overall-model-interpretation"><i class="fa fa-check"></i><b>4.2</b> Overall model interpretation</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding-regression-2"><i class="fa fa-check"></i><b>4.2.1</b> Melanin binding (regression)</a></li>
+<li class="chapter" data-level="4.2.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#cell-penetration-classification-2"><i class="fa fa-check"></i><b>4.2.2</b> Cell-penetration (classification)</a></li>
+<li class="chapter" data-level="4.2.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#toxicity-classification-2"><i class="fa fa-check"></i><b>4.2.3</b> Toxicity (classification)</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#multifunctional-peptide-selection"><i class="fa fa-check"></i><b>4.3</b> Multifunctional peptide selection</a></li>
+<li class="chapter" data-level="4.4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#explanation-of-hr97-predictions"><i class="fa fa-check"></i><b>4.4</b> Explanation of HR97 predictions</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding"><i class="fa fa-check"></i><b>4.4.1</b> Melanin binding</a></li>
+<li class="chapter" data-level="4.4.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#cell-penetration"><i class="fa fa-check"></i><b>4.4.2</b> Cell-penetration</a></li>
+<li class="chapter" data-level="4.4.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#toxicity"><i class="fa fa-check"></i><b>4.4.3</b> Toxicity</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#peptide-design-space-visualization"><i class="fa fa-check"></i><b>4.5</b> Peptide design space visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html"><i class="fa fa-check"></i><b>5</b> Adversarial computational control</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#general-codefunctions-1"><i class="fa fa-check"></i><b>5.1</b> General code/functions</a></li>
+<li class="chapter" data-level="5.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#melanin-binding-regression-3"><i class="fa fa-check"></i><b>5.2</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-3"><i class="fa fa-check"></i><b>5.2.1</b> Model training</a></li>
+<li class="chapter" data-level="5.2.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-3"><i class="fa fa-check"></i><b>5.2.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="5.2.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-3"><i class="fa fa-check"></i><b>5.2.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="5.2.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-3"><i class="fa fa-check"></i><b>5.2.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="5.2.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-3"><i class="fa fa-check"></i><b>5.2.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="5.2.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-3"><i class="fa fa-check"></i><b>5.2.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="5.2.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-3"><i class="fa fa-check"></i><b>5.2.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="5.2.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-3"><i class="fa fa-check"></i><b>5.2.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="5.2.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-3"><i class="fa fa-check"></i><b>5.2.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="5.2.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-3"><i class="fa fa-check"></i><b>5.2.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="5.2.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-3"><i class="fa fa-check"></i><b>5.2.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="5.2.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-3"><i class="fa fa-check"></i><b>5.2.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="5.2.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-3"><i class="fa fa-check"></i><b>5.2.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="5.2.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-3"><i class="fa fa-check"></i><b>5.2.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-3"><i class="fa fa-check"></i><b>5.2.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cell-penetration-classification-3"><i class="fa fa-check"></i><b>5.3</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-4"><i class="fa fa-check"></i><b>5.3.1</b> Model training</a></li>
+<li class="chapter" data-level="5.3.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-4"><i class="fa fa-check"></i><b>5.3.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="5.3.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-4"><i class="fa fa-check"></i><b>5.3.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="5.3.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-4"><i class="fa fa-check"></i><b>5.3.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="5.3.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-4"><i class="fa fa-check"></i><b>5.3.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="5.3.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-4"><i class="fa fa-check"></i><b>5.3.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="5.3.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-4"><i class="fa fa-check"></i><b>5.3.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="5.3.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-4"><i class="fa fa-check"></i><b>5.3.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="5.3.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-4"><i class="fa fa-check"></i><b>5.3.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="5.3.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-4"><i class="fa fa-check"></i><b>5.3.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="5.3.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-4"><i class="fa fa-check"></i><b>5.3.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="5.3.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-4"><i class="fa fa-check"></i><b>5.3.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="5.3.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-4"><i class="fa fa-check"></i><b>5.3.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="5.3.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-4"><i class="fa fa-check"></i><b>5.3.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="5.3.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-4"><i class="fa fa-check"></i><b>5.3.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#toxicity-classification-3"><i class="fa fa-check"></i><b>5.4</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-5"><i class="fa fa-check"></i><b>5.4.1</b> Model training</a></li>
+<li class="chapter" data-level="5.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-5"><i class="fa fa-check"></i><b>5.4.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="5.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-5"><i class="fa fa-check"></i><b>5.4.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="5.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-5"><i class="fa fa-check"></i><b>5.4.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="5.4.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-5"><i class="fa fa-check"></i><b>5.4.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="5.4.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-5"><i class="fa fa-check"></i><b>5.4.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="5.4.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-5"><i class="fa fa-check"></i><b>5.4.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="5.4.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-5"><i class="fa fa-check"></i><b>5.4.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="5.4.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-5"><i class="fa fa-check"></i><b>5.4.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="5.4.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-5"><i class="fa fa-check"></i><b>5.4.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="5.4.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-5"><i class="fa fa-check"></i><b>5.4.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="5.4.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-5"><i class="fa fa-check"></i><b>5.4.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="5.4.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-5"><i class="fa fa-check"></i><b>5.4.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="5.4.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-5"><i class="fa fa-check"></i><b>5.4.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-5"><i class="fa fa-check"></i><b>5.4.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#overall-model-interpretation-1"><i class="fa fa-check"></i><b>5.5</b> Overall model interpretation</a>
+<ul>
+<li class="chapter" data-level="5.5.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#melanin-binding-regression-4"><i class="fa fa-check"></i><b>5.5.1</b> Melanin binding (regression)</a></li>
+<li class="chapter" data-level="5.5.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cell-penetration-classification-4"><i class="fa fa-check"></i><b>5.5.2</b> Cell-penetration (classification)</a></li>
+<li class="chapter" data-level="5.5.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#toxicity-classification-4"><i class="fa fa-check"></i><b>5.5.3</b> Toxicity (classification)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html"><i class="fa fa-check"></i><b>6</b> Small data set demo</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#setup"><i class="fa fa-check"></i><b>6.1</b> Setup</a>
+<ul>
+<li class="chapter" data-level="6.1.1" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#load-libraries"><i class="fa fa-check"></i><b>6.1.1</b> Load libraries</a></li>
+<li class="chapter" data-level="6.1.2" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#aic-functions-1"><i class="fa fa-check"></i><b>6.1.2</b> AIC functions</a></li>
+<li class="chapter" data-level="6.1.3" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#model-parameters"><i class="fa fa-check"></i><b>6.1.3</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#variable-reduction-3"><i class="fa fa-check"></i><b>6.2</b> Variable reduction</a></li>
+<li class="chapter" data-level="6.3" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#model-training-6"><i class="fa fa-check"></i><b>6.3</b> Model training</a></li>
+<li class="chapter" data-level="6.4" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#run-pipeline"><i class="fa fa-check"></i><b>6.4</b> Run pipeline</a></li>
+<li class="chapter" data-level="6.5" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#session-info"><i class="fa fa-check"></i><b>6.5</b> Session info</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multifunctional peptide engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="id_02_variable_reduction" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Section 2</span> Variable reduction<a href="id_02_variable_reduction.html#id_02_variable_reduction" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb9-1"><a href="id_02_variable_reduction.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Peptides)</span>
+<span id="cb9-2"><a href="id_02_variable_reduction.html#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(protr)</span>
+<span id="cb9-3"><a href="id_02_variable_reduction.html#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rlist)</span>
+<span id="cb9-4"><a href="id_02_variable_reduction.html#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ranger)</span>
+<span id="cb9-5"><a href="id_02_variable_reduction.html#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-6"><a href="id_02_variable_reduction.html#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span>
+<span id="cb9-7"><a href="id_02_variable_reduction.html#cb9-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code></pre></div>
+<div id="methods" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Methods<a href="id_02_variable_reduction.html#methods" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>Formula of AIC</li>
+</ul>
+<p><span class="math display" id="eq:aic">\[\begin{equation}
+AIC = -2\ln(\hat{L}) + 2k,
+\tag{2.1}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+\mathrm{where}\:\hat{L}\:\mathrm{is\:the\:maximum\:likelihood\:value,}\\
+\mathrm{and}\:k\:\mathrm{is\:the\:number\:of\:parameters.}
+\end{split}
+\end{equation}\]</span></p>
+<div id="regression" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Regression<a href="id_02_variable_reduction.html#regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>Likelihood of normal distribution</p>
+<p>Assume residuals are normally distributed, then
+<span class="math display" id="eq:likelihood-reg">\[\begin{equation}
+L(\theta) = \prod_{i = 1}^{N} \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{{(\hat{y}_{i} - y_i)}^2}{2\sigma^2}}
+\tag{2.2}
+\end{equation}\]</span></p></li>
+</ul>
+<p><span class="math display" id="eq:log-likelihood-reg-1">\[\begin{equation}
+\begin{split}
+\ln{L(\theta)} &amp; = \sum_{i = 1}^{N} [\ln{(\frac{1}{\sqrt{2\pi\sigma^2}})} - {\frac{{(\hat{y}_{i} - y_i)}^2}{2\sigma^2}}] \\
+&amp; = -\frac{N}{2}\ln{(2\pi)} -\frac{N}{2}\ln{(\sigma^2)} - \frac{1}{2\sigma^2}\sum_{i = 1}^{N}{{(\hat{y}_{i} - y_i)}^2.} \\
+\end{split}
+\tag{2.3}
+\end{equation}\]</span>
+<span class="math inline">\(\mathrm{Since}\:{\hat{\sigma}^2} = \frac{\sum_{i = 1}^{N}{{(\hat{y}_{i} - y_i)}^2}}{N} = {MSE},\)</span>
+<span class="math display" id="eq:log-likelihood-reg-2">\[\begin{equation}
+\ln{L(\theta)} = -\frac{N}{2}\ln{(MSE)} + C, \mathrm{where}\:C\:\mathrm{is\:a\:constant.}
+\tag{2.4}
+\end{equation}\]</span></p>
+<ul>
+<li>Derived regression AIC</li>
+</ul>
+<p><span class="math display" id="eq:aic-reg">\[\begin{equation}
+AIC_{reg} = N\ln{(MSE)} + 2k
+\tag{2.5}
+\end{equation}\]</span></p>
+</div>
+<div id="classification" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Classification<a href="id_02_variable_reduction.html#classification" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>Likelihood of Bernoulli distribution</li>
+</ul>
+<p><span class="math display" id="eq:likelihood-clf">\[\begin{equation}
+L(\theta) = \prod_{i = 1}^{N} [q_{\theta}(y_i = 1)^{y_i}q_{\theta}(y_i = 0)^{1-y_i}]
+\tag{2.6}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:log-likelihood-clf">\[\begin{equation}
+\begin{split}
+\ln{L(\theta)} = \sum_{i = 1}^{N} [y_i\ln{q_{\theta}(y_i = 1)} + (1 - y_i)\ln{q_{\theta}(y_i = 0)}],
+\end{split}
+\tag{2.7}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+\mathrm{where}\:q_{\theta}\:\mathrm{is\:the\:estimated\:probability\:with\:parameters\:\theta}\:\mathrm{and\:}\:y_i \in \{0, 1\}
+\end{split}
+\end{equation}\]</span></p>
+<ul>
+<li>Binary cross-entropy</li>
+</ul>
+<p><span class="math display" id="eq:binary-cross-entropy">\[\begin{equation}
+\begin{split}
+H_p(q_{\theta}) &amp; = -\frac{1}{N}\sum_{i = 1}^{N} [y_i\log_2{q_{\theta}(y_i = 1)} + (1 - y_i)\log_2{q_{\theta}(y_i = 0)}] \\
+&amp; = -\frac{1}{N{\cdot}\ln{2}}\sum_{i = 1}^{N} [y_i\ln{q_{\theta}(y_i = 1)} + (1 - y_i)\ln{q_{\theta}(y_i = 0)}]
+\end{split}
+\tag{2.8}
+\end{equation}\]</span></p>
+<ul>
+<li>Derived classification AIC</li>
+</ul>
+<p><span class="math display" id="eq:aic-clf">\[\begin{equation}
+AIC_{clf} = 2{\cdot}\ln{2}{\cdot}N{\cdot}H_p(q_{\theta}) + 2k
+\tag{2.9}
+\end{equation}\]</span></p>
+<div id="extension-to-multi-class-classification" class="section level4 hasAnchor" number="2.1.2.1">
+<h4><span class="header-section-number">2.1.2.1</span> Extension to multi-class classification<a href="id_02_variable_reduction.html#extension-to-multi-class-classification" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li><p>Generalized likelihood estimation</p>
+<p>Assume the classes are one-hot encoded, then we can generalize equation <a href="id_02_variable_reduction.html#eq:aic-clf">(2.9)</a> to multi-class problems.</p></li>
+</ul>
+<p><span class="math display" id="eq:likelihood-multi-clf">\[\begin{equation}
+L(\theta) = \prod_{i = 1}^{N}\prod_{j = 1}^{M}\hat{y}_{ij}^{y_{ij}}
+\tag{2.10}
+\end{equation}\]</span></p>
+<p><span class="math display" id="eq:log-likelihood-multi-clf">\[\begin{equation}
+\begin{split}
+\ln{L(\theta)} = \sum_{i = 1}^{N}\sum_{j = 1}^{M}y_{ij}\ln{\hat{y}_{ij}},
+\end{split}
+\tag{2.11}
+\end{equation}\]</span></p>
+<p><span class="math display">\[\begin{equation}
+\begin{split}
+\mathrm{where}\:\hat{y}_{ij}\:\mathrm{is\:the\:estimated\:probability\:of\:class}\:j\:\mathrm{of\:sample\:}i\:\mathrm{and\:}\:y_{ij} \in \{0, 1\}
+\end{split}
+\end{equation}\]</span></p>
+<ul>
+<li>Categorical cross-entropy</li>
+</ul>
+<p><span class="math display" id="eq:cat-cross-entropy">\[\begin{equation}
+H_p(q_{\theta}) = -\frac{1}{N}\sum_{i = 1}^{N}\sum_{j = 1}^{M}y_{ij}\log_2{\hat{y}_{ij}}
+\tag{2.12}
+\end{equation}\]</span></p>
+<ul>
+<li>Derived generalized classification AIC</li>
+</ul>
+<p><span class="math display" id="eq:aic-multi-clf">\[\begin{equation}
+AIC_{clf} = 2{\cdot}\ln{2}{\cdot}N{\cdot}H_p(q_{\theta}) + 2k
+\tag{2.13}
+\end{equation}\]</span></p>
+</div>
+</div>
+</div>
+<div id="ml-input-generating-function" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> ML input generating function<a href="id_02_variable_reduction.html#ml-input-generating-function" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb10-1"><a href="id_02_variable_reduction.html#cb10-1" aria-hidden="true" tabindex="-1"></a>generate_ml_input <span class="ot">&lt;-</span> <span class="cf">function</span>(fasta_file, label_file, output_file) {</span>
+<span id="cb10-2"><a href="id_02_variable_reduction.html#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --------------</span></span>
+<span id="cb10-3"><a href="id_02_variable_reduction.html#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Peptides_2.4.4</span></span>
+<span id="cb10-4"><a href="id_02_variable_reduction.html#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="co"># --------------</span></span>
+<span id="cb10-5"><a href="id_02_variable_reduction.html#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read in fasta file</span></span>
+<span id="cb10-6"><a href="id_02_variable_reduction.html#cb10-6" aria-hidden="true" tabindex="-1"></a>  peptides <span class="ot">&lt;-</span> <span class="fu">read.fasta</span>(fasta_file, <span class="at">seqtype =</span> <span class="st">&quot;AA&quot;</span>, <span class="at">as.string =</span> <span class="cn">TRUE</span>, <span class="at">set.attributes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb10-7"><a href="id_02_variable_reduction.html#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Molecular weight</span></span>
+<span id="cb10-8"><a href="id_02_variable_reduction.html#cb10-8" aria-hidden="true" tabindex="-1"></a>  weights <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">mw</span>(x, <span class="at">monoisotopic =</span> <span class="cn">FALSE</span>)))</span>
+<span id="cb10-9"><a href="id_02_variable_reduction.html#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(weights) <span class="ot">&lt;-</span> <span class="st">&quot;weight&quot;</span></span>
+<span id="cb10-10"><a href="id_02_variable_reduction.html#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Amino acid composition</span></span>
+<span id="cb10-11"><a href="id_02_variable_reduction.html#cb10-11" aria-hidden="true" tabindex="-1"></a>  aa.comp <span class="ot">&lt;-</span> <span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">aaComp</span>(x))</span>
+<span id="cb10-12"><a href="id_02_variable_reduction.html#cb10-12" aria-hidden="true" tabindex="-1"></a>  aa.comp.matrix <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(aa.comp, <span class="cf">function</span>(x) x[, <span class="st">&quot;Mole%&quot;</span>]))</span>
+<span id="cb10-13"><a href="id_02_variable_reduction.html#cb10-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Isoelectric point</span></span>
+<span id="cb10-14"><a href="id_02_variable_reduction.html#cb10-14" aria-hidden="true" tabindex="-1"></a>  pI.values <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">pI</span>(x, <span class="at">pKscale =</span> <span class="st">&quot;EMBOSS&quot;</span>)))</span>
+<span id="cb10-15"><a href="id_02_variable_reduction.html#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(pI.values) <span class="ot">&lt;-</span> <span class="st">&quot;pI.value&quot;</span></span>
+<span id="cb10-16"><a href="id_02_variable_reduction.html#cb10-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Hydrophobicity</span></span>
+<span id="cb10-17"><a href="id_02_variable_reduction.html#cb10-17" aria-hidden="true" tabindex="-1"></a>  hydrophobicity.values <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">hydrophobicity</span>(x, <span class="at">scale =</span> <span class="st">&quot;KyteDoolittle&quot;</span>)))</span>
+<span id="cb10-18"><a href="id_02_variable_reduction.html#cb10-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(hydrophobicity.values) <span class="ot">&lt;-</span> <span class="st">&quot;hydrophobicity.value&quot;</span></span>
+<span id="cb10-19"><a href="id_02_variable_reduction.html#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Net charge at pH 7</span></span>
+<span id="cb10-20"><a href="id_02_variable_reduction.html#cb10-20" aria-hidden="true" tabindex="-1"></a>  net.charges <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">charge</span>(x, <span class="at">pH =</span> <span class="dv">7</span>, <span class="at">pKscale =</span> <span class="st">&quot;EMBOSS&quot;</span>)))</span>
+<span id="cb10-21"><a href="id_02_variable_reduction.html#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(net.charges) <span class="ot">&lt;-</span> <span class="st">&quot;net.charge&quot;</span></span>
+<span id="cb10-22"><a href="id_02_variable_reduction.html#cb10-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Boman index</span></span>
+<span id="cb10-23"><a href="id_02_variable_reduction.html#cb10-23" aria-hidden="true" tabindex="-1"></a>  boman.indices <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">boman</span>(x)))</span>
+<span id="cb10-24"><a href="id_02_variable_reduction.html#cb10-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(boman.indices) <span class="ot">&lt;-</span> <span class="st">&quot;boman.index&quot;</span></span>
+<span id="cb10-25"><a href="id_02_variable_reduction.html#cb10-25" aria-hidden="true" tabindex="-1"></a>  <span class="co"># combine peptides results</span></span>
+<span id="cb10-26"><a href="id_02_variable_reduction.html#cb10-26" aria-hidden="true" tabindex="-1"></a>  peptides_res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(weights, aa.comp.matrix, pI.values, hydrophobicity.values, net.charges, boman.indices))</span>
+<span id="cb10-27"><a href="id_02_variable_reduction.html#cb10-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-28"><a href="id_02_variable_reduction.html#cb10-28" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -----------</span></span>
+<span id="cb10-29"><a href="id_02_variable_reduction.html#cb10-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># protr_1.6-2</span></span>
+<span id="cb10-30"><a href="id_02_variable_reduction.html#cb10-30" aria-hidden="true" tabindex="-1"></a>  <span class="co"># -----------</span></span>
+<span id="cb10-31"><a href="id_02_variable_reduction.html#cb10-31" aria-hidden="true" tabindex="-1"></a>  length <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb10-32"><a href="id_02_variable_reduction.html#cb10-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># read in FASTA file</span></span>
+<span id="cb10-33"><a href="id_02_variable_reduction.html#cb10-33" aria-hidden="true" tabindex="-1"></a>  sequences <span class="ot">&lt;-</span> <span class="fu">readFASTA</span>(fasta_file)</span>
+<span id="cb10-34"><a href="id_02_variable_reduction.html#cb10-34" aria-hidden="true" tabindex="-1"></a>  sequences <span class="ot">&lt;-</span> sequences[<span class="fu">unlist</span>(<span class="fu">lapply</span>(sequences, <span class="cf">function</span>(x) <span class="fu">nchar</span>(x) <span class="sc">&gt;</span> <span class="dv">1</span>))]</span>
+<span id="cb10-35"><a href="id_02_variable_reduction.html#cb10-35" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate amino acid composition descriptors (dim = 20)</span></span>
+<span id="cb10-36"><a href="id_02_variable_reduction.html#cb10-36" aria-hidden="true" tabindex="-1"></a>  x1 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractAAC))</span>
+<span id="cb10-37"><a href="id_02_variable_reduction.html#cb10-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x1)[<span class="fu">colnames</span>(x1) <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Y_tyrosine&quot;</span></span>
+<span id="cb10-38"><a href="id_02_variable_reduction.html#cb10-38" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate dipeptide composition descriptors (dim = 400)</span></span>
+<span id="cb10-39"><a href="id_02_variable_reduction.html#cb10-39" aria-hidden="true" tabindex="-1"></a>  x2 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractDC))</span>
+<span id="cb10-40"><a href="id_02_variable_reduction.html#cb10-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x2)[<span class="fu">colnames</span>(x2) <span class="sc">==</span> <span class="st">&quot;NA&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;NA_dipeptide&quot;</span></span>
+<span id="cb10-41"><a href="id_02_variable_reduction.html#cb10-41" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate Moreau-Broto autocorrelation descriptors (dim = 8 * (length - 1))</span></span>
+<span id="cb10-42"><a href="id_02_variable_reduction.html#cb10-42" aria-hidden="true" tabindex="-1"></a>  x3 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractMoreauBroto, <span class="at">nlag =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb10-43"><a href="id_02_variable_reduction.html#cb10-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">colnames</span>(x3) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;moreau_broto&quot;</span>, <span class="fu">colnames</span>(x3), <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
+<span id="cb10-44"><a href="id_02_variable_reduction.html#cb10-44" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate composition descriptors (dim = 21)</span></span>
+<span id="cb10-45"><a href="id_02_variable_reduction.html#cb10-45" aria-hidden="true" tabindex="-1"></a>  x4 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTDC))</span>
+<span id="cb10-46"><a href="id_02_variable_reduction.html#cb10-46" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate transition descriptors (dim = 21)</span></span>
+<span id="cb10-47"><a href="id_02_variable_reduction.html#cb10-47" aria-hidden="true" tabindex="-1"></a>  x5 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTDT))</span>
+<span id="cb10-48"><a href="id_02_variable_reduction.html#cb10-48" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate distribution descriptors (dim = 105)</span></span>
+<span id="cb10-49"><a href="id_02_variable_reduction.html#cb10-49" aria-hidden="true" tabindex="-1"></a>  x6 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTDD))</span>
+<span id="cb10-50"><a href="id_02_variable_reduction.html#cb10-50" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate conjoint triad descriptors (dim = 343)</span></span>
+<span id="cb10-51"><a href="id_02_variable_reduction.html#cb10-51" aria-hidden="true" tabindex="-1"></a>  x7 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTriad))</span>
+<span id="cb10-52"><a href="id_02_variable_reduction.html#cb10-52" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate sequence-order-coupling numbers (dim = 2 * (length - 1))</span></span>
+<span id="cb10-53"><a href="id_02_variable_reduction.html#cb10-53" aria-hidden="true" tabindex="-1"></a>  x8 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractSOCN, <span class="at">nlag =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb10-54"><a href="id_02_variable_reduction.html#cb10-54" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate quasi-sequence-order descriptors (dim = 40 + 2 * (length - 1))</span></span>
+<span id="cb10-55"><a href="id_02_variable_reduction.html#cb10-55" aria-hidden="true" tabindex="-1"></a>  x9 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractQSO, <span class="at">nlag =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb10-56"><a href="id_02_variable_reduction.html#cb10-56" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate pseudo-amino acid composition (dim = 20 + (length - 1))</span></span>
+<span id="cb10-57"><a href="id_02_variable_reduction.html#cb10-57" aria-hidden="true" tabindex="-1"></a>  x10 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractPAAC, <span class="at">lambda =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb10-58"><a href="id_02_variable_reduction.html#cb10-58" aria-hidden="true" tabindex="-1"></a>  <span class="co"># calculate amphiphilic pseudo-amino acid composition (dim = 20 + 2 * (length - 1))</span></span>
+<span id="cb10-59"><a href="id_02_variable_reduction.html#cb10-59" aria-hidden="true" tabindex="-1"></a>  x11 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractAPAAC, <span class="at">lambda =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb10-60"><a href="id_02_variable_reduction.html#cb10-60" aria-hidden="true" tabindex="-1"></a>  <span class="co"># combine all of the result datasets</span></span>
+<span id="cb10-61"><a href="id_02_variable_reduction.html#cb10-61" aria-hidden="true" tabindex="-1"></a>  protr_res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11))</span>
+<span id="cb10-62"><a href="id_02_variable_reduction.html#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-63"><a href="id_02_variable_reduction.html#cb10-63" aria-hidden="true" tabindex="-1"></a>  labels <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(label_file, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb10-64"><a href="id_02_variable_reduction.html#cb10-64" aria-hidden="true" tabindex="-1"></a>  merge.all <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ..., <span class="at">by =</span> <span class="st">&quot;row.names&quot;</span>) { <span class="co"># https://stackoverflow.com/a/22618297</span></span>
+<span id="cb10-65"><a href="id_02_variable_reduction.html#cb10-65" aria-hidden="true" tabindex="-1"></a>    L <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
+<span id="cb10-66"><a href="id_02_variable_reduction.html#cb10-66" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(L)) {</span>
+<span id="cb10-67"><a href="id_02_variable_reduction.html#cb10-67" aria-hidden="true" tabindex="-1"></a>      x <span class="ot">&lt;-</span> <span class="fu">merge</span>(x, L[[i]], <span class="at">by =</span> by)</span>
+<span id="cb10-68"><a href="id_02_variable_reduction.html#cb10-68" aria-hidden="true" tabindex="-1"></a>      <span class="fu">rownames</span>(x) <span class="ot">&lt;-</span> x<span class="sc">$</span>Row.names</span>
+<span id="cb10-69"><a href="id_02_variable_reduction.html#cb10-69" aria-hidden="true" tabindex="-1"></a>      x<span class="sc">$</span>Row.names <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb10-70"><a href="id_02_variable_reduction.html#cb10-70" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb10-71"><a href="id_02_variable_reduction.html#cb10-71" aria-hidden="true" tabindex="-1"></a>    <span class="fu">return</span>(x)</span>
+<span id="cb10-72"><a href="id_02_variable_reduction.html#cb10-72" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb10-73"><a href="id_02_variable_reduction.html#cb10-73" aria-hidden="true" tabindex="-1"></a>  data <span class="ot">&lt;-</span> <span class="fu">merge.all</span>(peptides_res, protr_res, labels)</span>
+<span id="cb10-74"><a href="id_02_variable_reduction.html#cb10-74" aria-hidden="true" tabindex="-1"></a>  <span class="fu">write.csv</span>(data, <span class="at">file =</span> output_file)</span>
+<span id="cb10-75"><a href="id_02_variable_reduction.html#cb10-75" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="aic-functions" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> AIC functions<a href="id_02_variable_reduction.html#aic-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb11-1"><a href="id_02_variable_reduction.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Mean squared error function</span></span>
+<span id="cb11-2"><a href="id_02_variable_reduction.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb11-3"><a href="id_02_variable_reduction.html#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true values.</span></span>
+<span id="cb11-4"><a href="id_02_variable_reduction.html#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector or a matrix of predicted values.</span></span>
+<span id="cb11-5"><a href="id_02_variable_reduction.html#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb11-6"><a href="id_02_variable_reduction.html#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return MSE</span></span>
+<span id="cb11-7"><a href="id_02_variable_reduction.html#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb11-8"><a href="id_02_variable_reduction.html#cb11-8" aria-hidden="true" tabindex="-1"></a>mse <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred) {</span>
+<span id="cb11-9"><a href="id_02_variable_reduction.html#cb11-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">mean</span>((y_true <span class="sc">-</span> y_pred)<span class="sc">^</span><span class="dv">2</span>))</span>
+<span id="cb11-10"><a href="id_02_variable_reduction.html#cb11-10" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb12-1"><a href="id_02_variable_reduction.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Regression AIC</span></span>
+<span id="cb12-2"><a href="id_02_variable_reduction.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb12-3"><a href="id_02_variable_reduction.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true values.</span></span>
+<span id="cb12-4"><a href="id_02_variable_reduction.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector or a matrix of predicted values.</span></span>
+<span id="cb12-5"><a href="id_02_variable_reduction.html#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param k number of parameters/variables.</span></span>
+<span id="cb12-6"><a href="id_02_variable_reduction.html#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param eps a very small value to avoid negative infinitives generated by log(p=0).</span></span>
+<span id="cb12-7"><a href="id_02_variable_reduction.html#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb12-8"><a href="id_02_variable_reduction.html#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return AIC</span></span>
+<span id="cb12-9"><a href="id_02_variable_reduction.html#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb12-10"><a href="id_02_variable_reduction.html#cb12-10" aria-hidden="true" tabindex="-1"></a>aic_reg <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred, k, <span class="at">eps =</span> <span class="fl">1e-15</span>) {</span>
+<span id="cb12-11"><a href="id_02_variable_reduction.html#cb12-11" aria-hidden="true" tabindex="-1"></a>  mserr <span class="ot">&lt;-</span> <span class="fu">mse</span>(y_true, y_pred)</span>
+<span id="cb12-12"><a href="id_02_variable_reduction.html#cb12-12" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (mserr <span class="sc">==</span> <span class="dv">0</span>) mserr <span class="ot">&lt;-</span> eps</span>
+<span id="cb12-13"><a href="id_02_variable_reduction.html#cb12-13" aria-hidden="true" tabindex="-1"></a>  AIC <span class="ot">&lt;-</span> <span class="fu">length</span>(y_true) <span class="sc">*</span> <span class="fu">log</span>(mserr) <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> k</span>
+<span id="cb12-14"><a href="id_02_variable_reduction.html#cb12-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(AIC)</span>
+<span id="cb12-15"><a href="id_02_variable_reduction.html#cb12-15" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb13-1"><a href="id_02_variable_reduction.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Cross-entropy function</span></span>
+<span id="cb13-2"><a href="id_02_variable_reduction.html#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb13-3"><a href="id_02_variable_reduction.html#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true labels.</span></span>
+<span id="cb13-4"><a href="id_02_variable_reduction.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector (probabilities of the second class/factor level)</span></span>
+<span id="cb13-5"><a href="id_02_variable_reduction.html#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; or a matrix of predicted probabilities.</span></span>
+<span id="cb13-6"><a href="id_02_variable_reduction.html#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param eps a very small value to avoid negative infinitives generated by log(p=0).</span></span>
+<span id="cb13-7"><a href="id_02_variable_reduction.html#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; If the function returns NaN, then increasing eps may solve the issue. Alternatively,</span></span>
+<span id="cb13-8"><a href="id_02_variable_reduction.html#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; As NaN is usually generated in the case of p = 1 - eps = 1, resulting in log(1 - p)</span></span>
+<span id="cb13-9"><a href="id_02_variable_reduction.html#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; = log(0) from binary cross-entropy, the user can pass prediction values as a matrix</span></span>
+<span id="cb13-10"><a href="id_02_variable_reduction.html#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; to calculate categorical cross-entropy instead.</span></span>
+<span id="cb13-11"><a href="id_02_variable_reduction.html#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb13-12"><a href="id_02_variable_reduction.html#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return H, cross-entropy (mean loss per sample)</span></span>
+<span id="cb13-13"><a href="id_02_variable_reduction.html#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb13-14"><a href="id_02_variable_reduction.html#cb13-14" aria-hidden="true" tabindex="-1"></a>crossEntropy <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred, <span class="at">eps =</span> <span class="fl">1e-15</span>) {</span>
+<span id="cb13-15"><a href="id_02_variable_reduction.html#cb13-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stopifnot</span>(<span class="fu">is.factor</span>(y_true))</span>
+<span id="cb13-16"><a href="id_02_variable_reduction.html#cb13-16" aria-hidden="true" tabindex="-1"></a>  y_pred <span class="ot">&lt;-</span> <span class="fu">pmax</span>(<span class="fu">pmin</span>(y_pred, <span class="dv">1</span> <span class="sc">-</span> eps), eps)</span>
+<span id="cb13-17"><a href="id_02_variable_reduction.html#cb13-17" aria-hidden="true" tabindex="-1"></a>  n_levels <span class="ot">&lt;-</span> <span class="fu">nlevels</span>(y_true)</span>
+<span id="cb13-18"><a href="id_02_variable_reduction.html#cb13-18" aria-hidden="true" tabindex="-1"></a>  H <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb13-19"><a href="id_02_variable_reduction.html#cb13-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Binary classification</span></span>
+<span id="cb13-20"><a href="id_02_variable_reduction.html#cb13-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span> (n_levels <span class="sc">==</span> <span class="dv">2</span> <span class="sc">&amp;&amp;</span> <span class="fu">is.vector</span>(y_pred)) {</span>
+<span id="cb13-21"><a href="id_02_variable_reduction.html#cb13-21" aria-hidden="true" tabindex="-1"></a>    y_true <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(y_true <span class="sc">==</span> <span class="fu">levels</span>(y_true)[<span class="sc">-</span><span class="dv">1</span>])</span>
+<span id="cb13-22"><a href="id_02_variable_reduction.html#cb13-22" aria-hidden="true" tabindex="-1"></a>    H <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">mean</span>(y_true <span class="sc">*</span> <span class="fu">log2</span>(y_pred) <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">-</span> y_true) <span class="sc">*</span> <span class="fu">log2</span>(<span class="dv">1</span> <span class="sc">-</span> y_pred))</span>
+<span id="cb13-23"><a href="id_02_variable_reduction.html#cb13-23" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-24"><a href="id_02_variable_reduction.html#cb13-24" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Multi-class classification</span></span>
+<span id="cb13-25"><a href="id_02_variable_reduction.html#cb13-25" aria-hidden="true" tabindex="-1"></a>  <span class="cf">else</span> <span class="cf">if</span> (n_levels <span class="sc">==</span> <span class="fu">ncol</span>(y_pred)) {</span>
+<span id="cb13-26"><a href="id_02_variable_reduction.html#cb13-26" aria-hidden="true" tabindex="-1"></a>    y_true <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(y_true)</span>
+<span id="cb13-27"><a href="id_02_variable_reduction.html#cb13-27" aria-hidden="true" tabindex="-1"></a>    y_true_encoded <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(y_true, <span class="cf">function</span>(x) {</span>
+<span id="cb13-28"><a href="id_02_variable_reduction.html#cb13-28" aria-hidden="true" tabindex="-1"></a>      tmp <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="dv">0</span>, n_levels)</span>
+<span id="cb13-29"><a href="id_02_variable_reduction.html#cb13-29" aria-hidden="true" tabindex="-1"></a>      tmp[x] <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-30"><a href="id_02_variable_reduction.html#cb13-30" aria-hidden="true" tabindex="-1"></a>      <span class="fu">return</span>(tmp)</span>
+<span id="cb13-31"><a href="id_02_variable_reduction.html#cb13-31" aria-hidden="true" tabindex="-1"></a>    }))</span>
+<span id="cb13-32"><a href="id_02_variable_reduction.html#cb13-32" aria-hidden="true" tabindex="-1"></a>    H <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">mean</span>(<span class="fu">sapply</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(y_true_encoded), <span class="cf">function</span>(x) <span class="fu">sum</span>(y_true_encoded[x, ] <span class="sc">*</span> <span class="fu">log2</span>(y_pred[x, ]))))</span>
+<span id="cb13-33"><a href="id_02_variable_reduction.html#cb13-33" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-34"><a href="id_02_variable_reduction.html#cb13-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(H)</span>
+<span id="cb13-35"><a href="id_02_variable_reduction.html#cb13-35" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb14-1"><a href="id_02_variable_reduction.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; Classification AIC</span></span>
+<span id="cb14-2"><a href="id_02_variable_reduction.html#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb14-3"><a href="id_02_variable_reduction.html#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_true a factor vector representing true labels.</span></span>
+<span id="cb14-4"><a href="id_02_variable_reduction.html#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param y_pred a numeric vector or a matrix of predicted probabilities.</span></span>
+<span id="cb14-5"><a href="id_02_variable_reduction.html#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param k number of parameters/variables.</span></span>
+<span id="cb14-6"><a href="id_02_variable_reduction.html#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @param ... other parameters to be passed to `crossEntropy()`</span></span>
+<span id="cb14-7"><a href="id_02_variable_reduction.html#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb14-8"><a href="id_02_variable_reduction.html#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39; @return AIC</span></span>
+<span id="cb14-9"><a href="id_02_variable_reduction.html#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&#39;</span></span>
+<span id="cb14-10"><a href="id_02_variable_reduction.html#cb14-10" aria-hidden="true" tabindex="-1"></a>aic_clf <span class="ot">&lt;-</span> <span class="cf">function</span>(y_true, y_pred, k, ...) {</span>
+<span id="cb14-11"><a href="id_02_variable_reduction.html#cb14-11" aria-hidden="true" tabindex="-1"></a>  H <span class="ot">&lt;-</span> <span class="fu">crossEntropy</span>(y_true, y_pred, ...)</span>
+<span id="cb14-12"><a href="id_02_variable_reduction.html#cb14-12" aria-hidden="true" tabindex="-1"></a>  AIC <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">log</span>(<span class="dv">2</span>) <span class="sc">*</span> <span class="fu">length</span>(y_true) <span class="sc">*</span> H <span class="sc">+</span> <span class="dv">2</span> <span class="sc">*</span> k</span>
+<span id="cb14-13"><a href="id_02_variable_reduction.html#cb14-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(AIC)</span>
+<span id="cb14-14"><a href="id_02_variable_reduction.html#cb14-14" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+</div>
+<div id="melanin-binding-regression" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> Melanin binding (regression)<a href="id_02_variable_reduction.html#melanin-binding-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="generating-ml-input-1" class="section level3 hasAnchor" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> Generating ML input<a href="id_02_variable_reduction.html#generating-ml-input-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb15-1"><a href="id_02_variable_reduction.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_ml_input</span>(</span>
+<span id="cb15-2"><a href="id_02_variable_reduction.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">fasta_file =</span> <span class="st">&quot;./other_data/mb_second_peptide_array.fasta&quot;</span>,</span>
+<span id="cb15-3"><a href="id_02_variable_reduction.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label_file =</span> <span class="st">&quot;./other_data/mb_second_peptide_array_labels.csv&quot;</span>,</span>
+<span id="cb15-4"><a href="id_02_variable_reduction.html#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;./data/mb_second_peptide_array_ml_input.csv&quot;</span></span>
+<span id="cb15-5"><a href="id_02_variable_reduction.html#cb15-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="variable-importance" class="section level3 hasAnchor" number="2.4.2">
+<h3><span class="header-section-number">2.4.2</span> Variable importance<a href="id_02_variable_reduction.html#variable-importance" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb16-1"><a href="id_02_variable_reduction.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb16-2"><a href="id_02_variable_reduction.html#cb16-2" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/mb_second_peptide_array_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb16-3"><a href="id_02_variable_reduction.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb16-4"><a href="id_02_variable_reduction.html#cb16-4" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> mb_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mb_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb16-5"><a href="id_02_variable_reduction.html#cb16-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-6"><a href="id_02_variable_reduction.html#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="co"># train random forest using ranger</span></span>
+<span id="cb16-7"><a href="id_02_variable_reduction.html#cb16-7" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb16-8"><a href="id_02_variable_reduction.html#cb16-8" aria-hidden="true" tabindex="-1"></a>predictor_variables <span class="ot">&lt;-</span> <span class="fu">subset</span>(mb_data, <span class="at">select =</span> <span class="sc">-</span>log_intensity)</span>
+<span id="cb16-9"><a href="id_02_variable_reduction.html#cb16-9" aria-hidden="true" tabindex="-1"></a>response_variable <span class="ot">&lt;-</span> mb_data<span class="sc">$</span>log_intensity</span>
+<span id="cb16-10"><a href="id_02_variable_reduction.html#cb16-10" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb16-11"><a href="id_02_variable_reduction.html#cb16-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">importance =</span> <span class="st">&quot;permutation&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb16-12"><a href="id_02_variable_reduction.html#cb16-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">scale.permutation.importance =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>, <span class="at">keep.inbag =</span> <span class="cn">TRUE</span></span>
+<span id="cb16-13"><a href="id_02_variable_reduction.html#cb16-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb16-14"><a href="id_02_variable_reduction.html#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(rf, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_mb_rf.RData&quot;</span>)</span></code></pre></div>
+</div>
+<div id="variable-reduction" class="section level3 hasAnchor" number="2.4.3">
+<h3><span class="header-section-number">2.4.3</span> Variable reduction<a href="id_02_variable_reduction.html#variable-reduction" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb17-1"><a href="id_02_variable_reduction.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_mb_rf.RData&quot;</span>)</span>
+<span id="cb17-2"><a href="id_02_variable_reduction.html#cb17-2" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb17-3"><a href="id_02_variable_reduction.html#cb17-3" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)]</span>
+<span id="cb17-4"><a href="id_02_variable_reduction.html#cb17-4" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[var_imp <span class="sc">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb17-5"><a href="id_02_variable_reduction.html#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="id_02_variable_reduction.html#cb17-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb17-7"><a href="id_02_variable_reduction.html#cb17-7" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/mb_second_peptide_array_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb17-8"><a href="id_02_variable_reduction.html#cb17-8" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb17-9"><a href="id_02_variable_reduction.html#cb17-9" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> mb_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mb_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb17-10"><a href="id_02_variable_reduction.html#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="id_02_variable_reduction.html#cb17-11" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb17-12"><a href="id_02_variable_reduction.html#cb17-12" aria-hidden="true" tabindex="-1"></a>var_subset_res <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb17-13"><a href="id_02_variable_reduction.html#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(var_imp)) {</span>
+<span id="cb17-14"><a href="id_02_variable_reduction.html#cb17-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(i, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb17-15"><a href="id_02_variable_reduction.html#cb17-15" aria-hidden="true" tabindex="-1"></a>  predictor_variables <span class="ot">&lt;-</span> mb_data[, <span class="fu">colnames</span>(mb_data) <span class="sc">%in%</span> <span class="fu">names</span>(var_imp)[<span class="dv">1</span><span class="sc">:</span>i], drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb17-16"><a href="id_02_variable_reduction.html#cb17-16" aria-hidden="true" tabindex="-1"></a>  response_variable <span class="ot">&lt;-</span> mb_data<span class="sc">$</span>log_intensity</span>
+<span id="cb17-17"><a href="id_02_variable_reduction.html#cb17-17" aria-hidden="true" tabindex="-1"></a>  rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(<span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">importance =</span> <span class="st">&quot;none&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>)</span>
+<span id="cb17-18"><a href="id_02_variable_reduction.html#cb17-18" aria-hidden="true" tabindex="-1"></a>  var_subset_res <span class="ot">&lt;-</span> <span class="fu">list.append</span>(var_subset_res, <span class="fu">list</span>(</span>
+<span id="cb17-19"><a href="id_02_variable_reduction.html#cb17-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">rsq =</span> rf<span class="sc">$</span>r.squared,</span>
+<span id="cb17-20"><a href="id_02_variable_reduction.html#cb17-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">aic =</span> <span class="fu">aic_reg</span>(</span>
+<span id="cb17-21"><a href="id_02_variable_reduction.html#cb17-21" aria-hidden="true" tabindex="-1"></a>      <span class="at">y_true =</span> response_variable,</span>
+<span id="cb17-22"><a href="id_02_variable_reduction.html#cb17-22" aria-hidden="true" tabindex="-1"></a>      <span class="at">y_pred =</span> rf<span class="sc">$</span>predictions,</span>
+<span id="cb17-23"><a href="id_02_variable_reduction.html#cb17-23" aria-hidden="true" tabindex="-1"></a>      <span class="at">k =</span> i</span>
+<span id="cb17-24"><a href="id_02_variable_reduction.html#cb17-24" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb17-25"><a href="id_02_variable_reduction.html#cb17-25" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb17-26"><a href="id_02_variable_reduction.html#cb17-26" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb17-27"><a href="id_02_variable_reduction.html#cb17-27" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(var_subset_res, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_mb_var_subset_res.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb18-1"><a href="id_02_variable_reduction.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_mb_var_subset_res.RData&quot;</span>)</span>
+<span id="cb18-2"><a href="id_02_variable_reduction.html#cb18-2" aria-hidden="true" tabindex="-1"></a>rsq_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>rsq))</span>
+<span id="cb18-3"><a href="id_02_variable_reduction.html#cb18-3" aria-hidden="true" tabindex="-1"></a>aic_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>aic))</span>
+<span id="cb18-4"><a href="id_02_variable_reduction.html#cb18-4" aria-hidden="true" tabindex="-1"></a>rsq_cutoff <span class="ot">&lt;-</span> <span class="fu">which.max</span>(rsq_vec)</span>
+<span id="cb18-5"><a href="id_02_variable_reduction.html#cb18-5" aria-hidden="true" tabindex="-1"></a>aic_cutoff <span class="ot">&lt;-</span> <span class="fu">which.min</span>(aic_vec)</span>
+<span id="cb18-6"><a href="id_02_variable_reduction.html#cb18-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="id_02_variable_reduction.html#cb18-7" aria-hidden="true" tabindex="-1"></a>p1_1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(rsq_vec), <span class="at">y =</span> rsq_vec), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb18-8"><a href="id_02_variable_reduction.html#cb18-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb18-9"><a href="id_02_variable_reduction.html#cb18-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> rsq_cutoff, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-10"><a href="id_02_variable_reduction.html#cb18-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, rsq_cutoff, <span class="dv">200</span>, <span class="dv">400</span>, <span class="dv">600</span>, <span class="dv">735</span>)) <span class="sc">+</span></span>
+<span id="cb18-11"><a href="id_02_variable_reduction.html#cb18-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb18-12"><a href="id_02_variable_reduction.html#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.40</span>, <span class="fl">0.45</span>, <span class="fl">0.50</span>, <span class="fl">0.55</span>),</span>
+<span id="cb18-13"><a href="id_02_variable_reduction.html#cb18-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0.40&quot;</span>, <span class="st">&quot;0.45&quot;</span>, <span class="st">&quot;0.50&quot;</span>, <span class="st">&quot;0.55&quot;</span>)</span>
+<span id="cb18-14"><a href="id_02_variable_reduction.html#cb18-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-15"><a href="id_02_variable_reduction.html#cb18-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-16"><a href="id_02_variable_reduction.html#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-17"><a href="id_02_variable_reduction.html#cb18-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>), <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb18-18"><a href="id_02_variable_reduction.html#cb18-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-19"><a href="id_02_variable_reduction.html#cb18-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-20"><a href="id_02_variable_reduction.html#cb18-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-21"><a href="id_02_variable_reduction.html#cb18-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-22"><a href="id_02_variable_reduction.html#cb18-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb18-23"><a href="id_02_variable_reduction.html#cb18-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb18-24"><a href="id_02_variable_reduction.html#cb18-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb18-25"><a href="id_02_variable_reduction.html#cb18-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb18-26"><a href="id_02_variable_reduction.html#cb18-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-27"><a href="id_02_variable_reduction.html#cb18-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-28"><a href="id_02_variable_reduction.html#cb18-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="fu">expression</span>(<span class="fu">italic</span>(R<span class="sc">^</span><span class="dv">2</span>))) <span class="sc">+</span></span>
+<span id="cb18-29"><a href="id_02_variable_reduction.html#cb18-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Melanin binding&quot;</span>)</span>
+<span id="cb18-30"><a href="id_02_variable_reduction.html#cb18-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-31"><a href="id_02_variable_reduction.html#cb18-31" aria-hidden="true" tabindex="-1"></a>p1_2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(aic_vec), <span class="at">y =</span> aic_vec), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb18-32"><a href="id_02_variable_reduction.html#cb18-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb18-33"><a href="id_02_variable_reduction.html#cb18-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> aic_cutoff, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-34"><a href="id_02_variable_reduction.html#cb18-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, aic_cutoff, <span class="dv">200</span>, <span class="dv">400</span>, <span class="dv">600</span>, <span class="dv">735</span>)) <span class="sc">+</span></span>
+<span id="cb18-35"><a href="id_02_variable_reduction.html#cb18-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb18-36"><a href="id_02_variable_reduction.html#cb18-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">500</span>, <span class="dv">0</span>, <span class="dv">500</span>, <span class="dv">1000</span>),</span>
+<span id="cb18-37"><a href="id_02_variable_reduction.html#cb18-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;-500&quot;</span>, <span class="st">&quot;0&quot;</span>, <span class="st">&quot;500&quot;</span>, <span class="st">&quot;1,000&quot;</span>)</span>
+<span id="cb18-38"><a href="id_02_variable_reduction.html#cb18-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-39"><a href="id_02_variable_reduction.html#cb18-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb18-40"><a href="id_02_variable_reduction.html#cb18-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb18-41"><a href="id_02_variable_reduction.html#cb18-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>), <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb18-42"><a href="id_02_variable_reduction.html#cb18-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-43"><a href="id_02_variable_reduction.html#cb18-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-44"><a href="id_02_variable_reduction.html#cb18-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-45"><a href="id_02_variable_reduction.html#cb18-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb18-46"><a href="id_02_variable_reduction.html#cb18-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb18-47"><a href="id_02_variable_reduction.html#cb18-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb18-48"><a href="id_02_variable_reduction.html#cb18-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb18-49"><a href="id_02_variable_reduction.html#cb18-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb18-50"><a href="id_02_variable_reduction.html#cb18-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb18-51"><a href="id_02_variable_reduction.html#cb18-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Number of variables&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-52"><a href="id_02_variable_reduction.html#cb18-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;AIC&quot;</span>) <span class="sc">+</span></span>
+<span id="cb18-53"><a href="id_02_variable_reduction.html#cb18-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb18-54"><a href="id_02_variable_reduction.html#cb18-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-55"><a href="id_02_variable_reduction.html#cb18-55" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Maximum R-squared: &quot;</span>, <span class="fu">formatC</span>(rsq_vec[rsq_cutoff], <span class="at">format =</span> <span class="st">&quot;f&quot;</span>, <span class="at">digits =</span> <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb18-56"><a href="id_02_variable_reduction.html#cb18-56" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;R-squared at AIC cutoff: &quot;</span>, <span class="fu">formatC</span>(rsq_vec[aic_cutoff], <span class="at">format =</span> <span class="st">&quot;f&quot;</span>, <span class="at">digits =</span> <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+</div>
+<div id="generating-train-test-splits" class="section level3 hasAnchor" number="2.4.4">
+<h3><span class="header-section-number">2.4.4</span> Generating train-test splits<a href="id_02_variable_reduction.html#generating-train-test-splits" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb19-1"><a href="id_02_variable_reduction.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb19-2"><a href="id_02_variable_reduction.html#cb19-2" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/mb_second_peptide_array_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="id_02_variable_reduction.html#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb19-4"><a href="id_02_variable_reduction.html#cb19-4" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> mb_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mb_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb19-5"><a href="id_02_variable_reduction.html#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="id_02_variable_reduction.html#cb19-6" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> aic_cutoff</span>
+<span id="cb19-7"><a href="id_02_variable_reduction.html#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_mb_rf.RData&quot;</span>)</span>
+<span id="cb19-8"><a href="id_02_variable_reduction.html#cb19-8" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb19-9"><a href="id_02_variable_reduction.html#cb19-9" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)][<span class="dv">1</span><span class="sc">:</span>cutoff]</span>
+<span id="cb19-10"><a href="id_02_variable_reduction.html#cb19-10" aria-hidden="true" tabindex="-1"></a>mb_data <span class="ot">&lt;-</span> mb_data[, <span class="fu">colnames</span>(mb_data) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">names</span>(var_imp), <span class="st">&quot;log_intensity&quot;</span>)]</span>
+<span id="cb19-11"><a href="id_02_variable_reduction.html#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="id_02_variable_reduction.html#cb19-12" aria-hidden="true" tabindex="-1"></a>outer_splits <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb19-13"><a href="id_02_variable_reduction.html#cb19-13" aria-hidden="true" tabindex="-1"></a>n_train <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">nrow</span>(mb_data) <span class="sc">*</span> <span class="fl">0.9</span>)</span>
+<span id="cb19-14"><a href="id_02_variable_reduction.html#cb19-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>)</span>
+<span id="cb19-15"><a href="id_02_variable_reduction.html#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb19-16"><a href="id_02_variable_reduction.html#cb19-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># random shuffle</span></span>
+<span id="cb19-17"><a href="id_02_variable_reduction.html#cb19-17" aria-hidden="true" tabindex="-1"></a>  mb_data_ <span class="ot">&lt;-</span> mb_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(mb_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb19-18"><a href="id_02_variable_reduction.html#cb19-18" aria-hidden="true" tabindex="-1"></a>  outer_train <span class="ot">&lt;-</span> mb_data_[<span class="dv">1</span><span class="sc">:</span>n_train, ]</span>
+<span id="cb19-19"><a href="id_02_variable_reduction.html#cb19-19" aria-hidden="true" tabindex="-1"></a>  outer_test <span class="ot">&lt;-</span> mb_data_[(n_train <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(mb_data_), ]</span>
+<span id="cb19-20"><a href="id_02_variable_reduction.html#cb19-20" aria-hidden="true" tabindex="-1"></a>  outer_splits <span class="ot">&lt;-</span> <span class="fu">list.append</span>(outer_splits, <span class="fu">list</span>(<span class="at">train =</span> outer_train, <span class="at">test =</span> outer_test))</span>
+<span id="cb19-21"><a href="id_02_variable_reduction.html#cb19-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb19-22"><a href="id_02_variable_reduction.html#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(mb_data, outer_splits, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_mb_train_test_splits.RData&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="cell-penetration-classification" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> Cell-penetration (classification)<a href="id_02_variable_reduction.html#cell-penetration-classification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="generating-ml-input-2" class="section level3 hasAnchor" number="2.5.1">
+<h3><span class="header-section-number">2.5.1</span> Generating ML input<a href="id_02_variable_reduction.html#generating-ml-input-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb20-1"><a href="id_02_variable_reduction.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_ml_input</span>(</span>
+<span id="cb20-2"><a href="id_02_variable_reduction.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">fasta_file =</span> <span class="st">&quot;./other_data/CPP924.fasta&quot;</span>,</span>
+<span id="cb20-3"><a href="id_02_variable_reduction.html#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label_file =</span> <span class="st">&quot;./other_data/cpp_labels.csv&quot;</span>,</span>
+<span id="cb20-4"><a href="id_02_variable_reduction.html#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;./data/cpp_ml_input.csv&quot;</span></span>
+<span id="cb20-5"><a href="id_02_variable_reduction.html#cb20-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="variable-importance-1" class="section level3 hasAnchor" number="2.5.2">
+<h3><span class="header-section-number">2.5.2</span> Variable importance<a href="id_02_variable_reduction.html#variable-importance-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb21-1"><a href="id_02_variable_reduction.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb21-2"><a href="id_02_variable_reduction.html#cb21-2" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/cpp_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb21-3"><a href="id_02_variable_reduction.html#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb21-4"><a href="id_02_variable_reduction.html#cb21-4" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> cpp_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(cpp_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb21-5"><a href="id_02_variable_reduction.html#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="id_02_variable_reduction.html#cb21-6" aria-hidden="true" tabindex="-1"></a><span class="co"># train random forest using ranger</span></span>
+<span id="cb21-7"><a href="id_02_variable_reduction.html#cb21-7" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb21-8"><a href="id_02_variable_reduction.html#cb21-8" aria-hidden="true" tabindex="-1"></a>predictor_variables <span class="ot">&lt;-</span> <span class="fu">subset</span>(cpp_data, <span class="at">select =</span> <span class="sc">-</span>category)</span>
+<span id="cb21-9"><a href="id_02_variable_reduction.html#cb21-9" aria-hidden="true" tabindex="-1"></a>response_variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(cpp_data<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;non-penetrating&quot;</span>, <span class="st">&quot;penetrating&quot;</span>))</span>
+<span id="cb21-10"><a href="id_02_variable_reduction.html#cb21-10" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb21-11"><a href="id_02_variable_reduction.html#cb21-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">sample.fraction =</span> <span class="fu">rep</span>(<span class="fl">0.5</span>, <span class="dv">2</span>),</span>
+<span id="cb21-12"><a href="id_02_variable_reduction.html#cb21-12" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> <span class="st">&quot;permutation&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">scale.permutation.importance =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>, <span class="at">keep.inbag =</span> <span class="cn">TRUE</span></span>
+<span id="cb21-13"><a href="id_02_variable_reduction.html#cb21-13" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-14"><a href="id_02_variable_reduction.html#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(rf, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_cpp_rf.RData&quot;</span>)</span></code></pre></div>
+</div>
+<div id="variable-reduction-1" class="section level3 hasAnchor" number="2.5.3">
+<h3><span class="header-section-number">2.5.3</span> Variable reduction<a href="id_02_variable_reduction.html#variable-reduction-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb22-1"><a href="id_02_variable_reduction.html#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_cpp_rf.RData&quot;</span>)</span>
+<span id="cb22-2"><a href="id_02_variable_reduction.html#cb22-2" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb22-3"><a href="id_02_variable_reduction.html#cb22-3" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)]</span>
+<span id="cb22-4"><a href="id_02_variable_reduction.html#cb22-4" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[var_imp <span class="sc">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb22-5"><a href="id_02_variable_reduction.html#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="id_02_variable_reduction.html#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb22-7"><a href="id_02_variable_reduction.html#cb22-7" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/cpp_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb22-8"><a href="id_02_variable_reduction.html#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb22-9"><a href="id_02_variable_reduction.html#cb22-9" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> cpp_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(cpp_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb22-10"><a href="id_02_variable_reduction.html#cb22-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-11"><a href="id_02_variable_reduction.html#cb22-11" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb22-12"><a href="id_02_variable_reduction.html#cb22-12" aria-hidden="true" tabindex="-1"></a>var_subset_res <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb22-13"><a href="id_02_variable_reduction.html#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(var_imp)) {</span>
+<span id="cb22-14"><a href="id_02_variable_reduction.html#cb22-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(i, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb22-15"><a href="id_02_variable_reduction.html#cb22-15" aria-hidden="true" tabindex="-1"></a>  predictor_variables <span class="ot">&lt;-</span> cpp_data[, <span class="fu">colnames</span>(cpp_data) <span class="sc">%in%</span> <span class="fu">names</span>(var_imp)[<span class="dv">1</span><span class="sc">:</span>i], drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb22-16"><a href="id_02_variable_reduction.html#cb22-16" aria-hidden="true" tabindex="-1"></a>  response_variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(cpp_data<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;non-penetrating&quot;</span>, <span class="st">&quot;penetrating&quot;</span>))</span>
+<span id="cb22-17"><a href="id_02_variable_reduction.html#cb22-17" aria-hidden="true" tabindex="-1"></a>  rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb22-18"><a href="id_02_variable_reduction.html#cb22-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">importance =</span> <span class="st">&quot;none&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>,</span>
+<span id="cb22-19"><a href="id_02_variable_reduction.html#cb22-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">probability =</span> <span class="cn">TRUE</span></span>
+<span id="cb22-20"><a href="id_02_variable_reduction.html#cb22-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb22-21"><a href="id_02_variable_reduction.html#cb22-21" aria-hidden="true" tabindex="-1"></a>  var_subset_res <span class="ot">&lt;-</span> <span class="fu">list.append</span>(var_subset_res, <span class="fu">list</span>(</span>
+<span id="cb22-22"><a href="id_02_variable_reduction.html#cb22-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">acc =</span> <span class="dv">1</span> <span class="sc">-</span> rf<span class="sc">$</span>prediction.error,</span>
+<span id="cb22-23"><a href="id_02_variable_reduction.html#cb22-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">aic =</span> <span class="fu">aic_clf</span>(</span>
+<span id="cb22-24"><a href="id_02_variable_reduction.html#cb22-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">y_true =</span> response_variable,</span>
+<span id="cb22-25"><a href="id_02_variable_reduction.html#cb22-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">y_pred =</span> rf<span class="sc">$</span>predictions,</span>
+<span id="cb22-26"><a href="id_02_variable_reduction.html#cb22-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">k =</span> i</span>
+<span id="cb22-27"><a href="id_02_variable_reduction.html#cb22-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb22-28"><a href="id_02_variable_reduction.html#cb22-28" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb22-29"><a href="id_02_variable_reduction.html#cb22-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb22-30"><a href="id_02_variable_reduction.html#cb22-30" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(var_subset_res, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_cpp_var_subset_res.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb23-1"><a href="id_02_variable_reduction.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_cpp_var_subset_res.RData&quot;</span>)</span>
+<span id="cb23-2"><a href="id_02_variable_reduction.html#cb23-2" aria-hidden="true" tabindex="-1"></a>acc_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>acc))</span>
+<span id="cb23-3"><a href="id_02_variable_reduction.html#cb23-3" aria-hidden="true" tabindex="-1"></a>aic_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>aic))</span>
+<span id="cb23-4"><a href="id_02_variable_reduction.html#cb23-4" aria-hidden="true" tabindex="-1"></a>acc_cutoff <span class="ot">&lt;-</span> <span class="fu">which.max</span>(acc_vec)</span>
+<span id="cb23-5"><a href="id_02_variable_reduction.html#cb23-5" aria-hidden="true" tabindex="-1"></a>aic_cutoff <span class="ot">&lt;-</span> <span class="fu">which.min</span>(aic_vec)</span>
+<span id="cb23-6"><a href="id_02_variable_reduction.html#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="id_02_variable_reduction.html#cb23-7" aria-hidden="true" tabindex="-1"></a>p2_1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(acc_vec), <span class="at">y =</span> acc_vec), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb23-8"><a href="id_02_variable_reduction.html#cb23-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb23-9"><a href="id_02_variable_reduction.html#cb23-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> acc_cutoff, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-10"><a href="id_02_variable_reduction.html#cb23-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, acc_cutoff, <span class="dv">250</span>, <span class="dv">500</span>, <span class="dv">750</span>, <span class="dv">955</span>)) <span class="sc">+</span></span>
+<span id="cb23-11"><a href="id_02_variable_reduction.html#cb23-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb23-12"><a href="id_02_variable_reduction.html#cb23-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.88</span>, <span class="fl">0.90</span>, <span class="fl">0.92</span>),</span>
+<span id="cb23-13"><a href="id_02_variable_reduction.html#cb23-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0.88&quot;</span>, <span class="st">&quot;0.90&quot;</span>, <span class="st">&quot;0.92&quot;</span>)</span>
+<span id="cb23-14"><a href="id_02_variable_reduction.html#cb23-14" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-15"><a href="id_02_variable_reduction.html#cb23-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb23-16"><a href="id_02_variable_reduction.html#cb23-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb23-17"><a href="id_02_variable_reduction.html#cb23-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>), <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb23-18"><a href="id_02_variable_reduction.html#cb23-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-19"><a href="id_02_variable_reduction.html#cb23-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-20"><a href="id_02_variable_reduction.html#cb23-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-21"><a href="id_02_variable_reduction.html#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-22"><a href="id_02_variable_reduction.html#cb23-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb23-23"><a href="id_02_variable_reduction.html#cb23-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb23-24"><a href="id_02_variable_reduction.html#cb23-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb23-25"><a href="id_02_variable_reduction.html#cb23-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb23-26"><a href="id_02_variable_reduction.html#cb23-26" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-27"><a href="id_02_variable_reduction.html#cb23-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-28"><a href="id_02_variable_reduction.html#cb23-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Accuracy&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-29"><a href="id_02_variable_reduction.html#cb23-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Cell-penetration&quot;</span>)</span>
+<span id="cb23-30"><a href="id_02_variable_reduction.html#cb23-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-31"><a href="id_02_variable_reduction.html#cb23-31" aria-hidden="true" tabindex="-1"></a>p2_2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(aic_vec), <span class="at">y =</span> aic_vec), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb23-32"><a href="id_02_variable_reduction.html#cb23-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb23-33"><a href="id_02_variable_reduction.html#cb23-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> aic_cutoff, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-34"><a href="id_02_variable_reduction.html#cb23-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(aic_cutoff, <span class="dv">250</span>, <span class="dv">500</span>, <span class="dv">750</span>, <span class="dv">955</span>)) <span class="sc">+</span></span>
+<span id="cb23-35"><a href="id_02_variable_reduction.html#cb23-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb23-36"><a href="id_02_variable_reduction.html#cb23-36" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">500</span>, <span class="dv">1000</span>, <span class="dv">1500</span>, <span class="dv">2000</span>, <span class="dv">2500</span>),</span>
+<span id="cb23-37"><a href="id_02_variable_reduction.html#cb23-37" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;500&quot;</span>, <span class="st">&quot;1,000&quot;</span>, <span class="st">&quot;1,500&quot;</span>, <span class="st">&quot;2,000&quot;</span>, <span class="st">&quot;2,500&quot;</span>)</span>
+<span id="cb23-38"><a href="id_02_variable_reduction.html#cb23-38" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-39"><a href="id_02_variable_reduction.html#cb23-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb23-40"><a href="id_02_variable_reduction.html#cb23-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb23-41"><a href="id_02_variable_reduction.html#cb23-41" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>), <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb23-42"><a href="id_02_variable_reduction.html#cb23-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-43"><a href="id_02_variable_reduction.html#cb23-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-44"><a href="id_02_variable_reduction.html#cb23-44" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-45"><a href="id_02_variable_reduction.html#cb23-45" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb23-46"><a href="id_02_variable_reduction.html#cb23-46" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb23-47"><a href="id_02_variable_reduction.html#cb23-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb23-48"><a href="id_02_variable_reduction.html#cb23-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb23-49"><a href="id_02_variable_reduction.html#cb23-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb23-50"><a href="id_02_variable_reduction.html#cb23-50" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb23-51"><a href="id_02_variable_reduction.html#cb23-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Number of variables&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-52"><a href="id_02_variable_reduction.html#cb23-52" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;AIC&quot;</span>) <span class="sc">+</span></span>
+<span id="cb23-53"><a href="id_02_variable_reduction.html#cb23-53" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb23-54"><a href="id_02_variable_reduction.html#cb23-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-55"><a href="id_02_variable_reduction.html#cb23-55" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Maximum accuracy: &quot;</span>, <span class="fu">formatC</span>(acc_vec[acc_cutoff], <span class="at">format =</span> <span class="st">&quot;f&quot;</span>, <span class="at">digits =</span> <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb23-56"><a href="id_02_variable_reduction.html#cb23-56" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Accuracy at AIC cutoff: &quot;</span>, <span class="fu">formatC</span>(acc_vec[aic_cutoff], <span class="at">format =</span> <span class="st">&quot;f&quot;</span>, <span class="at">digits =</span> <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+</div>
+<div id="generating-train-test-splits-1" class="section level3 hasAnchor" number="2.5.4">
+<h3><span class="header-section-number">2.5.4</span> Generating train-test splits<a href="id_02_variable_reduction.html#generating-train-test-splits-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb24-1"><a href="id_02_variable_reduction.html#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb24-2"><a href="id_02_variable_reduction.html#cb24-2" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/cpp_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb24-3"><a href="id_02_variable_reduction.html#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb24-4"><a href="id_02_variable_reduction.html#cb24-4" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> cpp_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(cpp_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb24-5"><a href="id_02_variable_reduction.html#cb24-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="id_02_variable_reduction.html#cb24-6" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> aic_cutoff</span>
+<span id="cb24-7"><a href="id_02_variable_reduction.html#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_cpp_rf.RData&quot;</span>)</span>
+<span id="cb24-8"><a href="id_02_variable_reduction.html#cb24-8" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb24-9"><a href="id_02_variable_reduction.html#cb24-9" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)][<span class="dv">1</span><span class="sc">:</span>cutoff]</span>
+<span id="cb24-10"><a href="id_02_variable_reduction.html#cb24-10" aria-hidden="true" tabindex="-1"></a>cpp_data <span class="ot">&lt;-</span> cpp_data[, <span class="fu">colnames</span>(cpp_data) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">names</span>(var_imp), <span class="st">&quot;category&quot;</span>)]</span>
+<span id="cb24-11"><a href="id_02_variable_reduction.html#cb24-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-12"><a href="id_02_variable_reduction.html#cb24-12" aria-hidden="true" tabindex="-1"></a>outer_splits <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb24-13"><a href="id_02_variable_reduction.html#cb24-13" aria-hidden="true" tabindex="-1"></a>n_train <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">nrow</span>(cpp_data) <span class="sc">*</span> <span class="fl">0.9</span>)</span>
+<span id="cb24-14"><a href="id_02_variable_reduction.html#cb24-14" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>)</span>
+<span id="cb24-15"><a href="id_02_variable_reduction.html#cb24-15" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb24-16"><a href="id_02_variable_reduction.html#cb24-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># random shuffle</span></span>
+<span id="cb24-17"><a href="id_02_variable_reduction.html#cb24-17" aria-hidden="true" tabindex="-1"></a>  cpp_data_ <span class="ot">&lt;-</span> cpp_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(cpp_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb24-18"><a href="id_02_variable_reduction.html#cb24-18" aria-hidden="true" tabindex="-1"></a>  outer_train <span class="ot">&lt;-</span> cpp_data_[<span class="dv">1</span><span class="sc">:</span>n_train, ]</span>
+<span id="cb24-19"><a href="id_02_variable_reduction.html#cb24-19" aria-hidden="true" tabindex="-1"></a>  outer_test <span class="ot">&lt;-</span> cpp_data_[(n_train <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(cpp_data_), ]</span>
+<span id="cb24-20"><a href="id_02_variable_reduction.html#cb24-20" aria-hidden="true" tabindex="-1"></a>  outer_splits <span class="ot">&lt;-</span> <span class="fu">list.append</span>(outer_splits, <span class="fu">list</span>(<span class="at">train =</span> outer_train, <span class="at">test =</span> outer_test))</span>
+<span id="cb24-21"><a href="id_02_variable_reduction.html#cb24-21" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb24-22"><a href="id_02_variable_reduction.html#cb24-22" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(cpp_data, outer_splits, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_cpp_train_test_splits.RData&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="toxicity-classification" class="section level2 hasAnchor" number="2.6">
+<h2><span class="header-section-number">2.6</span> Toxicity (classification)<a href="id_02_variable_reduction.html#toxicity-classification" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="generating-ml-input-3" class="section level3 hasAnchor" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Generating ML input<a href="id_02_variable_reduction.html#generating-ml-input-3" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb25-1"><a href="id_02_variable_reduction.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">generate_ml_input</span>(</span>
+<span id="cb25-2"><a href="id_02_variable_reduction.html#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">fasta_file =</span> <span class="st">&quot;./other_data/toxicity.fasta&quot;</span>,</span>
+<span id="cb25-3"><a href="id_02_variable_reduction.html#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">label_file =</span> <span class="st">&quot;./other_data/tx_labels.csv&quot;</span>,</span>
+<span id="cb25-4"><a href="id_02_variable_reduction.html#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">output_file =</span> <span class="st">&quot;./data/tx_ml_input.csv&quot;</span></span>
+<span id="cb25-5"><a href="id_02_variable_reduction.html#cb25-5" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="variable-importance-2" class="section level3 hasAnchor" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Variable importance<a href="id_02_variable_reduction.html#variable-importance-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb26-1"><a href="id_02_variable_reduction.html#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb26-2"><a href="id_02_variable_reduction.html#cb26-2" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/tx_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb26-3"><a href="id_02_variable_reduction.html#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb26-4"><a href="id_02_variable_reduction.html#cb26-4" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> tx_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tx_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb26-5"><a href="id_02_variable_reduction.html#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># train random forest using ranger</span></span>
+<span id="cb26-6"><a href="id_02_variable_reduction.html#cb26-6" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb26-7"><a href="id_02_variable_reduction.html#cb26-7" aria-hidden="true" tabindex="-1"></a>predictor_variables <span class="ot">&lt;-</span> <span class="fu">subset</span>(tx_data, <span class="at">select =</span> <span class="sc">-</span>category)</span>
+<span id="cb26-8"><a href="id_02_variable_reduction.html#cb26-8" aria-hidden="true" tabindex="-1"></a>response_variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(tx_data<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;non-toxic&quot;</span>, <span class="st">&quot;toxic&quot;</span>))</span>
+<span id="cb26-9"><a href="id_02_variable_reduction.html#cb26-9" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb26-10"><a href="id_02_variable_reduction.html#cb26-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">sample.fraction =</span> <span class="fu">rep</span>(<span class="fl">0.5</span>, <span class="dv">2</span>),</span>
+<span id="cb26-11"><a href="id_02_variable_reduction.html#cb26-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> <span class="st">&quot;permutation&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">scale.permutation.importance =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>, <span class="at">keep.inbag =</span> <span class="cn">TRUE</span></span>
+<span id="cb26-12"><a href="id_02_variable_reduction.html#cb26-12" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb26-13"><a href="id_02_variable_reduction.html#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(rf, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_tx_rf.RData&quot;</span>)</span></code></pre></div>
+</div>
+<div id="variable-reduction-2" class="section level3 hasAnchor" number="2.6.3">
+<h3><span class="header-section-number">2.6.3</span> Variable reduction<a href="id_02_variable_reduction.html#variable-reduction-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb27-1"><a href="id_02_variable_reduction.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_tx_rf.RData&quot;</span>)</span>
+<span id="cb27-2"><a href="id_02_variable_reduction.html#cb27-2" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb27-3"><a href="id_02_variable_reduction.html#cb27-3" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)]</span>
+<span id="cb27-4"><a href="id_02_variable_reduction.html#cb27-4" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[var_imp <span class="sc">&gt;=</span> <span class="dv">0</span>]</span>
+<span id="cb27-5"><a href="id_02_variable_reduction.html#cb27-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-6"><a href="id_02_variable_reduction.html#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb27-7"><a href="id_02_variable_reduction.html#cb27-7" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/tx_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb27-8"><a href="id_02_variable_reduction.html#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb27-9"><a href="id_02_variable_reduction.html#cb27-9" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> tx_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tx_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb27-10"><a href="id_02_variable_reduction.html#cb27-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-11"><a href="id_02_variable_reduction.html#cb27-11" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="cb27-12"><a href="id_02_variable_reduction.html#cb27-12" aria-hidden="true" tabindex="-1"></a>var_subset_res <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb27-13"><a href="id_02_variable_reduction.html#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(var_imp)) {</span>
+<span id="cb27-14"><a href="id_02_variable_reduction.html#cb27-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(i, <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb27-15"><a href="id_02_variable_reduction.html#cb27-15" aria-hidden="true" tabindex="-1"></a>  predictor_variables <span class="ot">&lt;-</span> tx_data[, <span class="fu">colnames</span>(tx_data) <span class="sc">%in%</span> <span class="fu">names</span>(var_imp)[<span class="dv">1</span><span class="sc">:</span>i], drop <span class="ot">=</span> <span class="cn">FALSE</span>]</span>
+<span id="cb27-16"><a href="id_02_variable_reduction.html#cb27-16" aria-hidden="true" tabindex="-1"></a>  response_variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(tx_data<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;non-toxic&quot;</span>, <span class="st">&quot;toxic&quot;</span>))</span>
+<span id="cb27-17"><a href="id_02_variable_reduction.html#cb27-17" aria-hidden="true" tabindex="-1"></a>  rf <span class="ot">&lt;-</span> <span class="fu">ranger</span>(</span>
+<span id="cb27-18"><a href="id_02_variable_reduction.html#cb27-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">num.trees =</span> ntree, <span class="at">importance =</span> <span class="st">&quot;none&quot;</span>, <span class="at">verbose =</span> <span class="cn">TRUE</span>, <span class="at">seed =</span> <span class="dv">3</span>,</span>
+<span id="cb27-19"><a href="id_02_variable_reduction.html#cb27-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">probability =</span> <span class="cn">TRUE</span></span>
+<span id="cb27-20"><a href="id_02_variable_reduction.html#cb27-20" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb27-21"><a href="id_02_variable_reduction.html#cb27-21" aria-hidden="true" tabindex="-1"></a>  var_subset_res <span class="ot">&lt;-</span> <span class="fu">list.append</span>(var_subset_res, <span class="fu">list</span>(</span>
+<span id="cb27-22"><a href="id_02_variable_reduction.html#cb27-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">acc =</span> <span class="dv">1</span> <span class="sc">-</span> rf<span class="sc">$</span>prediction.error,</span>
+<span id="cb27-23"><a href="id_02_variable_reduction.html#cb27-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">aic =</span> <span class="fu">aic_clf</span>(</span>
+<span id="cb27-24"><a href="id_02_variable_reduction.html#cb27-24" aria-hidden="true" tabindex="-1"></a>      <span class="at">y_true =</span> response_variable,</span>
+<span id="cb27-25"><a href="id_02_variable_reduction.html#cb27-25" aria-hidden="true" tabindex="-1"></a>      <span class="at">y_pred =</span> rf<span class="sc">$</span>predictions,</span>
+<span id="cb27-26"><a href="id_02_variable_reduction.html#cb27-26" aria-hidden="true" tabindex="-1"></a>      <span class="at">k =</span> i</span>
+<span id="cb27-27"><a href="id_02_variable_reduction.html#cb27-27" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb27-28"><a href="id_02_variable_reduction.html#cb27-28" aria-hidden="true" tabindex="-1"></a>  ))</span>
+<span id="cb27-29"><a href="id_02_variable_reduction.html#cb27-29" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb27-30"><a href="id_02_variable_reduction.html#cb27-30" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(var_subset_res, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_tx_var_subset_res.RData&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb28-1"><a href="id_02_variable_reduction.html#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_tx_var_subset_res.RData&quot;</span>)</span>
+<span id="cb28-2"><a href="id_02_variable_reduction.html#cb28-2" aria-hidden="true" tabindex="-1"></a>acc_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>acc))</span>
+<span id="cb28-3"><a href="id_02_variable_reduction.html#cb28-3" aria-hidden="true" tabindex="-1"></a>aic_vec <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">lapply</span>(var_subset_res, <span class="cf">function</span>(x) x<span class="sc">$</span>aic))</span>
+<span id="cb28-4"><a href="id_02_variable_reduction.html#cb28-4" aria-hidden="true" tabindex="-1"></a>acc_cutoff <span class="ot">&lt;-</span> <span class="fu">which.max</span>(acc_vec)</span>
+<span id="cb28-5"><a href="id_02_variable_reduction.html#cb28-5" aria-hidden="true" tabindex="-1"></a>aic_cutoff <span class="ot">&lt;-</span> <span class="fu">which.min</span>(aic_vec)</span>
+<span id="cb28-6"><a href="id_02_variable_reduction.html#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="id_02_variable_reduction.html#cb28-7" aria-hidden="true" tabindex="-1"></a>p3_1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(acc_vec), <span class="at">y =</span> acc_vec), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb28-8"><a href="id_02_variable_reduction.html#cb28-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb28-9"><a href="id_02_variable_reduction.html#cb28-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> acc_cutoff, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-10"><a href="id_02_variable_reduction.html#cb28-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb28-11"><a href="id_02_variable_reduction.html#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">1</span>, acc_cutoff, <span class="dv">300</span>, <span class="dv">600</span>, <span class="dv">900</span>, <span class="dv">1076</span>),</span>
+<span id="cb28-12"><a href="id_02_variable_reduction.html#cb28-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;1&quot;</span>, <span class="st">&quot;148&quot;</span>, <span class="st">&quot;300&quot;</span>, <span class="st">&quot;600&quot;</span>, <span class="st">&quot;900&quot;</span>, <span class="st">&quot;1,076&quot;</span>)</span>
+<span id="cb28-13"><a href="id_02_variable_reduction.html#cb28-13" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-14"><a href="id_02_variable_reduction.html#cb28-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb28-15"><a href="id_02_variable_reduction.html#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="fl">0.91</span>, <span class="fl">0.92</span>, <span class="fl">0.93</span>, <span class="fl">0.94</span>, <span class="fl">0.95</span>, <span class="fl">0.96</span>),</span>
+<span id="cb28-16"><a href="id_02_variable_reduction.html#cb28-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;0.91&quot;</span>, <span class="st">&quot;0.92&quot;</span>, <span class="st">&quot;0.93&quot;</span>, <span class="st">&quot;0.94&quot;</span>, <span class="st">&quot;0.95&quot;</span>, <span class="st">&quot;0.96&quot;</span>)</span>
+<span id="cb28-17"><a href="id_02_variable_reduction.html#cb28-17" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-18"><a href="id_02_variable_reduction.html#cb28-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb28-19"><a href="id_02_variable_reduction.html#cb28-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-20"><a href="id_02_variable_reduction.html#cb28-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="sc">-</span><span class="dv">10</span>, <span class="dv">10</span>), <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb28-21"><a href="id_02_variable_reduction.html#cb28-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-22"><a href="id_02_variable_reduction.html#cb28-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-23"><a href="id_02_variable_reduction.html#cb28-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-24"><a href="id_02_variable_reduction.html#cb28-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-25"><a href="id_02_variable_reduction.html#cb28-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb28-26"><a href="id_02_variable_reduction.html#cb28-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb28-27"><a href="id_02_variable_reduction.html#cb28-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb28-28"><a href="id_02_variable_reduction.html#cb28-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb28-29"><a href="id_02_variable_reduction.html#cb28-29" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-30"><a href="id_02_variable_reduction.html#cb28-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-31"><a href="id_02_variable_reduction.html#cb28-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;Accuracy&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-32"><a href="id_02_variable_reduction.html#cb28-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;Toxicity&quot;</span>)</span>
+<span id="cb28-33"><a href="id_02_variable_reduction.html#cb28-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-34"><a href="id_02_variable_reduction.html#cb28-34" aria-hidden="true" tabindex="-1"></a>p3_2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> <span class="fu">data.frame</span>(<span class="at">x =</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(aic_vec), <span class="at">y =</span> aic_vec), <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb28-35"><a href="id_02_variable_reduction.html#cb28-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">alpha =</span> <span class="fl">0.3</span>, <span class="at">size =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb28-36"><a href="id_02_variable_reduction.html#cb28-36" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> aic_cutoff, <span class="at">colour =</span> <span class="st">&quot;red&quot;</span>, <span class="at">linetype =</span> <span class="st">&quot;dashed&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-37"><a href="id_02_variable_reduction.html#cb28-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(</span>
+<span id="cb28-38"><a href="id_02_variable_reduction.html#cb28-38" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(aic_cutoff, <span class="dv">300</span>, <span class="dv">600</span>, <span class="dv">900</span>, <span class="dv">1076</span>),</span>
+<span id="cb28-39"><a href="id_02_variable_reduction.html#cb28-39" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;56&quot;</span>, <span class="st">&quot;300&quot;</span>, <span class="st">&quot;600&quot;</span>, <span class="st">&quot;900&quot;</span>, <span class="st">&quot;1,076&quot;</span>)</span>
+<span id="cb28-40"><a href="id_02_variable_reduction.html#cb28-40" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-41"><a href="id_02_variable_reduction.html#cb28-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(</span>
+<span id="cb28-42"><a href="id_02_variable_reduction.html#cb28-42" aria-hidden="true" tabindex="-1"></a>    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2000</span>, <span class="dv">3000</span>, <span class="dv">4000</span>, <span class="dv">5000</span>, <span class="dv">6000</span>, <span class="dv">7000</span>),</span>
+<span id="cb28-43"><a href="id_02_variable_reduction.html#cb28-43" aria-hidden="true" tabindex="-1"></a>    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;2,000&quot;</span>, <span class="st">&quot;3,000&quot;</span>, <span class="st">&quot;4,000&quot;</span>, <span class="st">&quot;5,000&quot;</span>, <span class="st">&quot;6,000&quot;</span>, <span class="st">&quot;7,000&quot;</span>)</span>
+<span id="cb28-44"><a href="id_02_variable_reduction.html#cb28-44" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-45"><a href="id_02_variable_reduction.html#cb28-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb28-46"><a href="id_02_variable_reduction.html#cb28-46" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb28-47"><a href="id_02_variable_reduction.html#cb28-47" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> <span class="fu">unit</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">15</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>), <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb28-48"><a href="id_02_variable_reduction.html#cb28-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-49"><a href="id_02_variable_reduction.html#cb28-49" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-50"><a href="id_02_variable_reduction.html#cb28-50" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-51"><a href="id_02_variable_reduction.html#cb28-51" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb28-52"><a href="id_02_variable_reduction.html#cb28-52" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb28-53"><a href="id_02_variable_reduction.html#cb28-53" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>),</span>
+<span id="cb28-54"><a href="id_02_variable_reduction.html#cb28-54" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb28-55"><a href="id_02_variable_reduction.html#cb28-55" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)</span>
+<span id="cb28-56"><a href="id_02_variable_reduction.html#cb28-56" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb28-57"><a href="id_02_variable_reduction.html#cb28-57" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;Number of variables&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-58"><a href="id_02_variable_reduction.html#cb28-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">&quot;AIC&quot;</span>) <span class="sc">+</span></span>
+<span id="cb28-59"><a href="id_02_variable_reduction.html#cb28-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>)</span>
+<span id="cb28-60"><a href="id_02_variable_reduction.html#cb28-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-61"><a href="id_02_variable_reduction.html#cb28-61" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Maximum accuracy: &quot;</span>, <span class="fu">formatC</span>(acc_vec[acc_cutoff], <span class="at">format =</span> <span class="st">&quot;f&quot;</span>, <span class="at">digits =</span> <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span>
+<span id="cb28-62"><a href="id_02_variable_reduction.html#cb28-62" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">&quot;Accuracy at AIC cutoff: &quot;</span>, <span class="fu">formatC</span>(acc_vec[aic_cutoff], <span class="at">format =</span> <span class="st">&quot;f&quot;</span>, <span class="at">digits =</span> <span class="dv">3</span>), <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span>))</span></code></pre></div>
+</div>
+<div id="generating-train-test-splits-2" class="section level3 hasAnchor" number="2.6.4">
+<h3><span class="header-section-number">2.6.4</span> Generating train-test splits<a href="id_02_variable_reduction.html#generating-train-test-splits-2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb29-1"><a href="id_02_variable_reduction.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb29-2"><a href="id_02_variable_reduction.html#cb29-2" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/tx_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb29-3"><a href="id_02_variable_reduction.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="co"># random shuffle</span></span>
+<span id="cb29-4"><a href="id_02_variable_reduction.html#cb29-4" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> tx_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tx_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb29-5"><a href="id_02_variable_reduction.html#cb29-5" aria-hidden="true" tabindex="-1"></a><span class="co"># convert category so that positive class represents non-toxic</span></span>
+<span id="cb29-6"><a href="id_02_variable_reduction.html#cb29-6" aria-hidden="true" tabindex="-1"></a><span class="co"># for evaluation metrics that focus on true positives more than</span></span>
+<span id="cb29-7"><a href="id_02_variable_reduction.html#cb29-7" aria-hidden="true" tabindex="-1"></a><span class="co"># true negatives</span></span>
+<span id="cb29-8"><a href="id_02_variable_reduction.html#cb29-8" aria-hidden="true" tabindex="-1"></a>tx_data<span class="sc">$</span>category <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">sapply</span>(tx_data<span class="sc">$</span>category, <span class="cf">function</span>(x) <span class="cf">if</span> (x <span class="sc">==</span> <span class="st">&quot;non-toxic&quot;</span>) <span class="dv">1</span> <span class="cf">else</span> <span class="dv">0</span>))</span>
+<span id="cb29-9"><a href="id_02_variable_reduction.html#cb29-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-10"><a href="id_02_variable_reduction.html#cb29-10" aria-hidden="true" tabindex="-1"></a>cutoff <span class="ot">&lt;-</span> aic_cutoff</span>
+<span id="cb29-11"><a href="id_02_variable_reduction.html#cb29-11" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_tx_rf.RData&quot;</span>)</span>
+<span id="cb29-12"><a href="id_02_variable_reduction.html#cb29-12" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> ranger<span class="sc">::</span><span class="fu">importance</span>(rf)</span>
+<span id="cb29-13"><a href="id_02_variable_reduction.html#cb29-13" aria-hidden="true" tabindex="-1"></a>var_imp <span class="ot">&lt;-</span> var_imp[<span class="fu">order</span>(<span class="sc">-</span>var_imp)][<span class="dv">1</span><span class="sc">:</span>cutoff]</span>
+<span id="cb29-14"><a href="id_02_variable_reduction.html#cb29-14" aria-hidden="true" tabindex="-1"></a>tx_data <span class="ot">&lt;-</span> tx_data[, <span class="fu">colnames</span>(tx_data) <span class="sc">%in%</span> <span class="fu">c</span>(<span class="fu">names</span>(var_imp), <span class="st">&quot;category&quot;</span>)]</span>
+<span id="cb29-15"><a href="id_02_variable_reduction.html#cb29-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb29-16"><a href="id_02_variable_reduction.html#cb29-16" aria-hidden="true" tabindex="-1"></a>outer_splits <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb29-17"><a href="id_02_variable_reduction.html#cb29-17" aria-hidden="true" tabindex="-1"></a>n_train <span class="ot">&lt;-</span> <span class="fu">round</span>(<span class="fu">nrow</span>(tx_data) <span class="sc">*</span> <span class="fl">0.9</span>)</span>
+<span id="cb29-18"><a href="id_02_variable_reduction.html#cb29-18" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>)</span>
+<span id="cb29-19"><a href="id_02_variable_reduction.html#cb29-19" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
+<span id="cb29-20"><a href="id_02_variable_reduction.html#cb29-20" aria-hidden="true" tabindex="-1"></a>  <span class="co"># random shuffle</span></span>
+<span id="cb29-21"><a href="id_02_variable_reduction.html#cb29-21" aria-hidden="true" tabindex="-1"></a>  tx_data_ <span class="ot">&lt;-</span> tx_data[<span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="fu">nrow</span>(tx_data), <span class="at">replace =</span> <span class="cn">FALSE</span>), ]</span>
+<span id="cb29-22"><a href="id_02_variable_reduction.html#cb29-22" aria-hidden="true" tabindex="-1"></a>  outer_train <span class="ot">&lt;-</span> tx_data_[<span class="dv">1</span><span class="sc">:</span>n_train, ]</span>
+<span id="cb29-23"><a href="id_02_variable_reduction.html#cb29-23" aria-hidden="true" tabindex="-1"></a>  outer_test <span class="ot">&lt;-</span> tx_data_[(n_train <span class="sc">+</span> <span class="dv">1</span>)<span class="sc">:</span><span class="fu">nrow</span>(tx_data_), ]</span>
+<span id="cb29-24"><a href="id_02_variable_reduction.html#cb29-24" aria-hidden="true" tabindex="-1"></a>  outer_splits <span class="ot">&lt;-</span> <span class="fu">list.append</span>(outer_splits, <span class="fu">list</span>(<span class="at">train =</span> outer_train, <span class="at">test =</span> outer_test))</span>
+<span id="cb29-25"><a href="id_02_variable_reduction.html#cb29-25" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb29-26"><a href="id_02_variable_reduction.html#cb29-26" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(tx_data, outer_splits, <span class="at">file =</span> <span class="st">&quot;./rdata/var_reduct_tx_train_test_splits.RData&quot;</span>)</span></code></pre></div>
+</div>
+</div>
+<div id="plotting" class="section level2 hasAnchor" number="2.7">
+<h2><span class="header-section-number">2.7</span> Plotting<a href="id_02_variable_reduction.html#plotting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb30-1"><a href="id_02_variable_reduction.html#cb30-1" aria-hidden="true" tabindex="-1"></a>p_combined <span class="ot">&lt;-</span> <span class="fu">plot_grid</span>(p1_1, p2_1, p3_1,</span>
+<span id="cb30-2"><a href="id_02_variable_reduction.html#cb30-2" aria-hidden="true" tabindex="-1"></a>  p1_2, p2_2, p3_2,</span>
+<span id="cb30-3"><a href="id_02_variable_reduction.html#cb30-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">nrow =</span> <span class="dv">2</span>,</span>
+<span id="cb30-4"><a href="id_02_variable_reduction.html#cb30-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>, <span class="st">&quot;&quot;</span>),</span>
+<span id="cb30-5"><a href="id_02_variable_reduction.html#cb30-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">align =</span> <span class="st">&quot;v&quot;</span></span>
+<span id="cb30-6"><a href="id_02_variable_reduction.html#cb30-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb30-7"><a href="id_02_variable_reduction.html#cb30-7" aria-hidden="true" tabindex="-1"></a>p_combined</span></code></pre></div>
+<p><img src="figures/Supplementary%20Fig%203%20var%20reduct.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb31-1"><a href="id_02_variable_reduction.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.2.2 (2022-10-31)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Big Sur ... 10.16
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] scales_1.2.1   cowplot_1.1.1  ggplot2_3.3.6  ranger_0.14.1  rlist_0.4.6.2 
+## [6] protr_1.6-2    Peptides_2.4.4
+## 
+## loaded via a namespace (and not attached):
+##  [1] styler_1.8.0      tidyselect_1.1.2  xfun_0.32         bslib_0.4.0      
+##  [5] purrr_0.3.4       lattice_0.20-45   colorspace_2.0-3  vctrs_0.4.1      
+##  [9] generics_0.1.3    htmltools_0.5.3   yaml_2.3.5        utf8_1.2.2       
+## [13] rlang_1.0.4       R.oo_1.25.0       jquerylib_0.1.4   pillar_1.8.1     
+## [17] withr_2.5.0       glue_1.6.2        DBI_1.1.3         R.utils_2.12.0   
+## [21] R.cache_0.16.0    lifecycle_1.0.1   stringr_1.4.1     munsell_0.5.0    
+## [25] gtable_0.3.0      R.methodsS3_1.8.2 codetools_0.2-18  evaluate_0.16    
+## [29] knitr_1.40        fastmap_1.1.0     fansi_1.0.3       highr_0.9        
+## [33] Rcpp_1.0.9        cachem_1.0.6      jsonlite_1.8.0    digest_0.6.29    
+## [37] stringi_1.7.8     bookdown_0.28     dplyr_1.0.9       grid_4.2.2       
+## [41] cli_3.3.0         tools_4.2.2       magrittr_2.0.3    sass_0.4.2       
+## [45] tibble_3.1.8      pkgconfig_2.0.3   Matrix_1.5-1      data.table_1.14.2
+## [49] assertthat_0.2.1  rmarkdown_2.16    rstudioapi_0.14   R6_2.5.1         
+## [53] compiler_4.2.2</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="id_01_pilot_peptide_array.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="id_03_model_training.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["main_notebook.pdf", "PDF"]],
+"search": false,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

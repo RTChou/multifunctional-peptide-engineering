@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Multifunctional peptide engineering</title>
+  <meta name="description" content="Multifunctional peptide engineering" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Multifunctional peptide engineering" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Multifunctional peptide engineering" />
+  
+  
+  
+
+<meta name="author" content="Renee Ti Chou and Henry T. Hsueh" />
+
+
+<meta name="date" content="2023-02-06" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+
+<link rel="next" href="id_02_variable_reduction.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.24/datatables.js"></script>
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.11.3/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.11.3/js/jquery.dataTables.min.js"></script>
+<link href="libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet" />
+<script src="libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+<script src="libs/plotly-binding-4.10.0/plotly.js"></script>
+<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/plotly-htmlwidgets-css-2.5.1/plotly-htmlwidgets.css" rel="stylesheet" />
+<script src="libs/plotly-main-2.5.1/plotly-latest.min.js"></script>
+<!-- https://stackoverflow.com/questions/45360998/code-folding-in-bookdown -->
+<script type="text/javascript" src="js/transition.js"></script>
+<script type="text/javascript" src="js/dropdown.js"></script>
+<script>
+var str = '<div class="btn-group pull-right" style="position: fixed; right: 50px; top: 10px; z-index: 200"><button type="button" class="btn btn-default btn-xs dropdown-toggle" id="allCodeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" data-_extension-text-contrast=""><span>Code</span> <span class="caret"></span></button><ul class="dropdown-menu" style="min-width: 50px;"><li><a id="rmd-show-all-code" href="#">Show All Code</a></li><li><a id="rmd-hide-all-code" href="#">Hide All Code</a></li></ul></div>';
+document.write(str);
+</script>
+<script>
+$(document).ready(function () {
+  window.initializeCodeFolding("show" === "hide");
+});
+</script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./"><i>Multifunctional peptide engineering</i></a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a>
+<ul>
+<li class="chapter" data-level="0.1" data-path="preface.html"><a href="preface.html#overview"><i class="fa fa-check"></i><b>0.1</b> Overview</a></li>
+<li class="chapter" data-level="0.2" data-path="preface.html"><a href="preface.html#generating-ml-input"><i class="fa fa-check"></i><b>0.2</b> Generating ML input</a></li>
+<li class="chapter" data-level="0.3" data-path="preface.html"><a href="preface.html#training-initial-rf-model"><i class="fa fa-check"></i><b>0.3</b> Training initial RF model</a></li>
+<li class="chapter" data-level="0.4" data-path="preface.html"><a href="preface.html#melanin-binding-variable-importance"><i class="fa fa-check"></i><b>0.4</b> Melanin binding variable importance</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html"><i class="fa fa-check"></i><b>1</b> Variable reduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#methods"><i class="fa fa-check"></i><b>1.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#regression"><i class="fa fa-check"></i><b>1.1.1</b> Regression</a></li>
+<li class="chapter" data-level="1.1.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#classification"><i class="fa fa-check"></i><b>1.1.2</b> Classification</a>
+<ul>
+<li class="chapter" data-level="1.1.2.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#extension-to-multi-class-classification"><i class="fa fa-check"></i><b>1.1.2.1</b> Extension to multi-class classification</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#ml-input-generating-function"><i class="fa fa-check"></i><b>1.2</b> ML input generating function</a></li>
+<li class="chapter" data-level="1.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#aic-functions"><i class="fa fa-check"></i><b>1.3</b> AIC functions</a></li>
+<li class="chapter" data-level="1.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#melanin-binding-regression"><i class="fa fa-check"></i><b>1.4</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="1.4.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-1"><i class="fa fa-check"></i><b>1.4.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="1.4.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance"><i class="fa fa-check"></i><b>1.4.2</b> Variable importance</a></li>
+<li class="chapter" data-level="1.4.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction"><i class="fa fa-check"></i><b>1.4.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="1.4.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits"><i class="fa fa-check"></i><b>1.4.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#cell-penetration-classification"><i class="fa fa-check"></i><b>1.5</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-2"><i class="fa fa-check"></i><b>1.5.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="1.5.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance-1"><i class="fa fa-check"></i><b>1.5.2</b> Variable importance</a></li>
+<li class="chapter" data-level="1.5.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction-1"><i class="fa fa-check"></i><b>1.5.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="1.5.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits-1"><i class="fa fa-check"></i><b>1.5.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#toxicity-classification"><i class="fa fa-check"></i><b>1.6</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-ml-input-3"><i class="fa fa-check"></i><b>1.6.1</b> Generating ML input</a></li>
+<li class="chapter" data-level="1.6.2" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-importance-2"><i class="fa fa-check"></i><b>1.6.2</b> Variable importance</a></li>
+<li class="chapter" data-level="1.6.3" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#variable-reduction-2"><i class="fa fa-check"></i><b>1.6.3</b> Variable reduction</a></li>
+<li class="chapter" data-level="1.6.4" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#generating-train-test-splits-2"><i class="fa fa-check"></i><b>1.6.4</b> Generating train-test splits</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="id_02_variable_reduction.html"><a href="id_02_variable_reduction.html#plotting"><i class="fa fa-check"></i><b>1.7</b> Plotting</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="id_03_model_training.html"><a href="id_03_model_training.html"><i class="fa fa-check"></i><b>2</b> Model training</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#overview-1"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#general-codefunctions"><i class="fa fa-check"></i><b>2.2</b> General code/functions</a></li>
+<li class="chapter" data-level="2.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#melanin-binding-regression-1"><i class="fa fa-check"></i><b>2.3</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training"><i class="fa fa-check"></i><b>2.3.1</b> Model training</a></li>
+<li class="chapter" data-level="2.3.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation"><i class="fa fa-check"></i><b>2.3.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="2.3.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set"><i class="fa fa-check"></i><b>2.3.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="2.3.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation"><i class="fa fa-check"></i><b>2.3.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="2.3.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection"><i class="fa fa-check"></i><b>2.3.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="2.3.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1"><i class="fa fa-check"></i><b>2.3.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="2.3.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2"><i class="fa fa-check"></i><b>2.3.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="2.3.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3"><i class="fa fa-check"></i><b>2.3.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="2.3.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4"><i class="fa fa-check"></i><b>2.3.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="2.3.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5"><i class="fa fa-check"></i><b>2.3.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="2.3.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6"><i class="fa fa-check"></i><b>2.3.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="2.3.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7"><i class="fa fa-check"></i><b>2.3.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="2.3.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8"><i class="fa fa-check"></i><b>2.3.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="2.3.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9"><i class="fa fa-check"></i><b>2.3.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="2.3.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10"><i class="fa fa-check"></i><b>2.3.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation"><i class="fa fa-check"></i><b>2.3.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="2.3.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection"><i class="fa fa-check"></i><b>2.3.7</b> Final model selection</a></li>
+<li class="chapter" data-level="2.3.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl"><i class="fa fa-check"></i><b>2.3.8</b> Final reduced SL</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cell-penetration-classification-1"><i class="fa fa-check"></i><b>2.4</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training-1"><i class="fa fa-check"></i><b>2.4.1</b> Model training</a></li>
+<li class="chapter" data-level="2.4.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation-1"><i class="fa fa-check"></i><b>2.4.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="2.4.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set-1"><i class="fa fa-check"></i><b>2.4.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="2.4.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation-1"><i class="fa fa-check"></i><b>2.4.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="2.4.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection-1"><i class="fa fa-check"></i><b>2.4.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="2.4.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1-1"><i class="fa fa-check"></i><b>2.4.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="2.4.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2-1"><i class="fa fa-check"></i><b>2.4.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="2.4.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3-1"><i class="fa fa-check"></i><b>2.4.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="2.4.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4-1"><i class="fa fa-check"></i><b>2.4.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="2.4.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5-1"><i class="fa fa-check"></i><b>2.4.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="2.4.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6-1"><i class="fa fa-check"></i><b>2.4.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="2.4.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7-1"><i class="fa fa-check"></i><b>2.4.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="2.4.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8-1"><i class="fa fa-check"></i><b>2.4.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="2.4.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9-1"><i class="fa fa-check"></i><b>2.4.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="2.4.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10-1"><i class="fa fa-check"></i><b>2.4.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation-1"><i class="fa fa-check"></i><b>2.4.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="2.4.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection-1"><i class="fa fa-check"></i><b>2.4.7</b> Final model selection</a></li>
+<li class="chapter" data-level="2.4.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl-1"><i class="fa fa-check"></i><b>2.4.8</b> Final reduced SL</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#toxicity-classification-1"><i class="fa fa-check"></i><b>2.5</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="2.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-training-2"><i class="fa fa-check"></i><b>2.5.1</b> Model training</a></li>
+<li class="chapter" data-level="2.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-cross-validation-2"><i class="fa fa-check"></i><b>2.5.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="2.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#training-on-whole-data-set-2"><i class="fa fa-check"></i><b>2.5.3</b> Training on whole data set</a></li>
+<li class="chapter" data-level="2.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#model-evaluation-2"><i class="fa fa-check"></i><b>2.5.4</b> Model evaluation</a></li>
+<li class="chapter" data-level="2.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#inner-loop-model-selection-2"><i class="fa fa-check"></i><b>2.5.5</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="2.5.5.1" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-1-2"><i class="fa fa-check"></i><b>2.5.5.1</b> CV 1</a></li>
+<li class="chapter" data-level="2.5.5.2" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-2-2"><i class="fa fa-check"></i><b>2.5.5.2</b> CV 2</a></li>
+<li class="chapter" data-level="2.5.5.3" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-3-2"><i class="fa fa-check"></i><b>2.5.5.3</b> CV 3</a></li>
+<li class="chapter" data-level="2.5.5.4" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-4-2"><i class="fa fa-check"></i><b>2.5.5.4</b> CV 4</a></li>
+<li class="chapter" data-level="2.5.5.5" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-5-2"><i class="fa fa-check"></i><b>2.5.5.5</b> CV 5</a></li>
+<li class="chapter" data-level="2.5.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-6-2"><i class="fa fa-check"></i><b>2.5.5.6</b> CV 6</a></li>
+<li class="chapter" data-level="2.5.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-7-2"><i class="fa fa-check"></i><b>2.5.5.7</b> CV 7</a></li>
+<li class="chapter" data-level="2.5.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-8-2"><i class="fa fa-check"></i><b>2.5.5.8</b> CV 8</a></li>
+<li class="chapter" data-level="2.5.5.9" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-9-2"><i class="fa fa-check"></i><b>2.5.5.9</b> CV 9</a></li>
+<li class="chapter" data-level="2.5.5.10" data-path="id_03_model_training.html"><a href="id_03_model_training.html#cv-10-2"><i class="fa fa-check"></i><b>2.5.5.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5.6" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-evaluation-2"><i class="fa fa-check"></i><b>2.5.6</b> Final evaluation</a></li>
+<li class="chapter" data-level="2.5.7" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-model-selection-2"><i class="fa fa-check"></i><b>2.5.7</b> Final model selection</a></li>
+<li class="chapter" data-level="2.5.8" data-path="id_03_model_training.html"><a href="id_03_model_training.html#final-reduced-sl-2"><i class="fa fa-check"></i><b>2.5.8</b> Final reduced SL</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html"><i class="fa fa-check"></i><b>3</b> Model validation and interpretation</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#model-validation"><i class="fa fa-check"></i><b>3.1</b> Model validation</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melaning-binding"><i class="fa fa-check"></i><b>3.1.1</b> Melaning binding</a></li>
+<li class="chapter" data-level="3.1.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding-and-cell-penetration"><i class="fa fa-check"></i><b>3.1.2</b> Melanin binding and cell-penetration</a></li>
+<li class="chapter" data-level="3.1.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-induced-cells"><i class="fa fa-check"></i><b>3.1.3</b> Melanin-induced cells</a></li>
+<li class="chapter" data-level="3.1.4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#non-melanin-induced-cells"><i class="fa fa-check"></i><b>3.1.4</b> Non-melanin induced cells</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#overall-model-interpretation"><i class="fa fa-check"></i><b>3.2</b> Overall model interpretation</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding-regression-2"><i class="fa fa-check"></i><b>3.2.1</b> Melanin binding (regression)</a></li>
+<li class="chapter" data-level="3.2.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#cell-penetration-classification-2"><i class="fa fa-check"></i><b>3.2.2</b> Cell-penetration (classification)</a></li>
+<li class="chapter" data-level="3.2.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#toxicity-classification-2"><i class="fa fa-check"></i><b>3.2.3</b> Toxicity (classification)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#multifunctional-peptide-selection"><i class="fa fa-check"></i><b>3.3</b> Multifunctional peptide selection</a></li>
+<li class="chapter" data-level="3.4" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#explanation-of-hr97-predictions"><i class="fa fa-check"></i><b>3.4</b> Explanation of HR97 predictions</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#melanin-binding"><i class="fa fa-check"></i><b>3.4.1</b> Melanin binding</a></li>
+<li class="chapter" data-level="3.4.2" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#cell-penetration"><i class="fa fa-check"></i><b>3.4.2</b> Cell-penetration</a></li>
+<li class="chapter" data-level="3.4.3" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#toxicity"><i class="fa fa-check"></i><b>3.4.3</b> Toxicity</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="id_04_model_validation_and_interpretation.html"><a href="id_04_model_validation_and_interpretation.html#peptide-design-space-visualization"><i class="fa fa-check"></i><b>3.5</b> Peptide design space visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html"><i class="fa fa-check"></i><b>4</b> Adversarial computational control</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#general-codefunctions-1"><i class="fa fa-check"></i><b>4.1</b> General code/functions</a></li>
+<li class="chapter" data-level="4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#melanin-binding-regression-3"><i class="fa fa-check"></i><b>4.2</b> Melanin binding (regression)</a>
+<ul>
+<li class="chapter" data-level="4.2.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-3"><i class="fa fa-check"></i><b>4.2.1</b> Model training</a></li>
+<li class="chapter" data-level="4.2.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-3"><i class="fa fa-check"></i><b>4.2.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="4.2.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-3"><i class="fa fa-check"></i><b>4.2.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="4.2.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-3"><i class="fa fa-check"></i><b>4.2.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="4.2.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-3"><i class="fa fa-check"></i><b>4.2.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="4.2.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-3"><i class="fa fa-check"></i><b>4.2.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="4.2.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-3"><i class="fa fa-check"></i><b>4.2.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="4.2.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-3"><i class="fa fa-check"></i><b>4.2.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="4.2.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-3"><i class="fa fa-check"></i><b>4.2.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="4.2.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-3"><i class="fa fa-check"></i><b>4.2.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="4.2.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-3"><i class="fa fa-check"></i><b>4.2.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="4.2.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-3"><i class="fa fa-check"></i><b>4.2.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="4.2.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-3"><i class="fa fa-check"></i><b>4.2.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="4.2.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-3"><i class="fa fa-check"></i><b>4.2.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-3"><i class="fa fa-check"></i><b>4.2.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cell-penetration-classification-3"><i class="fa fa-check"></i><b>4.3</b> Cell-penetration (classification)</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-4"><i class="fa fa-check"></i><b>4.3.1</b> Model training</a></li>
+<li class="chapter" data-level="4.3.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-4"><i class="fa fa-check"></i><b>4.3.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="4.3.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-4"><i class="fa fa-check"></i><b>4.3.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="4.3.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-4"><i class="fa fa-check"></i><b>4.3.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="4.3.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-4"><i class="fa fa-check"></i><b>4.3.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="4.3.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-4"><i class="fa fa-check"></i><b>4.3.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="4.3.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-4"><i class="fa fa-check"></i><b>4.3.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="4.3.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-4"><i class="fa fa-check"></i><b>4.3.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="4.3.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-4"><i class="fa fa-check"></i><b>4.3.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="4.3.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-4"><i class="fa fa-check"></i><b>4.3.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="4.3.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-4"><i class="fa fa-check"></i><b>4.3.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="4.3.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-4"><i class="fa fa-check"></i><b>4.3.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="4.3.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-4"><i class="fa fa-check"></i><b>4.3.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="4.3.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-4"><i class="fa fa-check"></i><b>4.3.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-4"><i class="fa fa-check"></i><b>4.3.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#toxicity-classification-3"><i class="fa fa-check"></i><b>4.4</b> Toxicity (classification)</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-training-5"><i class="fa fa-check"></i><b>4.4.1</b> Model training</a></li>
+<li class="chapter" data-level="4.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-cross-validation-5"><i class="fa fa-check"></i><b>4.4.2</b> Inner cross-validation</a></li>
+<li class="chapter" data-level="4.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#model-evaluation-5"><i class="fa fa-check"></i><b>4.4.3</b> Model evaluation</a></li>
+<li class="chapter" data-level="4.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#inner-loop-model-selection-5"><i class="fa fa-check"></i><b>4.4.4</b> Inner loop model selection</a>
+<ul>
+<li class="chapter" data-level="4.4.4.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-1-5"><i class="fa fa-check"></i><b>4.4.4.1</b> CV 1</a></li>
+<li class="chapter" data-level="4.4.4.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-2-5"><i class="fa fa-check"></i><b>4.4.4.2</b> CV 2</a></li>
+<li class="chapter" data-level="4.4.4.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-3-5"><i class="fa fa-check"></i><b>4.4.4.3</b> CV 3</a></li>
+<li class="chapter" data-level="4.4.4.4" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-4-5"><i class="fa fa-check"></i><b>4.4.4.4</b> CV 4</a></li>
+<li class="chapter" data-level="4.4.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-5-5"><i class="fa fa-check"></i><b>4.4.4.5</b> CV 5</a></li>
+<li class="chapter" data-level="4.4.4.6" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-6-5"><i class="fa fa-check"></i><b>4.4.4.6</b> CV 6</a></li>
+<li class="chapter" data-level="4.4.4.7" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-7-5"><i class="fa fa-check"></i><b>4.4.4.7</b> CV 7</a></li>
+<li class="chapter" data-level="4.4.4.8" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-8-5"><i class="fa fa-check"></i><b>4.4.4.8</b> CV 8</a></li>
+<li class="chapter" data-level="4.4.4.9" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-9-5"><i class="fa fa-check"></i><b>4.4.4.9</b> CV 9</a></li>
+<li class="chapter" data-level="4.4.4.10" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cv-10-5"><i class="fa fa-check"></i><b>4.4.4.10</b> CV 10</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#final-evaluation-5"><i class="fa fa-check"></i><b>4.4.5</b> Final evaluation</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#overall-model-interpretation-1"><i class="fa fa-check"></i><b>4.5</b> Overall model interpretation</a>
+<ul>
+<li class="chapter" data-level="4.5.1" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#melanin-binding-regression-4"><i class="fa fa-check"></i><b>4.5.1</b> Melanin binding (regression)</a></li>
+<li class="chapter" data-level="4.5.2" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#cell-penetration-classification-4"><i class="fa fa-check"></i><b>4.5.2</b> Cell-penetration (classification)</a></li>
+<li class="chapter" data-level="4.5.3" data-path="id_05_adversarial_computational_control.html"><a href="id_05_adversarial_computational_control.html#toxicity-classification-4"><i class="fa fa-check"></i><b>4.5.3</b> Toxicity (classification)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html"><i class="fa fa-check"></i><b>5</b> Small data set demo</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#setup"><i class="fa fa-check"></i><b>5.1</b> Setup</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#load-libraries"><i class="fa fa-check"></i><b>5.1.1</b> Load libraries</a></li>
+<li class="chapter" data-level="5.1.2" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#aic-functions-1"><i class="fa fa-check"></i><b>5.1.2</b> AIC functions</a></li>
+<li class="chapter" data-level="5.1.3" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#model-parameters"><i class="fa fa-check"></i><b>5.1.3</b> Model parameters</a></li>
+</ul></li>
+<li class="chapter" data-level="5.2" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#variable-reduction-3"><i class="fa fa-check"></i><b>5.2</b> Variable reduction</a></li>
+<li class="chapter" data-level="5.3" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#model-training-6"><i class="fa fa-check"></i><b>5.3</b> Model training</a></li>
+<li class="chapter" data-level="5.4" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#run-pipeline"><i class="fa fa-check"></i><b>5.4</b> Run pipeline</a></li>
+<li class="chapter" data-level="5.5" data-path="id_06_small_data_set_demo.html"><a href="id_06_small_data_set_demo.html#session-info"><i class="fa fa-check"></i><b>5.5</b> Session info</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Multifunctional peptide engineering</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Multifunctional peptide engineering</h1>
+<p class="author"><em>Renee Ti Chou and Henry T. Hsueh</em></p>
+<p class="date"><em>2023-02-06</em></p>
+</div>
+<div id="preface" class="section level1 unnumbered hasAnchor">
+<h1>Preface<a href="preface.html#preface" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>The research notebook contains the code of the machine learning algorithms used to generate the results in the paper “<em>Machine learning-driven multifunctional peptide engineering for sustained ocular drug delivery.</em>” The research involves a super learner-based methodology to improve multifunctional peptide engineering. The aim is to impart high melanin binding, high cell-penetration, and low cytotoxicity to ocular drugs through peptide-drug conjugation, with the ultimate goal of enhancing the sustained delivery of the drug to maintain the therapeutic level in the eye for a prolonged period.</p>
+<p><strong>Citation:</strong></p>
+<p>Chou RT<em>, et al.</em> Supplementary materials for machine learning-driven multifunctional peptide engineering for sustained ocular drug delivery. <a href="https://doi.org/10.13016/0jck-hnnv">https://doi.org/10.13016/0jck-hnnv</a>, (2023).</p>
+<pre><code>@misc{https://doi.org/10.13016/0jck-hnnv,
+  doi = {10.13016/0JCK-HNNV},
+  url = {https://drum.lib.umd.edu/handle/1903/29529},
+  author = {Chou,  Renee Ti and Hsueh,  Henry T. and Rai,  Usha and Liyanage,  Wathsala and Kim,  Yoo Chun and Appell,  Matthew B. and Pejavar,  Jahnavi and Leo,  Kirby T. and Davison,  Charlotte and Kolodziejski,  Patricia and Mozzer,  Ann and Kwon,  HyeYoung and Sista,  Maanasa and Anders,  Nicole M. and Hemingway,  Avelina and Rompicharla,  Sri Vishnu Kiran and Edwards,  Malia and Pitha,  Ian and Hanes,  Justin and Cummings,  Michael P. and Ensign,  Laura M.},
+  keywords = {machine learning,  drug delivery},
+  language = {en},
+  title = {Supplementary materials for machine learning-driven multifunctional peptide engineering for sustained ocular drug delivery},
+  publisher = {Digital Repository at the University of Maryland},
+  year = {2023}
+}
+--- 
+
+&lt;!--chapter:end:index.Rmd--&gt;
+
+
+# Melanin binding pilot peptide array {#01_pilot_peptide_array}
+
+
+
+
+```{.r .fold-hide}
+library(seqinr)
+library(Peptides)
+library(stringr)
+library(protr)
+library(plyr)
+library(randomForest)
+library(ggplot2)</code></pre>
+<div id="overview" class="section level2 hasAnchor" number="0.1">
+<h2><span class="header-section-number">0.1</span> Overview<a href="preface.html#overview" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="figures/mb_pilot_overview.png" width="100%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="generating-ml-input" class="section level2 hasAnchor" number="0.2">
+<h2><span class="header-section-number">0.2</span> Generating ML input<a href="preface.html#generating-ml-input" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb2-1"><a href="preface.html#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------</span></span>
+<span id="cb2-2"><a href="preface.html#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Peptides_2.4.4</span></span>
+<span id="cb2-3"><a href="preface.html#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># --------------</span></span>
+<span id="cb2-4"><a href="preface.html#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read in fasta file</span></span>
+<span id="cb2-5"><a href="preface.html#cb2-5" aria-hidden="true" tabindex="-1"></a>peptides <span class="ot">&lt;-</span> <span class="fu">read.fasta</span>(<span class="st">&quot;./other_data/mb_pilot_peptide_array.fasta&quot;</span>, <span class="at">seqtype =</span> <span class="st">&quot;AA&quot;</span>, <span class="at">as.string =</span> <span class="cn">TRUE</span>, <span class="at">set.attributes =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb2-6"><a href="preface.html#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Molecular weight</span></span>
+<span id="cb2-7"><a href="preface.html#cb2-7" aria-hidden="true" tabindex="-1"></a>weights <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">mw</span>(x, <span class="at">monoisotopic =</span> <span class="cn">FALSE</span>)))</span>
+<span id="cb2-8"><a href="preface.html#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(weights) <span class="ot">&lt;-</span> <span class="st">&quot;weight&quot;</span></span>
+<span id="cb2-9"><a href="preface.html#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Amino acid composition</span></span>
+<span id="cb2-10"><a href="preface.html#cb2-10" aria-hidden="true" tabindex="-1"></a>aa.comp <span class="ot">&lt;-</span> <span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">aaComp</span>(x))</span>
+<span id="cb2-11"><a href="preface.html#cb2-11" aria-hidden="true" tabindex="-1"></a>aa.comp.matrix <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(aa.comp, <span class="cf">function</span>(x) x[, <span class="st">&quot;Mole%&quot;</span>]))</span>
+<span id="cb2-12"><a href="preface.html#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Isoelectric point</span></span>
+<span id="cb2-13"><a href="preface.html#cb2-13" aria-hidden="true" tabindex="-1"></a>pI.values <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">pI</span>(x, <span class="at">pKscale =</span> <span class="st">&quot;EMBOSS&quot;</span>)))</span>
+<span id="cb2-14"><a href="preface.html#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(pI.values) <span class="ot">&lt;-</span> <span class="st">&quot;pI.value&quot;</span></span>
+<span id="cb2-15"><a href="preface.html#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Hydrophobicity</span></span>
+<span id="cb2-16"><a href="preface.html#cb2-16" aria-hidden="true" tabindex="-1"></a>hydrophobicity.values <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">hydrophobicity</span>(x, <span class="at">scale =</span> <span class="st">&quot;KyteDoolittle&quot;</span>)))</span>
+<span id="cb2-17"><a href="preface.html#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(hydrophobicity.values) <span class="ot">&lt;-</span> <span class="st">&quot;hydrophobicity.value&quot;</span></span>
+<span id="cb2-18"><a href="preface.html#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Net charge at pH 7</span></span>
+<span id="cb2-19"><a href="preface.html#cb2-19" aria-hidden="true" tabindex="-1"></a>net.charges <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">charge</span>(x, <span class="at">pH =</span> <span class="dv">7</span>, <span class="at">pKscale =</span> <span class="st">&quot;EMBOSS&quot;</span>)))</span>
+<span id="cb2-20"><a href="preface.html#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(net.charges) <span class="ot">&lt;-</span> <span class="st">&quot;net.charge&quot;</span></span>
+<span id="cb2-21"><a href="preface.html#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Boman index</span></span>
+<span id="cb2-22"><a href="preface.html#cb2-22" aria-hidden="true" tabindex="-1"></a>boman.indices <span class="ot">&lt;-</span> <span class="fu">as.matrix</span>(<span class="fu">sapply</span>(peptides, <span class="cf">function</span>(x) <span class="fu">boman</span>(x)))</span>
+<span id="cb2-23"><a href="preface.html#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(boman.indices) <span class="ot">&lt;-</span> <span class="st">&quot;boman.index&quot;</span></span>
+<span id="cb2-24"><a href="preface.html#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co"># combine peptides results</span></span>
+<span id="cb2-25"><a href="preface.html#cb2-25" aria-hidden="true" tabindex="-1"></a>peptides_res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(weights, aa.comp.matrix, pI.values, hydrophobicity.values, net.charges, boman.indices))</span>
+<span id="cb2-26"><a href="preface.html#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="preface.html#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------</span></span>
+<span id="cb2-28"><a href="preface.html#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="co"># protr_1.6-2</span></span>
+<span id="cb2-29"><a href="preface.html#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co"># -----------</span></span>
+<span id="cb2-30"><a href="preface.html#cb2-30" aria-hidden="true" tabindex="-1"></a>length <span class="ot">&lt;-</span> <span class="dv">7</span></span>
+<span id="cb2-31"><a href="preface.html#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="co"># read in FASTA file</span></span>
+<span id="cb2-32"><a href="preface.html#cb2-32" aria-hidden="true" tabindex="-1"></a>sequences <span class="ot">&lt;-</span> <span class="fu">readFASTA</span>(<span class="st">&quot;./other_data/mb_pilot_peptide_array.fasta&quot;</span>)</span>
+<span id="cb2-33"><a href="preface.html#cb2-33" aria-hidden="true" tabindex="-1"></a>sequences <span class="ot">&lt;-</span> sequences[<span class="fu">unlist</span>(<span class="fu">lapply</span>(sequences, <span class="cf">function</span>(x) <span class="fu">nchar</span>(x) <span class="sc">&gt;</span> <span class="dv">1</span>))]</span>
+<span id="cb2-34"><a href="preface.html#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate amino acid composition descriptors (dim = 20)</span></span>
+<span id="cb2-35"><a href="preface.html#cb2-35" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractAAC))</span>
+<span id="cb2-36"><a href="preface.html#cb2-36" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x1)[<span class="fu">colnames</span>(x1) <span class="sc">==</span> <span class="st">&quot;Y&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;Y_tyrosine&quot;</span></span>
+<span id="cb2-37"><a href="preface.html#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate dipeptide composition descriptors (dim = 400)</span></span>
+<span id="cb2-38"><a href="preface.html#cb2-38" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractDC))</span>
+<span id="cb2-39"><a href="preface.html#cb2-39" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x2)[<span class="fu">colnames</span>(x2) <span class="sc">==</span> <span class="st">&quot;NA&quot;</span>] <span class="ot">&lt;-</span> <span class="st">&quot;NA_dipeptide&quot;</span></span>
+<span id="cb2-40"><a href="preface.html#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate Moreau-Broto autocorrelation descriptors (dim = 8 * (length - 1))</span></span>
+<span id="cb2-41"><a href="preface.html#cb2-41" aria-hidden="true" tabindex="-1"></a>x3 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractMoreauBroto, <span class="at">nlag =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb2-42"><a href="preface.html#cb2-42" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(x3) <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">&quot;moreau_broto&quot;</span>, <span class="fu">colnames</span>(x3), <span class="at">sep =</span> <span class="st">&quot;_&quot;</span>)</span>
+<span id="cb2-43"><a href="preface.html#cb2-43" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate composition descriptors (dim = 21)</span></span>
+<span id="cb2-44"><a href="preface.html#cb2-44" aria-hidden="true" tabindex="-1"></a>x4 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTDC))</span>
+<span id="cb2-45"><a href="preface.html#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate transition descriptors (dim = 21)</span></span>
+<span id="cb2-46"><a href="preface.html#cb2-46" aria-hidden="true" tabindex="-1"></a>x5 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTDT))</span>
+<span id="cb2-47"><a href="preface.html#cb2-47" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate distribution descriptors (dim = 105)</span></span>
+<span id="cb2-48"><a href="preface.html#cb2-48" aria-hidden="true" tabindex="-1"></a>x6 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTDD))</span>
+<span id="cb2-49"><a href="preface.html#cb2-49" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate conjoint triad descriptors (dim = 343)</span></span>
+<span id="cb2-50"><a href="preface.html#cb2-50" aria-hidden="true" tabindex="-1"></a>x7 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractCTriad))</span>
+<span id="cb2-51"><a href="preface.html#cb2-51" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate sequence-order-coupling numbers (dim = 2 * (length - 1))</span></span>
+<span id="cb2-52"><a href="preface.html#cb2-52" aria-hidden="true" tabindex="-1"></a>x8 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractSOCN, <span class="at">nlag =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb2-53"><a href="preface.html#cb2-53" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate quasi-sequence-order descriptors (dim = 40 + 2 * (length - 1))</span></span>
+<span id="cb2-54"><a href="preface.html#cb2-54" aria-hidden="true" tabindex="-1"></a>x9 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractQSO, <span class="at">nlag =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb2-55"><a href="preface.html#cb2-55" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate pseudo-amino acid composition (dim = 20 + (length - 1))</span></span>
+<span id="cb2-56"><a href="preface.html#cb2-56" aria-hidden="true" tabindex="-1"></a>x10 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractPAAC, <span class="at">lambda =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb2-57"><a href="preface.html#cb2-57" aria-hidden="true" tabindex="-1"></a><span class="co"># calculate amphiphilic pseudo-amino acid composition (dim = 20 + 2 * (length - 1))</span></span>
+<span id="cb2-58"><a href="preface.html#cb2-58" aria-hidden="true" tabindex="-1"></a>x11 <span class="ot">&lt;-</span> <span class="fu">t</span>(<span class="fu">sapply</span>(sequences, extractAPAAC, <span class="at">lambda =</span> length <span class="sc">-</span> 1L))</span>
+<span id="cb2-59"><a href="preface.html#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="co"># combine all of the result datasets</span></span>
+<span id="cb2-60"><a href="preface.html#cb2-60" aria-hidden="true" tabindex="-1"></a>protr_res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="fu">cbind</span>(x1, x2, x3, x4, x5, x6, x7, x8, x9, x10, x11))</span>
+<span id="cb2-61"><a href="preface.html#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-62"><a href="preface.html#cb2-62" aria-hidden="true" tabindex="-1"></a>labels <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./other_data/mb_pilot_peptide_array_labels.csv&quot;</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb2-63"><a href="preface.html#cb2-63" aria-hidden="true" tabindex="-1"></a>merge.all <span class="ot">&lt;-</span> <span class="cf">function</span>(x, ..., <span class="at">by =</span> <span class="st">&quot;row.names&quot;</span>) {</span>
+<span id="cb2-64"><a href="preface.html#cb2-64" aria-hidden="true" tabindex="-1"></a>  L <span class="ot">&lt;-</span> <span class="fu">list</span>(...)</span>
+<span id="cb2-65"><a href="preface.html#cb2-65" aria-hidden="true" tabindex="-1"></a>  <span class="cf">for</span> (i <span class="cf">in</span> <span class="fu">seq_along</span>(L)) {</span>
+<span id="cb2-66"><a href="preface.html#cb2-66" aria-hidden="true" tabindex="-1"></a>    x <span class="ot">&lt;-</span> <span class="fu">merge</span>(x, L[[i]], <span class="at">by =</span> by)</span>
+<span id="cb2-67"><a href="preface.html#cb2-67" aria-hidden="true" tabindex="-1"></a>    <span class="fu">rownames</span>(x) <span class="ot">&lt;-</span> x<span class="sc">$</span>Row.names</span>
+<span id="cb2-68"><a href="preface.html#cb2-68" aria-hidden="true" tabindex="-1"></a>    x<span class="sc">$</span>Row.names <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb2-69"><a href="preface.html#cb2-69" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb2-70"><a href="preface.html#cb2-70" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(x)</span>
+<span id="cb2-71"><a href="preface.html#cb2-71" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-72"><a href="preface.html#cb2-72" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">merge.all</span>(peptides_res, protr_res, labels)</span>
+<span id="cb2-73"><a href="preface.html#cb2-73" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(data, <span class="at">file =</span> <span class="st">&quot;./data/mb_pilot_peptide_array_ml_input.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="training-initial-rf-model" class="section level2 hasAnchor" number="0.3">
+<h2><span class="header-section-number">0.3</span> Training initial RF model<a href="preface.html#training-initial-rf-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb3-1"><a href="preface.html#cb3-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;./data/mb_pilot_peptide_array_ml_input.csv&quot;</span>, <span class="at">check.names =</span> <span class="cn">FALSE</span>, <span class="at">row.names =</span> <span class="dv">1</span>)</span>
+<span id="cb3-2"><a href="preface.html#cb3-2" aria-hidden="true" tabindex="-1"></a>predictor_variables <span class="ot">&lt;-</span> <span class="fu">subset</span>(data, <span class="at">select =</span> <span class="sc">-</span>category)</span>
+<span id="cb3-3"><a href="preface.html#cb3-3" aria-hidden="true" tabindex="-1"></a>response_variable <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>category, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;non-bind&quot;</span>, <span class="st">&quot;bind&quot;</span>))</span>
+<span id="cb3-4"><a href="preface.html#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># impute missing values</span></span>
+<span id="cb3-5"><a href="preface.html#cb3-5" aria-hidden="true" tabindex="-1"></a>response_variable <span class="ot">&lt;-</span> <span class="fu">na.roughfix</span>(response_variable)</span>
+<span id="cb3-6"><a href="preface.html#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># perform balance sampling</span></span>
+<span id="cb3-7"><a href="preface.html#cb3-7" aria-hidden="true" tabindex="-1"></a>samp_size <span class="ot">&lt;-</span> <span class="fu">min</span>(<span class="fu">table</span>(response_variable))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb4-1"><a href="preface.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># build RF model</span></span>
+<span id="cb4-2"><a href="preface.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">22</span>)</span>
+<span id="cb4-3"><a href="preface.html#cb4-3" aria-hidden="true" tabindex="-1"></a>ntree <span class="ot">&lt;-</span> <span class="dv">100000</span></span>
+<span id="cb4-4"><a href="preface.html#cb4-4" aria-hidden="true" tabindex="-1"></a>rf <span class="ot">&lt;-</span> <span class="fu">randomForest</span>(</span>
+<span id="cb4-5"><a href="preface.html#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> predictor_variables, <span class="at">y =</span> response_variable, <span class="at">ntree =</span> ntree, <span class="at">sampsize =</span> <span class="fu">rep</span>(samp_size, <span class="dv">2</span>),</span>
+<span id="cb4-6"><a href="preface.html#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">importance =</span> <span class="cn">TRUE</span>, <span class="at">proximity =</span> <span class="cn">TRUE</span>, <span class="at">do.trace =</span> <span class="fl">0.1</span> <span class="sc">*</span> ntree</span>
+<span id="cb4-7"><a href="preface.html#cb4-7" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-8"><a href="preface.html#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(rf, <span class="at">file =</span> <span class="st">&quot;./rdata/mb_pilot_rf.RData&quot;</span>)</span></code></pre></div>
+</div>
+<div id="melanin-binding-variable-importance" class="section level2 hasAnchor" number="0.4">
+<h2><span class="header-section-number">0.4</span> Melanin binding variable importance<a href="preface.html#melanin-binding-variable-importance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb5-1"><a href="preface.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">load</span>(<span class="at">file =</span> <span class="st">&quot;./rdata/mb_pilot_rf.RData&quot;</span>)</span>
+<span id="cb5-2"><a href="preface.html#cb5-2" aria-hidden="true" tabindex="-1"></a>imp_ds <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(<span class="fu">importance</span>(rf)[, <span class="st">&quot;MeanDecreaseAccuracy&quot;</span>, <span class="at">drop =</span> <span class="cn">FALSE</span>])</span>
+<span id="cb5-3"><a href="preface.html#cb5-3" aria-hidden="true" tabindex="-1"></a>imp_ds<span class="sc">$</span><span class="st">`</span><span class="at">Feature</span><span class="st">`</span> <span class="ot">&lt;-</span> <span class="fu">rownames</span>(imp_ds)</span>
+<span id="cb5-4"><a href="preface.html#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(imp_ds) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Mean decrease accuracy&quot;</span>, <span class="st">&quot;Feature&quot;</span>)</span>
+<span id="cb5-5"><a href="preface.html#cb5-5" aria-hidden="true" tabindex="-1"></a>imp_ds <span class="ot">&lt;-</span> imp_ds[<span class="fu">order</span>(<span class="sc">-</span>imp_ds<span class="sc">$</span><span class="st">`</span><span class="at">Mean decrease accuracy</span><span class="st">`</span>), ][<span class="dv">1</span><span class="sc">:</span><span class="dv">20</span>, ]</span>
+<span id="cb5-6"><a href="preface.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="preface.html#cb5-7" aria-hidden="true" tabindex="-1"></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(imp_ds, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(<span class="st">`</span><span class="at">Feature</span><span class="st">`</span>, <span class="st">`</span><span class="at">Mean decrease accuracy</span><span class="st">`</span>), <span class="at">y =</span> <span class="st">`</span><span class="at">Mean decrease accuracy</span><span class="st">`</span>)) <span class="sc">+</span></span>
+<span id="cb5-8"><a href="preface.html#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_col</span>(<span class="at">color =</span> <span class="st">&quot;grey10&quot;</span>, <span class="at">fill =</span> <span class="st">&quot;#f5b8b8&quot;</span>, <span class="at">size =</span> <span class="fl">0.2</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="preface.html#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> <span class="fu">sprintf</span>(<span class="st">&quot;%.2f&quot;</span>, <span class="st">`</span><span class="at">Mean decrease accuracy</span><span class="st">`</span>)), <span class="at">nudge_y =</span> <span class="fl">4.2</span>, <span class="at">size =</span> <span class="dv">3</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="preface.html#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">coord_flip</span>() <span class="sc">+</span></span>
+<span id="cb5-11"><a href="preface.html#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fu">max</span>(imp_ds<span class="sc">$</span><span class="st">`</span><span class="at">Mean decrease accuracy</span><span class="st">`</span>) <span class="sc">+</span> <span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb5-12"><a href="preface.html#cb5-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb5-13"><a href="preface.html#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb5-14"><a href="preface.html#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.major =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-15"><a href="preface.html#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-16"><a href="preface.html#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">strip.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-17"><a href="preface.html#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">panel.border =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb5-18"><a href="preface.html#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;black&quot;</span>),</span>
+<span id="cb5-19"><a href="preface.html#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.text =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb5-20"><a href="preface.html#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb5-21"><a href="preface.html#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">plot.margin =</span> ggplot2<span class="sc">::</span><span class="fu">margin</span>(<span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">0</span>, <span class="st">&quot;pt&quot;</span>),</span>
+<span id="cb5-22"><a href="preface.html#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb5-23"><a href="preface.html#cb5-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">18</span>),</span>
+<span id="cb5-24"><a href="preface.html#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb5-25"><a href="preface.html#cb5-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb5-26"><a href="preface.html#cb5-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">14</span>),</span>
+<span id="cb5-27"><a href="preface.html#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">legend.position =</span> <span class="fu">c</span>(<span class="fl">0.85</span>, <span class="fl">0.5</span>)</span>
+<span id="cb5-28"><a href="preface.html#cb5-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-29"><a href="preface.html#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">&quot;&quot;</span>) <span class="sc">+</span></span>
+<span id="cb5-30"><a href="preface.html#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggtitle</span>(<span class="st">&quot;&quot;</span>)</span></code></pre></div>
+<p><img src="figures/Fig%201%20mb%20pilot%20var%20imp.png" width="100%" style="display: block; margin: auto;" /></p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r fold-hide"><code class="sourceCode r"><span id="cb6-1"><a href="preface.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sessionInfo</span>()</span></code></pre></div>
+<pre><code>## R version 4.2.2 (2022-10-31)
+## Platform: x86_64-apple-darwin17.0 (64-bit)
+## Running under: macOS Big Sur ... 10.16
+## 
+## Matrix products: default
+## BLAS:   /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRblas.0.dylib
+## LAPACK: /Library/Frameworks/R.framework/Versions/4.2/Resources/lib/libRlapack.dylib
+## 
+## locale:
+## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+## 
+## attached base packages:
+## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## 
+## other attached packages:
+## [1] ggplot2_3.3.6        randomForest_4.7-1.1 plyr_1.8.7          
+## [4] protr_1.6-2          stringr_1.4.1        Peptides_2.4.4      
+## [7] seqinr_4.2-16       
+## 
+## loaded via a namespace (and not attached):
+##  [1] styler_1.8.0      tidyselect_1.1.2  xfun_0.32         bslib_0.4.0      
+##  [5] purrr_0.3.4       colorspace_2.0-3  vctrs_0.4.1       generics_0.1.3   
+##  [9] htmltools_0.5.3   yaml_2.3.5        utf8_1.2.2        rlang_1.0.4      
+## [13] R.oo_1.25.0       jquerylib_0.1.4   pillar_1.8.1      glue_1.6.2       
+## [17] withr_2.5.0       DBI_1.1.3         R.utils_2.12.0    R.cache_0.16.0   
+## [21] lifecycle_1.0.1   munsell_0.5.0     gtable_0.3.0      R.methodsS3_1.8.2
+## [25] codetools_0.2-18  evaluate_0.16     knitr_1.40        fastmap_1.1.0    
+## [29] fansi_1.0.3       highr_0.9         Rcpp_1.0.9        scales_1.2.1     
+## [33] cachem_1.0.6      jsonlite_1.8.0    digest_0.6.29     stringi_1.7.8    
+## [37] bookdown_0.28     dplyr_1.0.9       grid_4.2.2        ade4_1.7-19      
+## [41] cli_3.3.0         tools_4.2.2       magrittr_2.0.3    sass_0.4.2       
+## [45] tibble_3.1.8      pkgconfig_2.0.3   MASS_7.3-58.1     assertthat_0.2.1 
+## [49] rmarkdown_2.16    rstudioapi_0.14   R6_2.5.1          compiler_4.2.2</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="id_02_variable_reduction.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": [["main_notebook.pdf", "PDF"]],
+"search": false,
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
